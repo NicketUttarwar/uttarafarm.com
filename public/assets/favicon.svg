@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <rect width="32" height="32" rx="6" fill="#1a4d2e"/>
+  <path
+    d="M8 20c2-4 6-8 10-10 2 3 3 7 2 11-4 2-9 1-12-1z"
+    fill="#c45c26"
+    opacity="0.95"
+  />
+  <path
+    d="M14 10c3 1 5 4 6 7-2 1-4 1-6 0 .5-2.5.5-5 0-7z"
+    fill="#f7f4ed"
+    opacity="0.35"
+  />
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120" role="img" aria-labelledby="t">
+  <title id="t">Max Protein</title>
+  <rect width="320" height="120" rx="12" fill="#1a1a1a"/>
+  <text x="160" y="62" text-anchor="middle" font-family="DM Sans, system-ui, sans-serif" font-size="30" font-weight="800">
+    <tspan fill="#e85d04">max</tspan><tspan fill="#ffffff"> PROTEIN</tspan>
+  </text>
+  <text x="160" y="88" text-anchor="middle" font-family="DM Sans, system-ui, sans-serif" font-size="12" fill="#a3a3a3">Protein bars &amp; snacks · Naturell brand</text>
+</svg>

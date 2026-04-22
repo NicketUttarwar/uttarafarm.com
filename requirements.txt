@@ -1,0 +1,17 @@
+# =============================================================================
+# Uttara Farm — repository dependencies
+# =============================================================================
+#
+# WEBSITE (REQUIRED): Node.js 18+ and npm 9+ recommended.
+#   All JavaScript/TypeScript packages are declared in:
+#     - package.json          — dependency names and version ranges
+#     - package-lock.json     — exact resolved tree (commit this file)
+#
+# Run: npm install
+# Dev server: npm run dev   OR   ./scripts/test-local.sh
+#
+# Python packages below: none required for the Vite/React app. The test-local
+# script creates a .venv for optional future Python tooling; pip install -r
+# this file will install nothing unless you add package lines below.
+#
+# --- pip packages (optional; add one package per line when needed) ---

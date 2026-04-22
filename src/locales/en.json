@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "home": {
+      "title": "Uttara Farm — Prosperity through ginger farming in Vidarbha",
+      "description": "A social initiative supporting farmers in Ralegaon and Vidarbha, Maharashtra with ginger expertise, soil testing, and access to major markets."
+    },
+    "about": {
+      "title": "About — Uttara Farm & Vijay Uttarwar",
+      "description": "Uttara Farm is a social project led by Vijay Uttarwar, founder of Naturell (Max Protein and more), which joined Zydus Wellness in 2024—giving back to villages near Ralegaon."
+    }
+  },
+  "a11y": {
+    "skipToMain": "Skip to main content"
+  },
+  "brand": "Uttara Farm",
+  "nav": {
+    "mission": "Mission",
+    "ginger": "Why ginger",
+    "support": "What we provide",
+    "region": "Our region",
+    "partners": "Partners",
+    "contact": "Contact",
+    "about": "About"
+  },
+  "hero": {
+    "eyebrow": "Social project · Maharashtra",
+    "title": "Prosperity for farmers through high-value ginger",
+    "subtitle": "We help farming families in Ralegaon and Vidarbha grow ginger with expert guidance, practical tools, and fair access to big-city markets.",
+    "ctaPrimary": "Learn how we help",
+    "ctaSecondary": "Get in touch"
+  },
+  "mission": {
+    "title": "A social project rooted in local farming",
+    "p1": "Agriculture is the backbone of our region. Uttara Farm exists to help farmers build economic stability from the land they already know—without having to leave it behind.",
+    "p2": "By focusing on a high-value crop like ginger and surrounding farmers with training, testing, and market connections, we aim to turn local farming into a more resilient livelihood."
+  },
+  "ginger": {
+    "title": "Why ginger",
+    "lead": "Ginger can earn strong returns—but it is demanding. Success depends on soil health, careful cultivation, and timing.",
+    "p1": "Unlike some crops, ginger needs attention through the season: land preparation, nutrition, water, and disease management all matter. That is why going it alone is risky.",
+    "p2": "Our programme reduces that risk by pairing farmers with experienced ginger advisors, soil insight, and a clearer path from field to buyers in larger cities."
+  },
+  "pillars": {
+    "title": "What we provide",
+    "knowledge": {
+      "title": "Knowledge & field guidance",
+      "body": "Hands-on training and season-long advice from ginger consultants—including specialists like Nilesh—so practices match local soil and weather."
+    },
+    "infrastructure": {
+      "title": "Tools & soil insight",
+      "body": "Access to soil testing kits and support through Warkem, helping farmers understand their land before they plant and adjust nutrition responsibly."
+    },
+    "markets": {
+      "title": "Scale, logistics & markets",
+      "body": "Working toward better bundling, grading, and transport so produce can reach tier-1 markets such as Mumbai—capturing economies of scale small lots often miss."
+    }
+  },
+  "region": {
+    "title": "Ralegaon & Vidarbha",
+    "p1": "We work in Ralegaon and the wider Vidarbha region of Maharashtra—communities where farming shapes daily life and seasonal income.",
+    "p2": "Our effort is deliberately local: solutions should fit Vidarbha’s climate, soils, and the realities of family farms."
+  },
+  "partners": {
+    "title": "Partners & contributors",
+    "body": "Uttara Farm brings together field experts, soil-testing partners, and market allies. Names and logos here recognise those who make the programme possible.",
+    "nilesh": "Ginger consultants — e.g. Nilesh",
+    "warkem": "Warkem — soil testing kits & support"
+  },
+  "contact": {
+    "title": "Contact",
+    "personName": "Vijay Uttarwar",
+    "intro": "Farmers, cooperatives, and supporters can reach Vijay directly about Uttara Farm.",
+    "emailLabel": "Email",
+    "emailValue": "vijay@uttarwar.com",
+    "phoneLabel": "Phone",
+    "phoneValue": "+91 98211 62605",
+    "whatsappLabel": "WhatsApp",
+    "whatsappCta": "Message on WhatsApp"
+  },
+  "footer": {
+    "rights": "Uttara Farm. Supporting farmers in Ralegaon and Vidarbha.",
+    "note": "uttarafarm.com"
+  },
+  "aboutPage": {
+    "badge": "Social project",
+    "title": "Why Uttara Farm exists",
+    "lead": "Uttara Farm is a social project—not a commercial venture. It exists to put entrepreneurial experience and networks to work for farming families in the region Vijay comes from.",
+    "p1": "The initiative is led by Vijay Uttarwar, founder of Naturell (India), the company behind well-known nutrition brands such as Max Protein and other everyday wellness foods.",
+    "p2": "In 2024, Naturell became part of Zydus Wellness, one of India’s leading listed consumer health companies—recognition for years of building trusted brands.",
+    "p3": "Vijay grew up in Bhamb, a village near Ralegaon in Vidarbha. That grounding shapes this project: solutions must work for real villages, real seasons, and real risk.",
+    "p4": "His dream is simple to state and hard to do: help villagers prosper economically while staying rooted in farming and local identity.",
+    "brandsTitle": "Brands & milestone",
+    "brandsIntro": "These names mark the journey behind Uttara Farm’s purpose-led work in the villages.",
+    "captionNaturell": "Naturell — nutrition & wellness foods",
+    "captionMax": "Max Protein — flagship protein snacks & bars",
+    "captionZydus": "Zydus Wellness — Naturell joined this listed company in 2024",
+    "backHome": "Back to home"
+  }
+}

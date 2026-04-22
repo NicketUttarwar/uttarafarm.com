@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120" role="img" aria-labelledby="t">
+  <title id="t">Zydus Wellness</title>
+  <rect width="320" height="120" rx="12" fill="#ffffff"/>
+  <rect x="1" y="1" width="318" height="118" rx="11" fill="none" stroke="#0c4a6e" stroke-width="2"/>
+  <text x="160" y="55" text-anchor="middle" font-family="DM Sans, system-ui, sans-serif" font-size="26" font-weight="700" fill="#0c4a6e">Zydus Wellness</text>
+  <text x="160" y="82" text-anchor="middle" font-family="DM Sans, system-ui, sans-serif" font-size="12" fill="#5c4a3d">Listed consumer health &amp; wellness company</text>
+</svg>
