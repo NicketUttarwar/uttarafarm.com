@@ -21,6 +21,7 @@ ROUTES=(
   "story"
   "impact"
   "contact"
+  "how-we-work"
 )
 
 for route in "${ROUTES[@]}"; do
