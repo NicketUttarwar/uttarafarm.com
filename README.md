@@ -7,6 +7,19 @@ Static marketing site for Uttara Farm (Vite + React + TypeScript + Tailwind) wit
 - Deploy artifact: `combined/`
 - Runtime: S3 website endpoint behind CloudFront
 
+## Domains (canonical deploy)
+
+This repository deploys **one** static website: a **single** S3 bucket and **one** CloudFront distribution. There is no multi-distribution or multi-bucket setup in Terraform for different hostnames.
+
+**Canonical production hostname:** **`uttarafarm.com`** (and **`www`** if you use it in DNS). The steps in this README—build, `aws s3 sync`, CloudFront invalidation, and the Terraform modules in `terraform/`—all target that stack only.
+
+Uttara Farm uses **five** domains that should present the **same** site to visitors. Only **`uttarafarm.com`** is backed by this repo’s CloudFront + S3 deploy. Point the others to the canonical URL with **HTTP redirects or DNS forwarding at your registrar or DNS provider**; you do **not** need extra CloudFront alternate domain names or Terraform changes here for those names.
+
+| Role | Hostname |
+| --- | --- |
+| Canonical (this deploy) | `uttarafarm.com` |
+| Forward to canonical (registrar/DNS only) | `uttarafarm.in`, `uttarafarms.com`, `uttarafarms.in`, `uttara.farm` |
+
 ## Stack
 
 | Layer | Choices |
@@ -131,8 +144,9 @@ Terraform scripts already **`source`** `config/aws.env`. **`aws s3`** and **`aws
 
 ### 11 — Public DNS (traffic to CloudFront)
 
-25. **`www`** **→** **CNAME** to the **`cloudfront_domain_name`** hostname from step 19 (omit `https://` in DNS).
-26. **Apex (`@`)** → registrar **HTTP redirect** to `www` **or** your provider’s **ALIAS/ANAME** to the same CloudFront target, per registrar docs.
+25. For **`uttarafarm.com`** (canonical), **`www`** **→** **CNAME** to the **`cloudfront_domain_name`** hostname from step 19 (omit `https://` in DNS).
+26. **Apex (`@`)** for the canonical zone → registrar **HTTP redirect** to `www` **or** your provider’s **ALIAS/ANAME** to the same CloudFront target, per registrar docs.
+27. For **`uttarafarm.in`**, **`uttarafarms.com`**, **`uttarafarms.in`**, and **`uttara.farm`**, configure **redirect/forward** to **`uttarafarm.com`** at the registrar or DNS only (see [Domains (canonical deploy)](#domains-canonical-deploy)); no CloudFront or Terraform updates in this repo.
 
 ### 12 — Verify
 
