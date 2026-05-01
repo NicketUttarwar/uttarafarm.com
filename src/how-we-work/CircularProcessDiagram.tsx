@@ -40,18 +40,6 @@ export type LayoutSpec = {
     startShrink: number;
     endShrink: number;
   };
-  /** Entry arrow targets step 1 (first wedge) by default; numbers are optional tuning in layout.json. */
-  entry?: {
-    arrowLength?: number;
-    tipRadiusShrink?: number;
-    /** Fraction of first wedge span (0–1) from wedge start — aim into step 1, not the left side of the ring. */
-    firstWedgeBias?: number;
-    labelMaxWidth?: number;
-    /** Shift label along the arrow (positive = toward tip, in px). */
-    labelOffsetAlongArrow?: number;
-    /** Shift label perpendicular (negative = above in screen space for a westward arrow). */
-    labelOffsetAboveCenter?: number;
-  };
   steps: LayoutStep[];
 };
 
@@ -59,6 +47,8 @@ export type CircularProcessCopy = {
   centerLine1: string;
   centerLine2: string;
   entryLabel: string;
+  loopLine1: string;
+  loopLine2: string;
   steps: { title: string; detail: string }[];
 };
 
@@ -167,26 +157,17 @@ export function CircularProcessDiagram({ layout, copy, className }: CircularProc
   }
 
   const [cx, cy] = layout.center;
-  const { viewBoxSize, ring, badge, label, leader, segmentColors } = layout;
+  const { viewBoxSize, ring, badge, label, segmentColors } = layout;
   const padding = layout.padding ?? 96;
   const vbExtent = viewBoxSize + 2 * padding;
   const angles = layout.steps.map((s) => s.nodeAngleDeg);
   const halfGap = ring.segmentGapDeg / 2;
-
-  const entryOpts = layout.entry ?? {};
-  const boundary0 = nextBoundaryDeg(angles, 0);
-  const firstSpan = boundary0 - angles[0]!;
-  const aimDeg = angles[0]! + firstSpan * (entryOpts.firstWedgeBias ?? 0.2);
-  const tipR = ring.outerRadius - (entryOpts.tipRadiusShrink ?? 10);
-  const [xTip, yTip] = polar(cx, cy, tipR, aimDeg);
-  const arrowLen = entryOpts.arrowLength ?? 230;
-  const xStart = xTip - arrowLen;
-  const yStart = yTip;
-  const labelMaxW = entryOpts.labelMaxWidth ?? 218;
-  const along = entryOpts.labelOffsetAlongArrow ?? 12;
-  let labelEntryX = xStart + along;
-  labelEntryX = Math.max(-padding + 12, Math.min(labelEntryX, vbExtent - padding - labelMaxW - 12));
-  const labelEntryY = Math.min(yStart, yTip) + (entryOpts.labelOffsetAboveCenter ?? -54);
+  const step3Index = 2;
+  const step3Boundary = nextBoundaryDeg(angles, step3Index);
+  const step3Span = step3Boundary - angles[step3Index]!;
+  const step3Mid = angles[step3Index]! + step3Span / 2;
+  const loopAnchorRadius = ring.outerRadius + 56;
+  const [loopCx, loopCy] = polar(cx, cy, loopAnchorRadius, step3Mid);
 
   return (
     <div className={`min-w-0 w-full ${className ?? ""}`}>
@@ -199,20 +180,6 @@ export function CircularProcessDiagram({ layout, copy, className }: CircularProc
           aria-labelledby="how-we-work-diagram-title"
         >
           <title id="how-we-work-diagram-title">{`${copy.centerLine1} ${copy.centerLine2}`}</title>
-          <defs>
-            <marker
-              id="how-we-entry-arrow-head"
-              viewBox="0 0 10 10"
-              refX="9"
-              refY="5"
-              markerWidth="7"
-              markerHeight="7"
-              orient="auto"
-            >
-              <path d="M 0 0 L 10 5 L 0 10 Z" fill={segmentColors[0] ?? "#154a52"} />
-            </marker>
-          </defs>
-
           {layout.steps.map((step, idx) => {
             const boundary = nextBoundaryDeg(angles, idx);
             const span = boundary - angles[idx]!;
@@ -263,6 +230,14 @@ export function CircularProcessDiagram({ layout, copy, className }: CircularProc
             );
           })}
 
+          <foreignObject x={loopCx - 86} y={loopCy - 29} width={172} height={58}>
+            <div className="rounded-md bg-white/92 px-2 py-1 text-center text-[10px] font-semibold leading-tight text-forest shadow-[0_1px_6px_rgba(0,0,0,.1)] sm:text-[11px]">
+              {copy.loopLine1}
+              <br />
+              {copy.loopLine2}
+            </div>
+          </foreignObject>
+
           <circle
             cx={cx}
             cy={cy}
@@ -282,41 +257,6 @@ export function CircularProcessDiagram({ layout, copy, className }: CircularProc
               </p>
             </div>
           </foreignObject>
-
-          <line
-            x1={xStart}
-            y1={yStart}
-            x2={xTip}
-            y2={yTip}
-            stroke={segmentColors[0] ?? "#154a52"}
-            strokeWidth="9"
-            strokeLinecap="round"
-            markerEnd="url(#how-we-entry-arrow-head)"
-          />
-
-          <foreignObject x={labelEntryX} y={labelEntryY} width={labelMaxW} height={106}>
-            <div className="rounded-lg bg-white/94 px-2 py-1.5 text-[11px] font-semibold leading-snug text-forest shadow-[0_1px_8px_rgba(0,0,0,.1)] sm:text-xs">
-              {copy.entryLabel}
-            </div>
-          </foreignObject>
-
-          {layout.steps.map((step, idx) => {
-            const boundary = nextBoundaryDeg(angles, idx);
-            const span = boundary - angles[idx]!;
-            const midBadge = angles[idx]! + span / 2;
-
-            const [sx, sy] = polar(cx, cy, ring.outerRadius * leader.startShrink, midBadge);
-
-            const [ex, ey] = polar(cx, cy, label.radius * leader.endShrink, step.detailAngleDeg);
-
-            return (
-              <g key={`guide-${idx}`}>
-                <line x1={sx} y1={sy} x2={ex} y2={ey} stroke={ring.guideStroke} strokeWidth="1.35" strokeLinecap="round" />
-                <circle cx={sx} cy={sy} r={ring.guideDotRadius} fill="#fff" stroke={ring.guideStroke} strokeWidth="1.05" />
-                <circle cx={ex} cy={ey} r={ring.guideDotRadius} fill="#fff" stroke={ring.guideStroke} strokeWidth="1.05" />
-              </g>
-            );
-          })}
 
           {layout.steps.map((step, idx) => {
             const da = degToRad(step.detailAngleDeg);

@@ -25,7 +25,7 @@ export function SectionRegion() {
           </div>
           <div className="overflow-hidden rounded-2xl border border-forest/15 bg-white shadow-sm">
             <iframe
-              title="Vidarbha region map"
+              title={t("region.mapTitle")}
               src="https://www.google.com/maps?q=Vidarbha%20Maharashtra&output=embed"
               className="aspect-[4/3] w-full"
               loading="lazy"

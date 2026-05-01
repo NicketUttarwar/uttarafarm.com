@@ -34,13 +34,23 @@ type LanguageContextValue = {
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
+function getDeviceDefaultLocale(): Locale {
+  const ua = navigator.userAgent.toLowerCase();
+  const isAndroid = ua.includes("android");
+  const isIOS =
+    /iphone|ipad|ipod/.test(ua) ||
+    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
+  if (isIOS) return "en";
+  if (isAndroid) return "mr";
+  return "en";
+}
+
 function readInitialLocale(): Locale {
   if (typeof window === "undefined") return "en";
   const stored = window.localStorage.getItem(STORAGE_KEY);
   if (stored === "mr" || stored === "en") return stored;
-  const nav = navigator.language?.toLowerCase() ?? "";
-  if (nav.startsWith("mr")) return "mr";
-  return "en";
+  return getDeviceDefaultLocale();
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {

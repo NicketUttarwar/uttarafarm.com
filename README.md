@@ -48,7 +48,7 @@ What this does:
 
 ## Path B Phased Runbook
 
-### Phase 1: Local Repo Readiness
+### Phase 1: Local Repo + Network Baseline Readiness
 
 1. Copy config templates:
    - `cp config/aws.env.example config/aws.env`
@@ -56,7 +56,13 @@ What this does:
 2. Fill real values in:
    - `config/aws.env`
    - `config/terraform.tfvars`
-3. Build deploy artifact:
+3. Confirm network defaults in `config/terraform.tfvars` for the new dedicated network:
+   - `vpc_name`
+   - `public_subnet_name`
+   - `vpc_cidr_block`
+   - `public_subnet_cidr_block`
+   - `public_subnet_availability_zone`
+4. Build deploy artifact:
    - `npm run build:combined`
 
 ### Phase 2: Provision AWS Infrastructure
@@ -71,7 +77,7 @@ Run in order:
 ./scripts/tf-apply-phase1.sh
 ```
 
-Phase 1 apply creates S3 website resources and requests ACM certificate, but does not assume DNS is ready.
+Phase 1 apply creates the new dedicated VPC + public subnet network baseline, then creates S3 website resources and requests ACM certificate, but does not assume DNS is ready.
 
 ### Phase 3: External DNS Validation and Cutover Prep
 
@@ -125,6 +131,9 @@ Rollback:
   - `Environment`
   - `ManagedBy`
   - optional: `Owner`, `CostCenter`
+- Keep dedicated network naming and CIDR settings documented and stable:
+  - `vpc_name`, `public_subnet_name`
+  - `vpc_cidr_block`, `public_subnet_cidr_block`
 - List tagged resources:
   - `./scripts/list-tagged-resources.sh`
   - `TAG_KEY=Environment TAG_VALUE=personal ./scripts/list-tagged-resources.sh`

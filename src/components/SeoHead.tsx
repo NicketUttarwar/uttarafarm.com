@@ -4,30 +4,26 @@ import { useLanguage } from "../contexts/LanguageContext";
 import { howWeWorkDocumentMeta } from "../how-we-work";
 
 const SITE_URL = "https://uttarafarm.com";
-const META_BY_PATH: Record<string, { title: string; description: string }> = {
+const META_KEY_BY_PATH: Record<string, { titleKey: string; descriptionKey: string }> = {
   "/": {
-    title: "Uttara Farm — From Village Farm to Brand Scale",
-    description:
-      "A refreshed multi-page story site documenting the full Naturell, RiteBite, Max Protein, and Zydus timeline.",
-  },
-  "/timeline": {
-    title: "Timeline — Uttara Farm",
-    description:
-      "Chronological timeline of events from village roots to strategic acquisition, based on the war room transcript.",
+    titleKey: "meta.home.title",
+    descriptionKey: "meta.home.description",
   },
   "/story": {
-    title: "Story — Nicket and Vijay Uttarwar",
-    description:
-      "Interview-style narrative covering pivots, product-market fit, innovation, and stakeholder-first scale decisions.",
+    titleKey: "meta.about.title",
+    descriptionKey: "meta.about.description",
+  },
+  "/timeline": {
+    titleKey: "meta.about.title",
+    descriptionKey: "meta.about.description",
   },
   "/impact": {
-    title: "Impact — Uttara Farm",
-    description:
-      "How the journey created value for employees, investors, strategic partners, and the wider ecosystem.",
+    titleKey: "meta.about.title",
+    descriptionKey: "meta.about.description",
   },
   "/contact": {
-    title: "Contact — Uttara Farm",
-    description: "Reach out to Uttara Farm for collaboration, media, or strategic conversations.",
+    titleKey: "meta.contact.title",
+    descriptionKey: "meta.contact.description",
   },
 };
 
@@ -46,16 +42,25 @@ function upsertMeta(
 
 export function SeoHead() {
   const { pathname } = useLocation();
-  const { locale } = useLanguage();
+  const { locale, t } = useLanguage();
 
   useEffect(() => {
     const meta =
       pathname === "/how-we-work"
         ? howWeWorkDocumentMeta(locale)
-        : (META_BY_PATH[pathname] ?? {
-            title: "Uttara Farm",
-            description: "Uttara Farm website",
-          });
+        : (() => {
+            const keyMeta = META_KEY_BY_PATH[pathname];
+            if (!keyMeta) {
+              return {
+                title: t("brand"),
+                description: t("meta.home.description"),
+              };
+            }
+            return {
+              title: t(keyMeta.titleKey),
+              description: t(keyMeta.descriptionKey),
+            };
+          })();
     const title = meta.title;
     const description = meta.description;
     const path = pathname === "/" ? "" : pathname;
@@ -120,7 +125,7 @@ export function SeoHead() {
         m.setAttribute("property", "og:locale");
         return m;
       },
-      (el) => el.setAttribute("content", "en_IN"),
+      (el) => el.setAttribute("content", locale === "mr" ? "mr_IN" : "en_IN"),
     );
 
     upsertMeta(
@@ -152,7 +157,7 @@ export function SeoHead() {
       },
       (el) => el.setAttribute("content", description),
     );
-  }, [pathname, locale]);
+  }, [pathname, locale, t]);
 
   return null;
 }

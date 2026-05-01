@@ -44,3 +44,33 @@ variable "common_tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "vpc_name" {
+  description = "Name tag for the dedicated website VPC."
+  type        = string
+  default     = "website-vpc"
+}
+
+variable "public_subnet_name" {
+  description = "Name tag for the dedicated website public subnet."
+  type        = string
+  default     = "website-public-subnet"
+}
+
+variable "vpc_cidr_block" {
+  description = "CIDR block for the dedicated website VPC."
+  type        = string
+  default     = "10.50.0.0/16"
+}
+
+variable "public_subnet_cidr_block" {
+  description = "CIDR block for the dedicated website public subnet."
+  type        = string
+  default     = "10.50.1.0/24"
+}
+
+variable "public_subnet_availability_zone" {
+  description = "Availability zone for the dedicated website public subnet."
+  type        = string
+  default     = "us-east-1a"
+}

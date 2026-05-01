@@ -2,10 +2,10 @@ import { Link, NavLink } from "react-router-dom";
 import { useLanguage } from "../contexts/LanguageContext";
 
 const navItems = [
-  { label: "Home", to: "/" },
-  { label: "Story", to: "/story" },
-  { label: "How We Work", to: "/how-we-work" },
-  { label: "Contact", to: "/contact" },
+  { labelKey: "nav.home", to: "/" },
+  { labelKey: "nav.story", to: "/story" },
+  { labelKey: "nav.howWeWork", to: "/how-we-work" },
+  { labelKey: "nav.contact", to: "/contact" },
 ] as const;
 
 const navClass =
@@ -14,7 +14,7 @@ const navActive =
   "rounded-md px-2 py-1.5 text-sm font-semibold bg-forest/10 text-forest";
 
 export function Header() {
-  const { locale, setLocale } = useLanguage();
+  const { locale, setLocale, t } = useLanguage();
 
   return (
     <header
@@ -26,11 +26,11 @@ export function Header() {
           to="/"
           className="brand-wordmark text-2xl text-forest"
         >
-          Uttara Farm
+          {t("brand")}
         </Link>
         <nav
           className="flex flex-1 flex-wrap items-center justify-end gap-1 sm:gap-2"
-          aria-label="Primary"
+          aria-label={t("a11y.primaryNav")}
         >
           {navItems.map((item) => (
             <NavLink
@@ -38,13 +38,13 @@ export function Header() {
               to={item.to}
               className={({ isActive }) => (isActive ? navActive : navClass)}
             >
-              {item.label}
+              {t(item.labelKey)}
             </NavLink>
           ))}
           <div
             className="ml-1 flex items-center gap-0.5 rounded-lg border border-forest/20 bg-white/80 p-0.5"
             role="group"
-            aria-label="Language"
+            aria-label={t("a11y.languageToggle")}
           >
             <button
               type="button"

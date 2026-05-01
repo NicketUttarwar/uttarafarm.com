@@ -10,6 +10,8 @@
   "centerLine1": "Farmer operating",
   "centerLine2": "cycle",
   "entryLabel": "Field-first farmer cycle",
+  "loopLine1": "1-2 consultations/month",
+  "loopLine2": "on farmer's land",
   "steps": [
     {
       "title": "1. Consultation",
@@ -17,7 +19,7 @@
     },
     {
       "title": "2. Overview & evaluation",
-      "detail": "Assess conditions, crop potential, and risk gaps early."
+      "detail": "Assess conditions, including soil condition evaluation with soil test kits, plus crop potential and risk gaps early."
     },
     {
       "title": "3. Regular field support",

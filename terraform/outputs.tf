@@ -6,6 +6,18 @@ output "environment" {
   value = var.environment
 }
 
+output "vpc_id" {
+  value = aws_vpc.site.id
+}
+
+output "public_subnet_id" {
+  value = aws_subnet.site_public.id
+}
+
+output "public_route_table_id" {
+  value = aws_route_table.site_public.id
+}
+
 output "site_bucket_name" {
   value = aws_s3_bucket.site.bucket
 }

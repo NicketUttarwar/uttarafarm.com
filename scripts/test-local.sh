@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Local dev: ensure .venv exists, ensure npm deps, pick a free port, run Vite,
+# Local dev: ensure .venv exists, ensure npm deps, use a fixed port, run Vite,
 # open the browser, and stop the server when this script exits (Ctrl+C or kill).
 set -euo pipefail
 
@@ -45,16 +45,22 @@ if [[ ! -d "${ROOT}/node_modules" ]]; then
   npm install
 fi
 
-pick_port() {
-  "${VENV_PATH}/bin/python" -c 'import socket; s=socket.socket(); s.bind(("127.0.0.1",0)); print(s.getsockname()[1]); s.close()'
-}
-
-if [[ -n "${PORT:-}" ]] && [[ "${PORT}" =~ ^[0-9]+$ ]]; then
-  :
-else
-  PORT="$(pick_port)"
-fi
+PORT=9999
 export PORT
+
+free_port() {
+  if ! command -v lsof >/dev/null 2>&1; then
+    return
+  fi
+
+  local pids
+  pids="$(lsof -tiTCP:"${PORT}" -sTCP:LISTEN 2>/dev/null || true)"
+  if [[ -n "${pids}" ]]; then
+    echo "releasing port ${PORT} from existing listener(s): ${pids}"
+    # shellcheck disable=SC2086
+    kill ${pids} 2>/dev/null || true
+  fi
+}
 
 cleanup() {
   if [[ -n "${DEV_PID:-}" ]] && kill -0 "${DEV_PID}" 2>/dev/null; then
@@ -63,10 +69,13 @@ cleanup() {
     kill "${DEV_PID}" 2>/dev/null || true
     wait "${DEV_PID}" 2>/dev/null || true
   fi
+  free_port
 }
 trap cleanup EXIT INT TERM HUP
 
-echo "starting Vite on http://127.0.0.1:${PORT}/ (PORT=${PORT}; set PORT=... to pin)"
+free_port
+
+echo "starting Vite on http://127.0.0.1:${PORT}/"
 npm run dev -- --host 127.0.0.1 --port "${PORT}" --strictPort &
 DEV_PID=$!
 

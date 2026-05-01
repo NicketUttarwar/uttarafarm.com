@@ -12,10 +12,10 @@ export function Footer() {
     >
       <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6">
         <div className="mb-5 flex flex-wrap justify-center gap-4 text-sm">
-          <Link className="hover:text-cream" to="/">Home</Link>
-          <Link className="hover:text-cream" to="/story">Story</Link>
-          <Link className="hover:text-cream" to="/how-we-work">How We Work</Link>
-          <Link className="hover:text-cream" to="/contact">Contact</Link>
+          <Link className="hover:text-cream" to="/">{t("nav.home")}</Link>
+          <Link className="hover:text-cream" to="/story">{t("nav.story")}</Link>
+          <Link className="hover:text-cream" to="/how-we-work">{t("nav.howWeWork")}</Link>
+          <Link className="hover:text-cream" to="/contact">{t("nav.contact")}</Link>
         </div>
         <p className="text-center text-sm">
           © {year} {t("footer.rights")}

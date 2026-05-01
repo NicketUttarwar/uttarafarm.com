@@ -7,13 +7,22 @@
     "about": {
       "title": "About — Uttara Farm & Vijay Uttarwar",
       "description": "Uttara Farm is a social project led by Vijay Uttarwar, founder of Naturell (Max Protein and more), which joined Zydus Wellness in 2024—giving back to villages near Ralegaon."
+    },
+    "contact": {
+      "title": "Contact — Uttara Farm",
+      "description": "Reach Uttara Farm for collaboration, media requests, and strategic conversations."
     }
   },
   "a11y": {
-    "skipToMain": "Skip to main content"
+    "skipToMain": "Skip to main content",
+    "primaryNav": "Primary navigation",
+    "languageToggle": "Language selector"
   },
   "brand": "Uttara Farm",
   "nav": {
+    "home": "Home",
+    "story": "Story",
+    "howWeWork": "How We Work",
     "mission": "Mission",
     "ginger": "Why turmeric and ginger",
     "support": "What we provide",
@@ -58,7 +67,8 @@
   "region": {
     "title": "Ralegaon & Vidarbha",
     "p1": "We work in Ralegaon and the wider Vidarbha region of Maharashtra—communities where farming shapes daily life and seasonal income.",
-    "p2": "Our effort is deliberately local: solutions should fit Vidarbha’s climate, soils, and the realities of family farms."
+    "p2": "Our effort is deliberately local: solutions should fit Vidarbha’s climate, soils, and the realities of family farms.",
+    "mapTitle": "Vidarbha region map"
   },
   "partners": {
     "title": "Partners & contributors",
@@ -80,6 +90,17 @@
     "phoneValue": "+91 98211 62605",
     "whatsappLabel": "WhatsApp",
     "whatsappCta": "Message on WhatsApp"
+  },
+  "contactPage": {
+    "badge": "Get in touch",
+    "title": "Contact Uttara Farm",
+    "lead": "For speaking requests, collaborations, media questions, or strategic conversations, reach out directly.",
+    "primaryContactLabel": "Primary contact"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for does not exist.",
+    "backHome": "Back to home"
   },
   "footer": {
     "rights": "Uttara Farm. Supporting farmers in Ralegaon and Vidarbha.",
@@ -117,7 +138,7 @@
       "altNaturell": "Naturell brand visual",
       "naturellTitle": "Vijay Uttarwar and the formation of Naturell",
       "naturellBody": "Naturell was formed to build modern nutrition products for Indian consumers, laying the entrepreneurial foundation that now powers Uttara Farm’s social mission.",
-      "altStevia": "Young stevia sapling visual",
+      "altStevia": "Real stevia plant photo",
       "ritebiteTitle": "Stugar launches as a Stevia sweetening milestone",
       "ritebiteBody": "Naturell first built Stugar around Stevia as a separate sweetener-focused effort. RiteBite came afterward as a distinct next chapter in everyday nutrition snacking.",
       "altMaxProteinLaunch": "RiteBite and Max Protein visual",
@@ -129,6 +150,69 @@
       "altZydus": "Zydus Wellness stock visual",
       "zydusTitle": "Sale to Zydus Wellness in 2024",
       "zydusBody": "In 2024, Naturell was sold to Zydus Wellness, marking a major milestone and enabling Vijay to channel experience and networks back into village-focused initiatives."
+    },
+    "timeline": {
+      "title": "Full Story Timeline",
+      "intro": "The complete arc of Vijay Uttarwar's journey shown as a circular narrative: every milestone feeds the next and ultimately loops back to village impact.",
+      "centerLabel": "Journey loops back to rural impact",
+      "stepLabel": "Step {n}",
+      "phase": {
+        "act1": "Act 1",
+        "act2": "Act 2",
+        "act3": "Act 3"
+      },
+      "events": {
+        "roots": {
+          "title": "Bhamb roots and a bigger dream",
+          "detail": "Vijay grew up in Bhamb near Ralegaon, where farming shaped everyday life. That early exposure stayed with him while he built his professional career."
+        },
+        "naturellBegins": {
+          "title": "Naturell begins with a health-first mission",
+          "detail": "Naturell started with the vision of combining healthier food products with long-term value creation."
+        },
+        "pivot": {
+          "title": "Setback, pivot, and product learning",
+          "detail": "After early regulatory challenges, the team pivoted into nutrition snacks and steadily improved product fit, positioning, and category understanding."
+        },
+        "scale": {
+          "title": "RiteBite and Max Protein scale nationally",
+          "detail": "Focused innovation, wider distribution, and clear consumer use-cases helped build RiteBite and Max Protein into widely recognized brands."
+        },
+        "zydus": {
+          "title": "Naturell joins Zydus Wellness",
+          "detail": "The 2024 transaction with Zydus Wellness marked a major milestone and validated years of brand-building and execution."
+        },
+        "impact": {
+          "title": "Success circles back to village impact",
+          "detail": "With the Naturell journey at scale, Vijay turned his attention to giving back to Bhamb, Ralegaon, and nearby farming communities through Uttara Farm."
+        }
+      }
+    },
+    "impact": {
+      "title": "Impact of the Journey",
+      "intro": "This story is not only about one founder. It shows how a successful business journey can create value for many groups and then return that value to the village ecosystem.",
+      "groups": {
+        "people": {
+          "title": "People and teams",
+          "p1": "Employees and contributors participated in value creation as the company scaled.",
+          "p2": "A continuity-focused approach protected long-term careers and capability building."
+        },
+        "investors": {
+          "title": "Investors and shareholders",
+          "p1": "The growth journey created meaningful outcomes for early risk capital.",
+          "p2": "Execution discipline and category expansion translated into durable enterprise value."
+        },
+        "ecosystem": {
+          "title": "Strategic ecosystem",
+          "p1": "The Zydus partnership enabled the brands to move onto a larger national platform.",
+          "p2": "Suppliers, channel partners, and stakeholders benefited from a stronger scaled network."
+        },
+        "villages": {
+          "title": "Village communities in Vidarbha",
+          "p1": "Experience and networks from this entrepreneurial journey now feed back into rural initiatives.",
+          "p2": "Uttara Farm is designed to convert private success into public rural opportunity."
+        }
+      }
     },
     "backHome": "Back to home"
   }

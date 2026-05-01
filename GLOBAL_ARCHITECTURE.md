@@ -54,14 +54,15 @@ This repo is designed for static-site directory routing without edge rewrites:
 
 1. Configure local AWS credentials (`config/aws.env`)
 2. Configure local Terraform variables (`config/terraform.tfvars`)
-3. `./scripts/tf-init.sh`
-4. `./scripts/tf-plan.sh`
-5. `./scripts/tf-apply-phase1.sh` (creates S3 + ACM request, no DNS wait)
-6. Add ACM validation CNAME records in DNS provider
-7. Wait for ACM cert status `Issued`
-8. `./scripts/tf-apply.sh` (CloudFront + validation + bucket policy)
-9. `aws s3 sync combined/ s3://<bucket> --delete`
-10. `aws cloudfront create-invalidation --distribution-id <id> --paths "/*"`
+3. Confirm dedicated network inputs (`vpc_name`, `public_subnet_name`, `vpc_cidr_block`, `public_subnet_cidr_block`, `public_subnet_availability_zone`)
+4. `./scripts/tf-init.sh`
+5. `./scripts/tf-plan.sh`
+6. `./scripts/tf-apply-phase1.sh` (creates dedicated VPC + public subnet baseline, plus S3 + ACM request, no DNS wait)
+7. Add ACM validation CNAME records in DNS provider
+8. Wait for ACM cert status `Issued`
+9. `./scripts/tf-apply.sh` (CloudFront + validation + bucket policy)
+10. `aws s3 sync combined/ s3://<bucket> --delete`
+11. `aws cloudfront create-invalidation --distribution-id <id> --paths "/*"`
 
 For exact command behavior and sequence details, `README.md` remains the source of truth.
 
@@ -160,6 +161,11 @@ Suggested extension format:
 
 ## Resource composition
 
+- `aws_vpc.site`
+- `aws_subnet.site_public`
+- `aws_internet_gateway.site`
+- `aws_route_table.site_public`
+- `aws_route_table_association.site_public`
 - `aws_s3_bucket.site`
 - `aws_s3_bucket_website_configuration.site`
 - `aws_s3_bucket_public_access_block.site`
@@ -335,6 +341,8 @@ Use lowercase kebab-case for folder/file identifiers unless platform rules requi
 - `project_name`: stable project slug (example: `website`)
 - `environment`: stable environment slug (example: `personal`)
 - `aws_region`: fixed to `us-east-1` in this stack
+- `vpc_name`: dedicated network identifier (example: `website-vpc`)
+- `public_subnet_name`: dedicated public subnet identifier (example: `website-public-subnet`)
 
 These values are the canonical identity anchors for naming, tags, cost filtering, and search.
 

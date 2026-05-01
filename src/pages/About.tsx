@@ -11,7 +11,7 @@ const storyImages = [
     bodyKey: "aboutPage.story.naturellBody" as const,
   },
   {
-    src: assetUrl("stevia-sapling.svg"),
+    src: assetUrl("stevia-plant-realistic.jpg"),
     altKey: "aboutPage.story.altStevia" as const,
     titleKey: "aboutPage.story.ritebiteTitle" as const,
     bodyKey: "aboutPage.story.ritebiteBody" as const,
@@ -53,76 +53,70 @@ const additionalImages = [
 
 const timelineEvents = [
   {
-    phase: "Act 1",
+    phaseKey: "aboutPage.timeline.phase.act1",
     angle: -90,
-    title: "Bhamb roots and a bigger dream",
-    detail:
-      "Vijay grew up in Bhamb near Ralegaon, where farming shaped everyday life. That early exposure stayed with him while he built his professional career.",
+    titleKey: "aboutPage.timeline.events.roots.title",
+    detailKey: "aboutPage.timeline.events.roots.detail",
   },
   {
-    phase: "Act 1",
+    phaseKey: "aboutPage.timeline.phase.act1",
     angle: -30,
-    title: "Naturell begins with a health-first mission",
-    detail:
-      "Naturell started with the vision of combining healthier food products with long-term value creation.",
+    titleKey: "aboutPage.timeline.events.naturellBegins.title",
+    detailKey: "aboutPage.timeline.events.naturellBegins.detail",
   },
   {
-    phase: "Act 2",
+    phaseKey: "aboutPage.timeline.phase.act2",
     angle: 30,
-    title: "Setback, pivot, and product learning",
-    detail:
-      "After early regulatory challenges, the team pivoted into nutrition snacks and steadily improved product fit, positioning, and category understanding.",
+    titleKey: "aboutPage.timeline.events.pivot.title",
+    detailKey: "aboutPage.timeline.events.pivot.detail",
   },
   {
-    phase: "Act 2",
+    phaseKey: "aboutPage.timeline.phase.act2",
     angle: 90,
-    title: "RiteBite and Max Protein scale nationally",
-    detail:
-      "Focused innovation, wider distribution, and clear consumer use-cases helped build RiteBite and Max Protein into widely recognized brands.",
+    titleKey: "aboutPage.timeline.events.scale.title",
+    detailKey: "aboutPage.timeline.events.scale.detail",
   },
   {
-    phase: "Act 3",
+    phaseKey: "aboutPage.timeline.phase.act3",
     angle: 150,
-    title: "Naturell joins Zydus Wellness",
-    detail:
-      "The 2024 transaction with Zydus Wellness marked a major milestone and validated years of brand-building and execution.",
+    titleKey: "aboutPage.timeline.events.zydus.title",
+    detailKey: "aboutPage.timeline.events.zydus.detail",
   },
   {
-    phase: "Act 3",
+    phaseKey: "aboutPage.timeline.phase.act3",
     angle: 210,
-    title: "Success circles back to village impact",
-    detail:
-      "With the Naturell journey at scale, Vijay turned his attention to giving back to Bhamb, Ralegaon, and nearby farming communities through Uttara Farm.",
+    titleKey: "aboutPage.timeline.events.impact.title",
+    detailKey: "aboutPage.timeline.events.impact.detail",
   },
 ] as const;
 
 const impactGroups = [
   {
-    title: "People and teams",
+    titleKey: "aboutPage.impact.groups.people.title",
     points: [
-      "Employees and contributors participated in value creation as the company scaled.",
-      "A continuity-focused approach protected long-term careers and capability building.",
+      "aboutPage.impact.groups.people.p1",
+      "aboutPage.impact.groups.people.p2",
     ],
   },
   {
-    title: "Investors and shareholders",
+    titleKey: "aboutPage.impact.groups.investors.title",
     points: [
-      "The growth journey created meaningful outcomes for early risk capital.",
-      "Execution discipline and category expansion translated into durable enterprise value.",
+      "aboutPage.impact.groups.investors.p1",
+      "aboutPage.impact.groups.investors.p2",
     ],
   },
   {
-    title: "Strategic ecosystem",
+    titleKey: "aboutPage.impact.groups.ecosystem.title",
     points: [
-      "The Zydus partnership enabled the brands to move onto a larger national platform.",
-      "Suppliers, channel partners, and stakeholders benefited from a stronger scaled network.",
+      "aboutPage.impact.groups.ecosystem.p1",
+      "aboutPage.impact.groups.ecosystem.p2",
     ],
   },
   {
-    title: "Village communities in Vidarbha",
+    titleKey: "aboutPage.impact.groups.villages.title",
     points: [
-      "Experience and networks from this entrepreneurial journey now feed back into rural initiatives.",
-      "Uttara Farm is designed to convert private success into public rural opportunity.",
+      "aboutPage.impact.groups.villages.p1",
+      "aboutPage.impact.groups.villages.p2",
     ],
   },
 ] as const;
@@ -235,11 +229,10 @@ export function About() {
       <section className="border-t border-earth/10 bg-white py-12 sm:py-16" aria-labelledby="timeline-heading">
         <div className="mx-auto max-w-5xl px-4 sm:px-6">
           <h2 id="timeline-heading" className="text-2xl font-bold tracking-tight text-forest sm:text-3xl">
-            Full Story Timeline
+            {t("aboutPage.timeline.title")}
           </h2>
           <p className="mt-4 max-w-3xl text-lg leading-relaxed text-earth/90">
-            The complete arc of Vijay Uttarwar's journey shown as a circular narrative: every milestone
-            feeds the next and ultimately loops back to village impact.
+            {t("aboutPage.timeline.intro")}
           </p>
           <div className="relative mt-10 hidden min-h-[46rem] lg:block">
             <svg
@@ -272,12 +265,12 @@ export function About() {
             </svg>
             <div className="pointer-events-none absolute left-1/2 top-1/2 flex h-48 w-48 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-forest/20 bg-cream/95 px-6 text-center shadow-sm">
               <p className="text-sm font-semibold uppercase tracking-wide text-forest">
-                Journey loops back to rural impact
+                {t("aboutPage.timeline.centerLabel")}
               </p>
             </div>
             {timelineEvents.map((event, idx) => (
               <article
-                key={event.title}
+                key={event.titleKey}
                 className="absolute w-64 -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-forest/10 bg-cream/80 p-4 shadow-sm"
                 style={{
                   left: `calc(50% + ${330 * Math.cos((event.angle * Math.PI) / 180)}px)`,
@@ -285,21 +278,21 @@ export function About() {
                 }}
               >
                 <p className="text-xs font-semibold uppercase tracking-wide text-ginger">
-                  {event.phase} · Step {idx + 1}
+                  {t(event.phaseKey)} · {t("aboutPage.timeline.stepLabel").replace("{n}", String(idx + 1))}
                 </p>
-                <h3 className="mt-1 text-lg font-semibold text-forest">{event.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-earth/90">{event.detail}</p>
+                <h3 className="mt-1 text-lg font-semibold text-forest">{t(event.titleKey)}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-earth/90">{t(event.detailKey)}</p>
               </article>
             ))}
           </div>
           <ol className="mt-8 space-y-4 lg:hidden">
             {timelineEvents.map((event, idx) => (
-              <li key={event.title} className="rounded-2xl border border-forest/10 bg-cream/30 p-5 sm:p-6">
+              <li key={event.titleKey} className="rounded-2xl border border-forest/10 bg-cream/30 p-5 sm:p-6">
                 <p className="text-xs font-semibold uppercase tracking-wide text-ginger">
-                  {event.phase} · Step {idx + 1}
+                  {t(event.phaseKey)} · {t("aboutPage.timeline.stepLabel").replace("{n}", String(idx + 1))}
                 </p>
-                <h3 className="mt-1 text-xl font-semibold text-forest">{event.title}</h3>
-                <p className="mt-2 leading-relaxed text-earth/90">{event.detail}</p>
+                <h3 className="mt-1 text-xl font-semibold text-forest">{t(event.titleKey)}</h3>
+                <p className="mt-2 leading-relaxed text-earth/90">{t(event.detailKey)}</p>
               </li>
             ))}
           </ol>
@@ -309,19 +302,18 @@ export function About() {
       <section className="border-t border-earth/10 bg-cream/30 py-12 sm:py-16" aria-labelledby="impact-heading">
         <div className="mx-auto max-w-5xl px-4 sm:px-6">
           <h2 id="impact-heading" className="text-2xl font-bold tracking-tight text-forest sm:text-3xl">
-            Impact of the Journey
+            {t("aboutPage.impact.title")}
           </h2>
           <p className="mt-4 max-w-3xl text-lg leading-relaxed text-earth/90">
-            This story is not only about one founder. It shows how a successful business journey can
-            create value for many groups and then return that value to the village ecosystem.
+            {t("aboutPage.impact.intro")}
           </p>
           <div className="mt-8 grid gap-6 md:grid-cols-2">
             {impactGroups.map((group) => (
-              <div key={group.title} className="rounded-2xl border border-forest/10 bg-white p-6 shadow-sm">
-                <h3 className="text-xl font-semibold text-forest">{group.title}</h3>
+              <div key={group.titleKey} className="rounded-2xl border border-forest/10 bg-white p-6 shadow-sm">
+                <h3 className="text-xl font-semibold text-forest">{t(group.titleKey)}</h3>
                 <ul className="mt-3 list-disc space-y-2 pl-5 text-earth/90">
                   {group.points.map((point) => (
-                    <li key={point}>{point}</li>
+                    <li key={point}>{t(point)}</li>
                   ))}
                 </ul>
               </div>

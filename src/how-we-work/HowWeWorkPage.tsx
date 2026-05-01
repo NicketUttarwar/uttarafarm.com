@@ -17,6 +17,8 @@ export function HowWeWork() {
     centerLine1: copy.centerLine1,
     centerLine2: copy.centerLine2,
     entryLabel: copy.entryLabel,
+    loopLine1: copy.loopLine1,
+    loopLine2: copy.loopLine2,
     steps: copy.steps,
   };
 
