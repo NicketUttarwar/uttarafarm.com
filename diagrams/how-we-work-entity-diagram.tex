@@ -1,0 +1,62 @@
+\documentclass[tikz,border=8pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric,fit,backgrounds}
+
+\definecolor{forest}{HTML}{1F5E41}
+\definecolor{ginger}{HTML}{C9802A}
+\definecolor{earth}{HTML}{6D5846}
+\definecolor{cream}{HTML}{F7F3E8}
+
+\begin{document}
+\begin{tikzpicture}[
+  font=\sffamily,
+  step/.style={
+    rounded rectangle,
+    rounded rectangle arc length=120,
+    draw=forest!50,
+    line width=0.8pt,
+    fill=cream,
+    minimum width=4.8cm,
+    minimum height=1.5cm,
+    align=left,
+    inner sep=6pt
+  },
+  nlabel/.style={circle, fill=ginger, text=white, minimum size=7mm, inner sep=0pt, font=\bfseries\small},
+  arrow/.style={-{Latex[length=3.2mm,width=2.4mm]}, thick, draw=forest!75}
+]
+
+\node[text=forest, font=\bfseries\Large] at (0,8.2)
+  {How We Work --- Circular Farmer Journey};
+\node[text=earth, font=\normalsize] at (0,7.55)
+  {A 5-step operating loop from onboarding to market enablement};
+
+\coordinate (c) at (0,0);
+\def\radius{4.7}
+
+\node[step] (s1) at ({90:\radius}) {\textbf{Consultation}\\Understand goals, constraints, and season priorities.};
+\node[nlabel] at ([xshift=-2.8mm,yshift=5.8mm]s1.north west) {1};
+
+\node[step] (s2) at ({18:\radius}) {\textbf{Overview \& Evaluation}\\Assess farm conditions, crop potential, and gaps.};
+\node[nlabel] at ([xshift=-2.8mm,yshift=5.8mm]s2.north west) {2};
+
+\node[step] (s3) at ({-54:\radius}) {\textbf{Regular Field Support}\\Consultants visit regularly for in-season decisions.};
+\node[nlabel] at ([xshift=-2.8mm,yshift=5.8mm]s3.north west) {3};
+
+\node[step] (s4) at ({-126:\radius}) {\textbf{Infrastructure \& Funding Support}\\Close critical gaps with practical interventions.};
+\node[nlabel] at ([xshift=-2.8mm,yshift=5.8mm]s4.north west) {4};
+
+\node[step] (s5) at ({-198:\radius}) {\textbf{Knowledge \& Distribution Enablement}\\Build farmer capability and strengthen market pathways.};
+\node[nlabel] at ([xshift=-2.8mm,yshift=5.8mm]s5.north west) {5};
+
+\draw[forest!20, line width=0.8pt, dashed] (c) circle (4.05);
+\node[circle, draw=forest!25, fill=white, minimum size=2.7cm, align=center, text=forest, font=\bfseries\small]
+  at (c) {Circular\\Farmer\\Journey};
+
+\draw[arrow] (s1.south east) to[out=-20,in=120] (s2.north west);
+\draw[arrow] (s2.south) to[out=-105,in=30] (s3.north east);
+\draw[arrow] (s3.south west) to[out=-150,in=20] (s4.north east);
+\draw[arrow] (s4.north west) to[out=160,in=-30] (s5.south east);
+\draw[arrow] (s5.north) to[out=95,in=210] (s1.south west);
+
+\end{tikzpicture}
+\end{document}

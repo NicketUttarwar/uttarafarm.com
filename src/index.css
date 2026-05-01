@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap");
 @import "tailwindcss";
 
 @theme {
   --font-sans: "DM Sans", "Noto Sans Devanagari", ui-sans-serif, system-ui, sans-serif;
+  --font-brand: "Bree Serif", "Merriweather", "Times New Roman", serif;
   --color-cream: #f7f4ed;
   --color-forest: #1a4d2e;
   --color-forest-dark: #0f2e1b;
@@ -18,6 +20,12 @@ body {
   font-family: var(--font-sans);
   background-color: var(--color-cream);
   color: var(--color-earth);
+}
+
+.brand-wordmark {
+  font-family: var(--font-brand);
+  letter-spacing: 0.01em;
+  font-weight: 700;
 }
 
 :focus-visible {

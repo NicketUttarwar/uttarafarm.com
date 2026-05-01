@@ -1,8 +1,35 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useLanguage } from "../contexts/LanguageContext";
+import { howWeWorkDocumentMeta } from "../how-we-work";
 
 const SITE_URL = "https://uttarafarm.com";
+const META_BY_PATH: Record<string, { title: string; description: string }> = {
+  "/": {
+    title: "Uttara Farm — From Village Farm to Brand Scale",
+    description:
+      "A refreshed multi-page story site documenting the full Naturell, RiteBite, Max Protein, and Zydus timeline.",
+  },
+  "/timeline": {
+    title: "Timeline — Uttara Farm",
+    description:
+      "Chronological timeline of events from village roots to strategic acquisition, based on the war room transcript.",
+  },
+  "/story": {
+    title: "Story — Nicket and Vijay Uttarwar",
+    description:
+      "Interview-style narrative covering pivots, product-market fit, innovation, and stakeholder-first scale decisions.",
+  },
+  "/impact": {
+    title: "Impact — Uttara Farm",
+    description:
+      "How the journey created value for employees, investors, strategic partners, and the wider ecosystem.",
+  },
+  "/contact": {
+    title: "Contact — Uttara Farm",
+    description: "Reach out to Uttara Farm for collaboration, media, or strategic conversations.",
+  },
+};
 
 function upsertMeta(
   select: () => HTMLMetaElement | null,
@@ -18,13 +45,19 @@ function upsertMeta(
 }
 
 export function SeoHead() {
-  const { locale, t } = useLanguage();
   const { pathname } = useLocation();
+  const { locale } = useLanguage();
 
   useEffect(() => {
-    const metaPrefix = pathname.startsWith("/about") ? "meta.about" : "meta.home";
-    const title = t(`${metaPrefix}.title`);
-    const description = t(`${metaPrefix}.description`);
+    const meta =
+      pathname === "/how-we-work"
+        ? howWeWorkDocumentMeta(locale)
+        : (META_BY_PATH[pathname] ?? {
+            title: "Uttara Farm",
+            description: "Uttara Farm website",
+          });
+    const title = meta.title;
+    const description = meta.description;
     const path = pathname === "/" ? "" : pathname;
     const canonicalUrl = `${SITE_URL.replace(/\/$/, "")}${path || "/"}`;
 
@@ -87,8 +120,7 @@ export function SeoHead() {
         m.setAttribute("property", "og:locale");
         return m;
       },
-      (el) =>
-        el.setAttribute("content", locale === "mr" ? "mr_IN" : "en_IN"),
+      (el) => el.setAttribute("content", "en_IN"),
     );
 
     upsertMeta(
@@ -120,7 +152,7 @@ export function SeoHead() {
       },
       (el) => el.setAttribute("content", description),
     );
-  }, [locale, t, pathname]);
+  }, [pathname, locale]);
 
   return null;
 }

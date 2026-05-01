@@ -1,0 +1,623 @@
+From Village Farm 🌱 to ₹2000 Crore Brand
+
+
+Summary for both recordings 
+This text recounts the entrepreneurial journey of an individual from a humble farming background in rural India. His path unexpectedly shifted from agriculture and computer science to building a successful consumer products company, initially facing setbacks with Stevia and a nutrition bar. Through perseverance and strategic pivots, he adapted his product lines and positioning, ultimately achieving significant growth in the Indian health food market. The narrative concludes with the recent acquisition of his company by Zydus Wellness, setting the stage for ambitious future expansion.
+This text recounts the entrepreneurial journey of a company, from its bootstrapped beginnings as a lifestyle brand to its eventual sale to a larger corporation. Key themes include the strategic decision-making around securing funding, the importance of employee ownership (through ESOPs), and the ultimate choice to prioritize a strategic partnership that ensured employee job security and a lucrative exit for all stakeholders, including employees. The narrative culminates in a successful acquisition by Zydus Wellness, highlighting a balance between maximizing financial returns and maintaining brand integrity and employee well-being. The founder emphasizes the crucial role of his wife in the company's success, particularly in product design and flavor development.
+
+
+
+
+
+
+An Interview with Vijay Uttarwar
+Nicket Uttarwar: Welcome, Dad, it's great to have you here. I'm excited to hear about your entrepreneurial journey with Naturell.
+Vijay Uttarwar: Thanks, Nicket. It's a pleasure to be here and share my story.
+Nicket: Let's start from the beginning. What inspired you to transition from a successful career in software to the consumer products industry, specifically with Stevia?
+Vijay: It was a combination of factors. I always felt a pull towards contributing to the farming community, and Stevia seemed like a perfect opportunity. It promised higher incomes for farmers compared to traditional crops, and being a zero-calorie natural sweetener, it ticked the boxes for a healthy alternative. It felt like a good business proposition with a social cause - a way to improve the lives of farmers. Our initial tagline was “Wealthy Urban, Healty Rural”.
+Nicket: You mentioned Stevia faced some regulatory hurdles early on. Could you elaborate on that?
+Vijay: Yes, initially we outsourced manufacturing and secured the necessary licenses. However, a year in, the central government declared Stevia wasn’t on the approved list of sweeteners. It was a major setback. We had already built a team and invested resources. It would've been easy to give up, but my entrepreneurial spirit wouldn't let me. We had to pivot.
+Nicket: That's when you decided to enter the nutrition bar market, right? What were the initial challenges?
+Vijay: Absolutely. We launched Rite Bite bars priced at ₹15, targeting them as healthy chocolate for children. However, we quickly realized that ₹15 was a barrier for many consumers, and the positioning as "healthy chocolate" wasn't resonating. We learned that extensive consumer research was crucial, something we lacked initially. We reduced the price to ₹5, but faced another challenge - our premium product was placed in smaller stores where customers didn't understand the concept of a nutrition bar.
+Nicket: It sounds like a constant learning process. How did you overcome these challenges and what led to the creation of Max Protein?
+Vijay: We learned that clear communication was key. Since we didn't have the resources for large-scale consumer awareness campaigns, we decided to highlight the functional benefits directly on the packaging. We identified three target segments - gym-goers, calorie-conscious consumers, and women - and tailored our products accordingly. The "workout" branding for our protein bars clicked with gym-goers, especially when they realized they could get 20 grams of protein for a much lower price than imported brands. To cater to their demand for higher protein content, we launched Max Protein.
+Nicket: It's impressive how you identified a niche and grew within that segment. What were the key factors that drove Naturell’s growth to a ₹170 crore business?
+Vijay: Focusing on protein and fiber as primary benefits was crucial. We expanded Max Protein beyond bars, creating a platform for healthy snacks including protein chips, cookies, granola, peanut butter, and plant protein options. We constantly innovated, introducing new concepts like millet-based protein chips, a first in India and possibly globally.
+Nicket: You mentioned aiming for a ₹1000 crore brand. What prompted the decision to partner with Zydus Wellness to achieve that goal?
+Vijay: Building a brand from scratch to ₹25 crore is a different ball game than scaling it to ₹1000 crore. It requires more resources, expertise, and a shared passion. Zydus Wellness impressed me with their understanding of building and nurturing industries. They had created the sugar-free sweetener and face mask markets in India. Their existing health brand portfolio and resources combined with Naturell’s agility made for a compelling partnership.
+Nicket: What were the key factors you considered when making this decision? Was it a difficult decision?
+Vijay: It was a significant decision, but I focused on four key stakeholders: the brand, employees, shareholders, and partners. I wanted to ensure the brand’s continued growth and maintain the startup culture. For employees, job security and career growth opportunities were paramount. I also wanted all shareholders, including employees through ESOPs, to benefit financially. And lastly, I wanted to ensure our supply chain and distribution partners continued to thrive.
+Nicket: That's commendable. You've always prioritized your employees. How did you ensure their well-being during the acquisition?
+Vijay: I negotiated with Zydus Wellness to run Naturell as a separate independent subsidiary, guaranteeing no job losses. Additionally, employees received a higher share price than investors during the transaction. 50% of the payout was immediate, and the remaining 50% will be disbursed after a year with a 25% increase, ensuring their financial security. We even extended payouts to individuals not on our payroll, like promoters and support staff. Everyone who contributed to Naturell's success deserved to share in the rewards.
+Nicket: It's inspiring to see your commitment to your team. What's next for you?
+Vijay: I'll continue to be associated with Rite Bite and Max Protein in an advisory role. The brands will always be close to my heart. I'm also excited to explore new avenues. After 20 years in education, 20 years in software, and 20 years in the consumer business, I'm looking forward to the next 20 years, focusing on social causes and personal interests.
+Nicket: Thank you for sharing your incredible journey, Dad. I'm proud of everything you've accomplished and excited to see what you do next.
+Vijay: Thanks, Nicket. It's been a fulfilling journey, and I'm grateful for the opportunity to have made a difference.
+
+
+
+
+(prompt) Using each of these bullet points paraphrase the full story into an interview format between Nicket Uttarwar (interviewer) and Vijay Uttarwar (the entrepreneur in the story). Make Vijay's responses flow like a professional storyteller. 
+
+Nicket Uttarwar Interviews Vijay Uttarwar: A Story of Entrepreneurial Resilience and Purpose
+Nicket: Dad, your journey from software engineer to building and selling a successful consumer brand is fascinating. What sparked your decision to leave the tech world and dive into the uncharted waters of the food industry?
+Vijay: It started with a deep desire to give back to the farming community. I grew up in a small village, and agriculture was a way of life. I saw farmers struggling to make ends meet, and I wanted to find a way to improve their incomes while also exploring a new business opportunity. That’s how I stumbled upon Stevia, a natural, zero-calorie sweetener. It offered the potential for much higher profits for farmers compared to traditional crops. That’s when Naturell was born, with the tagline “Healthy Urban, Wealthy Rural” - it perfectly captured my vision.
+Nicket: Stevia sounds like a great idea, but you faced some early hurdles. What happened?
+Vijay: Yes, we hit a major roadblock. The regulatory landscape was evolving, and it turned out that Stevia wasn’t yet approved as a sweetener. It was a huge setback, but I wasn’t ready to give up. I had already invested a lot, and more importantly, I had a team of 30-40 people who were depending on Naturell’s success. I had to figure out a way to pivot.
+Nicket: So, how did you go from a sweetener to protein bars? That seems like a big leap.
+Vijay: Well, I had spent a good amount of time in the US, and I noticed that nutrition bars were gaining popularity there. I saw an opportunity to introduce a similar concept in India. We launched Rite Bite bars, initially positioning them as “healthy chocolate for children.”
+Nicket: From what I remember, those early days were a bit of a learning curve. What were some of the key lessons you learned during that time?
+Vijay: You’re right, those early days were full of valuable lessons. We realized that our initial pricing strategy was off, and our messaging wasn’t resonating with consumers. I learned the hard way that assumptions about the market can be dangerous. Thorough consumer research is essential, and understanding your target audience’s needs and preferences is paramount. We also needed to clearly communicate the value proposition – highlighting the functional benefits directly on the packaging.
+Nicket: So, how did you turn things around with Rite Bite?
+Vijay: We made some crucial adjustments. We lowered the price and shifted our focus from “healthy chocolate” to emphasizing functional benefits like protein content and low calories. This resonated with health-conscious consumers, especially gym-goers looking for affordable alternatives to imported protein bars. That's how Max Protein was born.
+Nicket: Max Protein became a big success, but you didn’t stop there. You seemed to have a constant drive for innovation.
+Vijay: Absolutely. I believe that continuous innovation is key to staying ahead in any market. We expanded Max Protein from just bars to a whole platform for healthy snacking. We introduced new products like millet-based protein chips, which was a first in India, and possibly even globally.
+Nicket: You eventually grew Naturell to a ₹170 crore business. That’s impressive! What made you decide to partner with Zydus Wellness?
+Vijay: Thank you! I always dreamt of building a truly massive brand – a ₹1000 crore brand. To achieve that level of scale, I knew I needed more resources and access to greater expertise. That’s where the partnership with Zydus Wellness came in. They had a proven track record of building successful brands in the health and wellness space, and I saw a strong synergy with our vision for Naturell.
+Nicket: It sounds like you put a lot of thought into ensuring that the partnership benefited everyone involved.
+Vijay: Yes, it was crucial for me that everyone – the brand, employees, shareholders, and our partners – would benefit from this partnership. Zydus Wellness agreed to let Naturell operate as an independent subsidiary, preserving our brand identity and giving us the agility to continue innovating. For our employees, I negotiated job security and provided generous financial incentives, including ESOPs with a higher share price than even the investors received. Our existing suppliers and distributors would also benefit from increased business as the brand scaled.
+Nicket: Dad, your story is truly inspiring. It's a testament to the power of resilience, adaptability, and a people-centric approach to business. What advice would you give to aspiring entrepreneurs?
+Vijay: Never be afraid to dream big, but be prepared to adapt and pivot when necessary. Thoroughly understand your target audience, invest in building a strong brand, and don’t underestimate the power of strategic partnerships. Above all, never lose sight of your values – treat your employees and partners well, and always strive to make a positive impact on the world. That's the most rewarding part of the journey.
+
+
+
+How would this story ideally be told. What are the story markers and highlights to go over, and what order would they be in?
+
+
+This entrepreneurial journey is ripe with captivating elements that would make for a compelling and inspiring story. Here's a suggested structure, highlighting key story markers and their ideal order:
+Act 1: The Origin Story - Seeds of Change
+From Village Roots to Silicon Valley: Begin by painting a vivid picture of Vijay’s upbringing in a small village without electricity or a school, emphasizing the importance of education in his family. Highlight his initial career path, from studying agriculture to transitioning to computer science, eventually landing in Silicon Valley as a successful software entrepreneur. This sets the stage for a dramatic shift in his life.
+The Calling to Give Back: Introduce the turning point where Vijay, despite his success in tech, feels a strong pull towards his agricultural roots and a desire to improve the lives of Indian farmers. This introduces the emotional core of the story – the blend of entrepreneurial ambition with a social mission.
+Discovering Stevia and the Birth of Naturell: Detail Vijay's research into Stevia and its potential to generate higher incomes for farmers. Share the excitement and hope surrounding the launch of Naturell, driven by the tagline "Healthy Urban, Wealthy Rural."
+Act 2: Overcoming Adversity - Trials and Triumphs
+The Stevia Setback: Recount the unexpected regulatory hurdle that throws Naturell off course. Emphasize the emotional impact of this setback - the disappointment, the weight of responsibility towards the team, and the decision to persevere rather than give up.
+Pivoting to Nutrition Bars: Detail the strategic thinking behind entering the nutrition bar market. Explain the rationale, the challenges of building a new product line, and the early missteps with Rite Bite (pricing, messaging, target audience).
+Learning from Mistakes and Finding the Right Formula: Describe the key lessons learned from those early mistakes. Emphasize the importance of consumer research, understanding price sensitivity, and clear communication of value propositions.
+The Emergence of Max Protein: Highlight the breakthrough moment when Naturell identifies its core customer base – health-conscious adults, particularly gym-goers. Share the story of how Max Protein was born, addressing the demand for higher protein content.
+The Power of Innovation: Showcase Naturell's commitment to continuous innovation. Detail the expansion of Max Protein into a platform for healthy snacking, including the launch of unique products like millet-based protein chips.
+Act 3: Scaling New Heights - Strategic Growth and Vision
+Building a ₹170 Crore Business: Celebrate the milestone of Naturell’s impressive growth. Emphasize the strategic decisions that contributed to this success - product innovation, targeted marketing, and building a strong brand.
+The Decision to Partner with Zydus Wellness: Frame this as a strategic decision to achieve the ambitious goal of building a ₹1000 crore brand. Explain the rationale behind choosing Zydus Wellness as a partner, highlighting their expertise, resources, and alignment with Naturell’s values.
+A People-Centric Approach: Emphasize Vijay's commitment to ensuring the partnership benefits all stakeholders – the brand, employees, shareholders, and partners. Detail the steps taken to protect jobs, offer generous financial incentives to employees, and maintain strong relationships with suppliers and distributors. This showcases Vijay’s values and leadership style.
+Looking Towards the Future: Conclude with Vijay’s vision for the future of Naturell under the partnership with Zydus Wellness. Express his continued passion for the brand and his confidence in its potential to achieve even greater success.
+Possible Narrative Techniques
+Use anecdotes and personal stories: These bring the narrative to life and make it more relatable. Examples could include Vijay’s early days in the village, his experiences in Silicon Valley, or memorable interactions with customers.
+Highlight moments of doubt and struggle: This adds authenticity and depth to the story, showing that success doesn’t come easy.
+Celebrate the small wins along the way: This creates a sense of momentum and keeps the audience engaged.
+Show the human side of entrepreneurship: Focus on the relationships Vijay built with his team, partners, and customers.
+End with a message of inspiration and hope: Leave the audience feeling inspired by Vijay’s journey and optimistic about the future of Naturell.
+
+
+
+
+
+
+Give me an interview transcript between Nicket Uttarwar and Vijay Uttarwar. Nicket is Vijay's son who is proud of his father for shepherding Naturell through an exit. Make sure there's a fair bit of back and forth between the two.
+
+
+Nicket: Dad, congratulations on the exit! I'm so incredibly proud of you and everything you've accomplished with Naturell. Building a company from scratch to a ₹170 crore business is no small feat, especially in the competitive fast-moving consumer goods (FMCG) market
+Vijay: Thanks, Nicket! It certainly was quite a journey.1 Starting with Stevia and pivoting to nutrition bars wasn't easy.23 There were many roadblocks along the way, from regulatory hurdles with Stevia to figuring out the right price point and marketing for our early products.3 But we learned and adapted, eventually finding success with our focus on gym-goers and protein bars.456
+Nicket: I remember those early days. You folks were constantly working, experimenting with recipes in the kitchen, meeting with suppliers, and talking to customers. Your passion for creating healthy, tasty snacks was infectious.
+Vijay: It was challenging, but also incredibly rewarding. Building a brand like Rite Bite and Max Protein, seeing people enjoy our products, and knowing we were making a difference in their lives was a driving force.357
+Nicket: You always emphasized the importance of building a strong team and creating a positive work environment. The ESOP program you implemented, ensuring everyone benefited from the company's success, was truly remarkable.8 From what I hear, the Zydus acquisition was structured to protect everyone's jobs and even included a generous payout for all employees.91011
+Vijay: It was crucial for me to take care of our employees. They were instrumental in Naturell's success, and I wanted them to share in the rewards. Zydus also recognized the value of our team and committed to maintaining Naturell as an independent subsidiary.9 This ensures continuity for the brand and provides growth opportunities for everyone.9
+Nicket: That's fantastic! It sounds like you found the perfect partner in Zydus, a company that shares your values and vision for the brand.
+Vijay: Exactly! Zydus Wellness has a strong track record in the health and wellness segment, having built iconic brands like Sugar Free and Glucon-D.12 They understand the importance of innovation and building brands that resonate with consumers.13 I believe their expertise and resources, combined with the dedication of our team, will propel Rite Bite and Max Protein to even greater heights.112
+Nicket: It's inspiring to see your entrepreneurial spirit continue. You could have easily retired after the exit, but you've chosen to stay involved in an advisory role, nurturing the brand you built.14
+Vijay: Rite Bite and Max Protein will always be my babies. I'm excited to contribute my experience and insights to help guide their future growth, while also exploring new ventures and passions in this next chapter of my life.1415
+Nicket: Well, Dad, you've set a high bar for me. Building my own business in the US has been incredibly challenging, but your example and guidance have been invaluable.16
+Vijay: I'm proud of you too, Nicket! Remember, entrepreneurship is about passion, perseverance, and constantly learning and adapting. The journey is just as important as the destination.2356 And always remember, the sense of accomplishment from creating something of your own is worth more than any financial reward.16
+Nicket: Thanks, Dad. That means a lot. I can't wait to see what the future holds for both of us.
+keep_pinSave to note
+copy_all
+thumb_up
+thumb_down
+
+
+
+Good Scaffolding of a script. Start here
+
+Turn the following text into a transcript of a conversation between Nicket Uttarwar and his father Vijay Uttarwar:
+<>
+
+
+elaborate on this transcript. Extend to roughly 500 words
+
+
+
+Vijay's emphasis on employee well-being and shared success is truly commendable. In his private interview1, Vijay explicitly mentions resisting VC funding initially because he wanted to ensure he could deliver substantial returns to investors. This shows a strong sense of responsibility and a desire to build a sustainable business. Later, when he did decide to take on investment from Rabo Agri Fund, Vijay proactively implemented an ESOP plan2 that extended to all employees, not just the top tier. He firmly believed that every individual, from the office boy to the Vice President, contributed to the company's success and deserved to share in the financial gains. This philosophy really set Naturell apart.
+•
+The ESOP program's impact during the Zydus acquisition further highlights Vijay's commitment to his employees. He negotiated a deal34 where employees received a higher per-share price than even the institutional investors like Rabo Agri Fund, demonstrating that he prioritized their financial security. He even ensured that part of the payout was distributed upfront with no conditions attached, while another portion was to be paid out after a year to address concerns from both employees and Zydus management about retention. This thoughtful approach reflects Vijay's empathy and genuine care for his team.
+•
+Vijay's journey with Naturell showcases his entrepreneurial spirit and resilience. He recounts how the initial venture with Stevia faced regulatory roadblocks5, forcing him to adapt and pivot to nutrition bars. Even then, pricing and positioning the bars proved to be a learning curve67. Despite these setbacks, Vijay remained focused on innovation, developing new product concepts like protein chips and soft cookies8—a testament to his ability to learn from challenges and identify new opportunities.
+•
+The acquisition by Zydus Wellness seems to be a win-win situation. Zydus gains a well-established brand with a loyal customer base and a strong team. Vijay, on the other hand, sees this as an opportunity to scale the brand to new heights9 leveraging Zydus's resources and expertise while ensuring the brand's independence and his team's well-being. The alignment of values and vision between Vijay and Zydus910 suggests a promising future for Rite Bite and Max Protein.
+
+
+
+
+
+Nicket: Dad, you always spoke about taking care of everyone at Naturell, from the office staff to the executives. That really came through in how you handled the Zydus acquisition.
+Vijay: I truly believe that every single person at Naturell contributed to the success we achieved. It wasn't just about the management or a select few. Remember how I initially resisted taking VC money? It was important to me that if I took someone's investment, I could deliver a good return. Building a sustainable business that benefits everyone involved has always been my goal.
+Nicket: I remember. You've always been cautious and responsible. But you eventually decided to partner with Rabo or India Agri Fund.
+Vijay: Yes, and even then, I made sure we had an ESOP program in place before the investment came in. It was important to me that everyone at Naturell had a chance to benefit financially if the company did well. That's why we created a program where every employee, regardless of their position or seniority, had the opportunity to own a piece of the company. Remember, even our office support staff and the promoters who helped us at retail stores were included. It was about recognizing everyone's contribution.
+Nicket: That's incredible! Did everyone understand the concept of ESOPs back then? It wasn't as common in India, especially in 2017
+Vijay: You're right, it was a new concept for many. Some even preferred a cash bonus instead of ESOPs because they didn't fully grasp its potential. But I was determined to implement it. I knew that when the company achieved financial success, everyone who helped us get there should reap the benefits.
+Nicket: And that vision really paid off during the Zydus acquisition, didn't it?
+Vijay: Absolutely. When Rabo wanted to exit, I had to make a crucial decision which was to continue growing Naturell independently or seek a strategic partner. My age played a factor too – I was turning 60 and wanted to think about my next chapter. You choosing to forge your own path as an entrepreneur in the US also made me realize that Naturell's future didn't have to be tied to family involvement. After evaluating different options, we felt that Zydus Wellness was the right fit. They had the resources and expertise to scale the brand while preserving its independent identity and, most importantly, our team.
+Nicket: And you made sure the employees were taken care of during the transition.
+Vijay: Absolutely. Zydus promised that no jobs would be at risk, ensuring everyone's security. But beyond that, I wanted to see our team thrive and grow their careers. The expansion that Zydus envisioned would create more opportunities for everyone.
+Nicket: So, how did the ESOP program play into the acquisition deal?
+Vijay: Well, I negotiated a higher per-share price for the employees than what Rabo received, around ₹250 compared to their ₹235.9 This ensured they received a significant financial reward for their hard work. We even structured the payout to address concerns about employee retention. 50% was given upfront with no conditions, and the remaining 50% would be paid after a year. This gave everyone immediate financial security while also incentivizing them to stay and contribute to Naturell's growth under Zydus.
+Nicket: Wow, that's amazing, Dad! You really went above and beyond for everyone. It must have been a proud moment to see those checks being distributed, especially to those who never imagined they'd own a piece of the company.
+Vijay: It was definitely a highlight of the entire journey. Knowing that over 250 people, from senior management to our office support staff, received a share of the success, felt incredible. It solidified the culture of shared success that we had built at Naturell.
+Nicket: That's truly inspiring. You've set a fantastic example for me as I embark on my own entrepreneurial journey. You've shown that building a successful business goes hand-in-hand with taking care of your people and building a company where everyone feels valued and shares in the rewards.
+
+Nicket: That's amazing! How did that work? I know Rabo was a major shareholder.
+Vijay: Rabo got a good return on their investment, around three times their initial investment, which is a solid return for a private equity firm. 
+Nicket: That seems like a really thoughtful approach. Everyone wins that way.
+Vijay: Exactly. I wanted everyone to feel secure and valued.
+Nicket: I know you put a lot of effort into getting that deal right for everyone. It really shows how much you care about the people who helped build Naturell.
+Vijay: They were the heart of the company. It was important for me to see them succeed, both professionally and financially. I’m happy we could make that happen.
+
+Nicket: Dad, your journey with Naturell has been quite a rollercoaster! It’s amazing how you navigated all those challenges, from regulatory hurdles with Stevia to figuring out the right pricing and marketing for the nutrition bars.
+Vijay: It definitely tested our resilience! When we started with Stevia, the concept was fantastic – a natural, zero-calorie sweetener with the potential to greatly benefit farmers. Our tagline was "Healthy Urban, Wealthy Rural." We were the first organized company to launch Stevia as a tabletop sweetener in India. But then, just as we were getting started, we hit a major roadblock.
+Nicket: What happened?
+Vijay: The government issued a notice stating that Stevia wasn't on the approved list of sweeteners. We were devastated. We had already invested so much into the project, and to have it all come crashing down because of regulatory issues was heartbreaking. It would have been easy to just give up, but I couldn’t. We had a team of 30-40 people, and I felt a responsibility to find a way forward.
+Nicket: That’s when you decided to pivot to nutrition bars, right?
+Vijay: Exactly! Having lived in the US, I had seen the growing popularity of nutrition bars, and I thought it could be a good fit for the Indian market. The industry didn't really exist in India back then, so we had to figure everything out from scratch.
+Nicket: And that wasn’t a smooth journey either, was it?
+Vijay: No, not at all! We initially priced our Rite Bite bars at ₹15, but quickly realized that wasn't going to work. We were new to the consumer market and didn't fully understand the importance of market research. We relied on feedback from distributors and customers, who suggested lowering the price to ₹10 or even ₹5.
+Nicket: I remember those ₹5 bars! They were everywhere. But didn’t you face some pushback as well?
+Vijay: Yes. We positioned them as "healthy chocolate for children," with the idea of providing a healthier alternative. We even had a calcium-enriched bar marketed as equivalent to a glass of milk. We thought this was a winning formula. We had distribution across the entire country, advertisements on TV, and the product was available everywhere, from premium stores to small kirana shops. But it just wasn't moving.
+Nicket: Why didn't it work?
+Vijay: We realized that we were targeting the wrong audience. Premium customers didn't trust a ₹5 bar from a new company, and children in smaller stores just wanted chocolate! They felt tricked when they realized our bars weren’t like regular chocolate bars. That was a huge learning experience. We realized we couldn't fight consumer perception with limited resources. We had to adapt.
+Nicket: So, how did you turn things around?
+Vijay: We completely shifted our strategy. We moved away from targeting children and repositioned the bars as a nutritious product for young adults and above. Instead of highlighting the health benefits, which consumers weren't ready for, we focused on functional benefits they could easily understand. So we created three segments. Workout, Targeting gym-goers who understood the importance of protein. 99 Calorie Sugarless, For calorie-conscious consumers. Women Bar, Addressing specific nutritional needs of women.
+Nicket: That’s smart! So, you essentially created a need rather than trying to convince people of a need they didn’t recognize.
+Vijay: Yes, and it worked! We started getting traction, especially with the workout bars. Gym-goers loved that our protein bars were much cheaper than imported options while still offering good quality. That’s actually how Max Protein was born. We noticed a demand for higher protein bars and realized we needed a separate brand to cater to that segment.
+Nicket: It’s fascinating how you constantly innovated and adapted. Even with the success of the bars, you didn't stop there. You expanded into protein chips, soft cookies, and even plant-based protein options. You never settled!
+Vijay: I believe that continuous innovation is key to staying ahead in the market. We wanted to offer healthy options across different snacking categories, from biscuits and cookies to namkeen and granola. That's how we built Max Protein into a platform for healthy snacks, not just a brand for protein bars. And we were constantly looking for new ideas, like our millet-based protein chips – I don't even think anyone else was doing that globally at the time. Facing those early challenges taught me to be flexible and to never stop exploring new possibilities.
+
+Nicket: Dad, it sounds like the acquisition by Zydus Wellness was the right move for everyone involved. It seems like a true win-win situation.
+Vijay: I believe so, Nicket. Zydus gains a well-established and respected brand in Rite Bite and Max Protein. We already have a loyal customer base and a strong team in place.1
+Nicket: And what about for you and Naturell? What do you see as the biggest benefits of this deal?
+Vijay: For me, it's all about taking the brand to the next level – that ₹2000 crore dream we talked about. Zydus has the resources, infrastructure, and expertise to help us scale in ways we couldn’t have achieved on our own. They have a deep understanding of the Indian consumer market and a proven track record of building successful health brands like Sugar Free, Glucon-D, and Complan.
+Nicket: That’s fantastic. But were you worried about losing control of the brand you built so carefully over the years?
+Vijay: That was a key consideration for me. But Zydus understands the importance of preserving the brand's identity and giving us the freedom to operate independently. They committed to running Naturell as a separate subsidiary, which means our team, our culture, and our way of doing things will remain intact.
+Nicket: That’s a relief! It sounds like Zydus shares your vision for the future of the brand.
+Vijay: Absolutely. That alignment in values and vision was critical for me when making this decision. They believe in our mission to make healthy snacking accessible and enjoyable for everyone. And they see the immense potential of Rite Bite and Max Protein to become even bigger players in the market. I’m confident that with their support, we can achieve even greater things.
+Nicket: Dad, after hearing everything, I'm truly inspired by your journey with Naturell. It's about so much more than just building a successful business. It's about building a company with heart, a company that values its people, from the employees to the suppliers and distributors.
+Vijay: That's exactly right, Nicket. It's about building something you can be proud of, something that leaves a positive impact on the world. For me, that meant creating a company that not only offered healthy and delicious snacks but also fostered a culture of respect, growth, and shared success.
+Nicket: And you've definitely achieved that. The way you prioritized the employees' financial well-being during the acquisition speaks volumes about your values. Not many founders would have fought so hard to ensure everyone got a fair share.
+Nicket: It's a powerful lesson, Dad. It shows that businesses can be a force for good, that they can prioritize people and values without compromising success. It's an inspiring example for entrepreneurs like me who are just starting out.
+Nicket: Dad, it sounds like the acquisition by Zydus Wellness was a win-win for everyone.
+Vijay: I think so, Nicket. It's good for so many people.
+Nicket: Like who?
+
+
+Need to clean below (add hook for 4 groups of people naturell helps)
+Vijay: Well, first, it's good for our employees. Zydus has committed to keeping all of our employees, and they are planning on growing the company. This means our employees will have job security and even more opportunities for growth and development. Plus, they all benefited financially from the ESOP program I set up.
+Nicket: That’s right. They all got a nice bonus when the deal closed, right?
+Vijay: Yes. I negotiated a higher price per share for our employees than for Rabo. They each received around ₹250 a share.
+Nicket: That's amazing. You really took care of them. Who else does the acquisition help?
+Vijay: Well, it's obviously good for Zydus, the acquirer. They are getting two well-established brands — Rite Bite and Max Protein — with a loyal customer base and a great team.
+Nicket: True. And what about you and Mom? Are you happy with the deal?
+Vijay: Yes, as shareholders, this is a good deal for us. We've worked hard to build Naturell, and now we have the opportunity to see it grow even bigger as part of Zydus. Zydus has the resources and expertise to help us reach that ₹2000 crore dream we talked about.
+Nicket: That’s awesome! It sounds like Rabo is happy too, as investors. They got a good return on their investment – around three times what they put in.
+Vijay: That's right. Our vendor partners will also benefit. They'll be part of a larger organization with greater reach and resources. As the Max Protein account increases so will theirs. 
+Nicket: So everyone benefits from this deal - Zydus, Naturell, the employees, the shareholders, the investors, and even the vendor partners.
+Vijay: Exactly.
+Nicket: Amazing! Now the only thing to fix is the bar protein
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AI Edits of the full transcript:
+Inserted was the full transcript of a podcast. Print out mostly the same sentences.
+At least 2000 words.
+minimum 2000 words
+Use continue paste to print the full response
+
+
+**INSERT:Track**
+**Vijay:** They felt tricked when they realized our bars weren’t like regular chocolate bars. We realized we couldn't fight consumer perception with limited resources. We had to adapt.
+**ENDINSERT:Track**
+
+**Nicket:** Dad, your journey with Naturell has been quite a rollercoaster! It’s amazing how you navigated all those challenges, from regulatory hurdles with Stevia to figuring out the right pricing and marketing for the nutrition bars.
+
+**Vijay:** It definitely tested our resilience! When we started with Stevia, the concept was fantastic – a natural, zero-calorie sweetener with the potential to greatly benefit farmers. Our tagline was "Healthy Urban, Wealthy Rural." We were the first organized company to launch Stevia as a tabletop sweetener in India. But then, just as we were getting started, we hit a major roadblock.
+
+**Nicket:** What happened?
+
+**Vijay:** The government issued a notice stating that Stevia wasn't on the approved list of sweeteners. We were devastated. We had already invested so much into the project, and to have it all come crashing down because of regulatory issues was heartbreaking. It would have been easy to just give up, but I couldn’t. We had a team of 30-40 people, and I felt a responsibility to find a way forward.
+
+**Nicket:** That’s when you decided to pivot to nutrition bars, right?
+
+**Vijay:** Exactly! Having lived in the US, I had seen the growing popularity of nutrition bars, and I thought it could be a good fit for the Indian market. The industry didn't really exist in India back then, so we had to figure everything out from scratch.
+
+**Nicket:** And that wasn’t a smooth journey either, was it?
+
+**Vijay:** No, not at all! We initially priced our Rite Bite bars at ₹15, but quickly realized that wasn't going to work. We were new to the consumer market and didn't fully understand the importance of market research. We relied on feedback from distributors and customers, who suggested lowering the price to ₹10 or even ₹5.
+
+**Nicket:** I remember those ₹5 bars! They were everywhere. But didn’t you face some pushback as well?
+
+**Vijay:** Yes. We positioned them as "healthy chocolate for children," with the idea of providing a healthier alternative. We even had a calcium-enriched bar marketed as equivalent to a glass of milk. We thought this was a winning formula. We had distribution across the entire country, advertisements on TV, and the product was available everywhere, from premium stores to small kirana shops. But it just wasn't moving.
+
+**Nicket:** Why didn't it work?
+
+**Vijay:** We realized that we were targeting the wrong audience. Premium customers didn't trust a ₹5 bar from a new company, and children in smaller stores just wanted chocolate! They felt tricked when they realized our bars weren’t like regular chocolate bars. We realized we couldn't fight consumer perception with limited resources. We had to adapt. That was a huge learning experience.
+
+**Nicket:** So, how did you turn things around?
+
+**Vijay:** We completely shifted our strategy. We moved away from targeting children and repositioned the bars as a nutritious product for young adults and above. Instead of highlighting the health benefits, which consumers weren't ready for, we focused on functional benefits they could easily understand. So we created three segments. Workout, Targeting gym-goers who understood the importance of protein. 99 Calorie Sugarless, For calorie-conscious consumers. Women Bar, Addressing specific nutritional needs of women.
+
+**Nicket:** That’s smart! So, you essentially created a need rather than trying to convince people of a need they didn’t recognize.
+
+**Vijay:** Yes, and it worked! We started getting traction, especially with the workout bars. Gym-goers loved that our protein bars were much cheaper than imported options while still offering good quality. That’s actually how Max Protein was born. We noticed a demand for higher protein bars and realized we needed a separate brand to cater to that segment.
+
+**Nicket:** It’s fascinating how you constantly innovated and adapted. Even with the success of the bars, you didn't stop there. 
+
+
+**Vijay:** No
+
+
+You expanded into protein chips, soft cookies, and even plant-based protein options. You never settled!
+
+**Vijay:** I believe that continuous innovation is key to staying ahead in the market. We wanted to offer healthy options across different snacking categories, from biscuits and cookies to namkeen and granola. That's how we built Max Protein into a platform for healthy snacks, not just a brand for protein bars. And we were constantly looking for new ideas, like our millet-based protein chips – I don't even think anyone else was doing that globally at the time. Facing those early challenges taught me to be flexible and to never stop exploring new possibilities.
+
+**Nicket:** And what about for Zydus and Naturell? What do you see as the biggest benefits of this deal?
+
+**Vijay:** For me, it's all about taking the brand to the next level – that ₹2000 crore dream we talked about. Zydus has the resources, infrastructure, and expertise to help us scale in ways we couldn’t have achieved on our own. 
+
+**Nicket:** That’s so true! They have a deep understanding of the Indian consumer market and a proven track record of building successful health brands like Sugar Free, Glucon-D, and Complan. 
+**Vijay:** I think so, Nicket. It's good for so many people.
+
+**Nicket:** Like who?
+Need to clean below (add hook for 4 groups of people naturell helps)
+
+**Vijay:** Well, first, it's good for our employees. Zydus has committed to keeping all of our employees, and they are planning on growing the company. This means our employees will have job security and even more opportunities for growth and development. Plus, they all benefited financially from the ESOP program I set up.
+
+**Nicket:** That’s right. They all got a nice bonus when the deal closed, right?
+
+**Vijay:** Yes. I negotiated a higher price per share for our employees than for Rabo. They each received around ₹250 a share.
+
+**Nicket:** That's amazing. You really took care of them. Who else does the acquisition help?
+
+**Vijay:** Well, it's obviously good for Zydus, the acquirer. They are getting two well-established brands — Rite Bite and Max Protein — with a loyal customer base and a great team.
+
+**Nicket:** True. And what about you and Mom? Are you happy with the deal?
+
+**Vijay:** Yes, as shareholders, this is a good deal for us. We've worked hard to build Naturell, and now we have the opportunity to see it grow even bigger as part of Zydus. Zydus has the resources and expertise to help us reach that ₹2000 crore dream we talked about.
+
+**Nicket:** That’s awesome! It sounds like Rabo is happy too, as investors. They got a good return on their investment – around three times what they put in.
+
+**Vijay:** That's right. Our vendor partners will also benefit. They'll be part of a larger organization with greater reach and resources. As the Max Protein account increases so will theirs.
+
+**Nicket:** So everyone benefits from this deal - Zydus, Naturell, the employees, the shareholders, the investors, and even the vendor partners.
+
+**Vijay:** Exactly.
+
+
+
+
+ 
+
+**Nicket:** That’s fantastic. But were you worried about losing control of the brand you built so carefully over the years?
+
+**Vijay:** That was a key consideration for me. But Zydus understands the importance of preserving the brand's identity and giving us the freedom to operate independently. They committed to running Naturell as a separate subsidiary, which means our team, our culture, and our way of doing things will remain intact.
+
+**Nicket:** That’s a relief! It sounds like Zydus shares your vision for the future of the brand.
+
+**Vijay:** Absolutely. That alignment in values and vision was critical for me when making this decision. And that’s why Zydus sees the immense potential of Rite Bite and Max Protein to become an even bigger player in the market.
+
+**Nicket:** Dad, after hearing everything, I'm truly inspired by your journey with Naturell. It's about so much more than just building a successful business. It's about building a company with heart, a company that values its people, from the employees to the suppliers and distributors.
+
+**Vijay:** That's exactly right, Nicket. It's about building something you can be proud of, something that leaves a positive impact on the world. For me, that meant creating a company that not only offered healthy and delicious snacks but also fostered a culture of respect, growth, and shared success.
+
+**Nicket:** And you've definitely achieved that. The way you prioritized the employees' financial well-being during the acquisition speaks volumes about your values. Not many founders would have fought so hard to ensure everyone got a fair share.
+
+**Nicket:** Dad, it sounds like the acquisition by Zydus Wellness was a win-win for everyone.
+
+**Vijay:** I think so, Nicket. It's good for so many people.
+
+**Vijay:** Especially for our employees. Zydus has committed to keeping all of our employees, and they are planning on growing the company. This means our employees will have job security and even more opportunities for growth and development. Plus, they all benefited financially from the ESOP program I set up.
+
+**Nicket:** That’s right. They all got a nice bonus when the deal closed, right?
+
+**Vijay:** Yes. I negotiated a higher price per share for our employees than for Rabo. They each received around ₹250 a share.
+
+**Nicket:** That's amazing. You really took care of them. Who else does the acquisition help?
+
+**Vijay:** Well, it's obviously good for Zydus, the acquirer. They are getting two well-established brands — Rite Bite and Max Protein — with a loyal customer base and a great team.
+
+**Nicket:** True. And what about you and Mom? Are you happy with the deal?
+
+**Vijay:** Yes, as shareholders, this is a good deal for us. We've worked hard to build Naturell, and now we have the opportunity to see it grow even bigger as part of Zydus. Zydus has the resources and expertise to help us reach that ₹2000 crore dream we talked about.
+
+**Nicket:** That’s awesome! It sounds like Rabo is happy too, as investors. They got a good return on their investment – around three times what they put in.
+
+**Vijay:** That's right. Our vendor partners will also benefit. They'll be part of a larger organization with greater reach and resources. As the Max Protein account increases so will theirs.
+
+**Nicket:** So everyone benefits from this deal - Zydus, Naturell, the employees, the shareholders, the investors, and even the vendor partners.
+
+**Vijay:** Exactly.
+
+**Nicket:** Amazing! Now the only thing to fix is the bar protein
+
+**Nicket:** Dad, you always spoke about taking care of everyone at Naturell, from the office staff to the executives. That really came through in how you handled the Zydus acquisition.
+
+**Vijay:** I truly believe that every single person at Naturell contributed to the success we achieved. It wasn't just about the management or a select few. Remember how I initially resisted taking VC money? It was important to me that if I took someone's investment, I could deliver a good return. Building a sustainable business that benefits everyone involved has always been my goal.
+
+**Nicket:** I remember. You've always been cautious and responsible. But you eventually decided to partner with Rabo or India Agri Fund.
+
+**Vijay:** Yes, and even then, I made sure we had an ESOP program in place before the investment came in. It was important to me that everyone at Naturell had a chance to benefit financially if the company did well. That's why we created a program where every employee, regardless of their position or seniority, had the opportunity to own a piece of the company. Remember, even our office support staff and the promoters who helped us at retail stores were included. It was about recognizing everyone's contribution.
+
+**Nicket:** That's incredible! Did everyone understand the concept of ESOPs back then? It wasn't as common in India, especially in 2017
+
+**Vijay:** You're right, it was a new concept for many. Some even preferred a cash bonus instead of ESOPs because they didn't fully grasp its potential. But I was determined to implement it. I knew that when the company achieved financial success, everyone who helped us get there should reap the benefits.
+
+**Nicket:** And that vision really paid off during the Zydus acquisition, didn't it?
+
+**Vijay:** Absolutely. When Rabo wanted to exit, I had to make a crucial decision which was to continue growing Naturell independently or seek a strategic partner. My age played a factor too – I was turning 60 and wanted to think about my next chapter. You choosing to forge your own path as an entrepreneur in the US also made me realize that Naturell's future didn't have to be tied to family involvement. After evaluating different options, we felt that Zydus Wellness was the right fit. They had the resources and expertise to scale the brand while preserving its independent identity and, most importantly, our team.
+
+**Nicket:** And you made sure the employees were taken care of during the transition.
+
+**Vijay:** Absolutely. Zydus promised that no jobs would be at risk, ensuring everyone's security. But beyond that, I wanted to see our team thrive and grow their careers. The expansion that Zydus envisioned would create more opportunities for everyone.
+
+**Nicket:** So, how did the ESOP program play into the acquisition deal?
+
+**Vijay:** Well, I negotiated a higher per-share price for the employees than what Rabo received, around ₹250 compared to their ₹235.9 This ensured they received a significant financial reward for their hard work. We even structured the payout to address concerns about employee retention. 50% was given upfront with no conditions, and the remaining 50% would be paid after a year. This gave everyone immediate financial security while also incentivizing them to stay and contribute to Naturell's growth under Zydus.
+
+**Nicket:** Wow, that's amazing, Dad! You really went above and beyond for everyone. It must have been a proud moment to see those checks being distributed, especially to those who never imagined they'd own a piece of the company.
+
+**Vijay:** It was definitely a highlight of the entire journey. Knowing that over 250 people, from senior management to our office support staff, received a share of the success, felt incredible. It solidified the culture of shared success that we had built at Naturell.
+
+**Nicket:** That's truly inspiring. You've set a fantastic example for me as I embark on my own entrepreneurial journey. You've shown that building a successful business goes hand-in-hand with taking care of your people and building a company where everyone feels valued and shares in the rewards.
+
+**Nicket:** That's amazing! How did that work? I know Rabo was a major shareholder.
+
+**Vijay:** Rabo got a good return on their investment, around three times their initial investment, which is a solid return for a private equity firm.
+
+**Nicket:** That seems like a really thoughtful approach. Everyone wins that way.
+
+**Vijay:** Exactly. I wanted everyone to feel secure and valued.
+
+**Nicket:** I know you put a lot of effort into getting that deal right for everyone. It really shows how much you care about the people who helped build Naturell.
+
+**Vijay:** They were the heart of the company. It was important for me to see them succeed, both professionally and financially. I’m happy we could make that happen.
+
+**Nicket:** Dad, your journey with Naturell has been quite a rollercoaster! It’s amazing how you navigated all those challenges, from regulatory hurdles with Stevia to figuring out the right pricing and marketing for the nutrition bars.
+
+**Vijay:** It definitely tested our resilience! When we started with Stevia, the concept was fantastic – a natural, zero-calorie sweetener with the potential to greatly benefit farmers. Our tagline was "Healthy Urban, Wealthy Rural." We were the first organized company to launch Stevia as a tabletop sweetener in India. But then, just as we were getting started, we hit a major roadblock.
+
+**Nicket:** What happened?
+
+**Vijay:** The government issued a notice stating that Stevia wasn't on the approved list of sweeteners. We were devastated. We had already invested so much into the project, and to have it all come crashing down because of regulatory issues was heartbreaking. It would have been easy to just give up, but I couldn’t. We had a team of 30-40 people, and I felt a responsibility to find a way forward.
+
+**Nicket:** That’s when you decided to pivot to nutrition bars, right?
+
+**Vijay:** Exactly! Having lived in the US, I had seen the growing popularity of nutrition bars, and I thought it could be a good fit for the Indian market. The industry didn't really exist in India back then, so we had to figure everything out from scratch.
+
+**Nicket:** And that wasn’t a smooth journey either, was it?
+
+**Vijay:** No, not at all! We initially priced our Rite Bite bars at ₹15, but quickly realized that wasn't going to work. We were new to the consumer market and didn't fully understand the importance of market research. We relied on feedback from distributors and customers, who suggested lowering the price to ₹10 or even ₹5.
+
+**Nicket:** I remember those ₹5 bars! They were everywhere. But didn’t you face some pushback as well?
+
+**Vijay:** Yes. We positioned them as "healthy chocolate for children," with the idea of providing a healthier alternative. We even had a calcium-enriched bar marketed as equivalent to a glass of milk. We thought this was a winning formula. We had distribution across the entire country, advertisements on TV, and the product was available everywhere, from premium stores to small kirana shops. But it just wasn't moving.
+
+**Nicket:** Why didn't it work?
+
+**Vijay:** We realized that we were targeting the wrong audience. Premium customers didn't trust a ₹5 bar from a new company, and children in smaller stores just wanted chocolate! They felt tricked when they realized our bars weren’t like regular chocolate bars. That was a huge learning experience. We realized we couldn't fight consumer perception with limited resources. We had to adapt.
+
+**Nicket:** So, how did you turn things around?
+
+**Vijay:** We completely shifted our strategy. We moved away from targeting children and repositioned the bars as a nutritious product for young adults and above. Instead of highlighting the health benefits, which consumers weren't ready for, we focused on functional benefits they could easily understand. So we created three segments. Workout, Targeting gym-goers who understood the importance of protein. 99 Calorie Sugarless, For calorie-conscious consumers. Women Bar, Addressing specific nutritional needs of women.
+
+**Nicket:** That’s smart! So, you essentially created a need rather than trying to convince people of a need they didn’t recognize.
+
+**Vijay:** Yes, and it worked! We started getting traction, especially with the workout bars. Gym-goers loved that our protein bars were much cheaper than imported options while still offering good quality. That’s actually how Max Protein was born. We noticed a demand for higher protein bars and realized we needed a separate brand to cater to that segment.
+
+**Nicket:** It’s fascinating how you constantly innovated and adapted. Even with the success of the bars, you didn't stop there. You expanded into protein chips, soft cookies, and even plant-based protein options. You never settled!
+
+**Vijay:** I believe that continuous innovation is key to staying ahead in the market. We wanted to offer healthy options across different snacking categories, from biscuits and cookies to namkeen and granola. That's how we built Max Protein into a platform for healthy snacks, not just a brand for protein bars. And we were constantly looking for new ideas, like our millet-based protein chips – I don't even think anyone else was doing that globally at the time. Facing those early challenges taught me to be flexible and to never stop exploring new possibilities.
+
+**Nicket:** Dad, it sounds like the acquisition by Zydus Wellness was the right move for everyone involved. It seems like a true win-win situation.
+
+**Vijay:** I believe so, Nicket. Zydus gains a well-established and respected brand in Rite Bite and Max Protein. We already have a loyal customer base and a strong team in place.
+
+**Nicket:** And what about for you and Naturell? What do you see as the biggest benefits of this deal?
+
+**Vijay:** For me, it's all about taking the brand to the next level – that ₹2000 crore dream we talked about. Zydus has the resources, infrastructure, and expertise to help us scale in ways we couldn’t have achieved on our own. They have a deep understanding of the Indian consumer market and a proven track record of building successful health brands like Sugar Free, Glucon-D, and Complan.
+
+**Nicket:** That’s fantastic. But were you worried about losing control of the brand you built so carefully over the years?
+
+**Vijay:** That was a key consideration for me. But Zydus understands the importance of preserving the brand's identity and giving us the freedom to operate independently. They committed to running Naturell as a separate subsidiary, which means our team, our culture, and our way of doing things will remain intact.
+
+**Nicket:** That’s a relief! It sounds like Zydus shares your vision for the future of the brand.
+
+**Vijay:** Absolutely. That alignment in values and vision was critical for me when making this decision. They believe in our mission to make healthy snacking accessible and enjoyable for everyone. And they see the immense potential of Rite Bite and Max Protein to become even bigger players in the market. I’m confident that with their support, we can achieve even greater things.
+
+**Nicket:** Dad, after hearing everything, I'm truly inspired by your journey with Naturell. It's about so much more than just building a successful business. It's about building a company with heart, a company that values its people, from the employees to the suppliers and distributors.
+
+**Vijay:** That's exactly right, Nicket. It's about building something you can be proud of, something that leaves a positive impact on the world. For me, that meant creating a company that not only offered healthy and delicious snacks but also fostered a culture of respect, growth, and shared success.
+
+**Nicket:** And you've definitely achieved that. The way you prioritized the employees' financial well-being during the acquisition speaks volumes about your values. Not many founders would have fought so hard to ensure everyone got a fair share.
+
+**Nicket:** It's a powerful lesson, Dad. It shows that businesses can be a force for good, that they can prioritize people and values without compromising success. It's an inspiring example for entrepreneurs like me who are just starting out.
+
+
+
+
+**Nicket:** Amazing! Now the only thing to fix is the bar protein
+
+**[Music]**
+
+**Nicket:** Hey everyone! Welcome back to another episode of The CEO's Son podcast. I'm your host, Nicket Jain. Today I have a very special guest, my dad, Vijay Jain.
+
+**[Applause]**
+
+**Nicket:** Dad, welcome to the show!
+
+**Vijay:** Thank you, Nicket.
+
+**Nicket:** It's such an honor to have you here. I know you're not someone who seeks the limelight, so I really appreciate you taking the time to chat with me today.
+
+**Vijay:** It's my pleasure, son. Happy to do it.
+
+**Nicket:** So, for those who may not know, you're the founder of Naturell India, the company behind the popular Rite Bite and Max Protein brands. We're going to dive into your incredible entrepreneurial journey, starting from the early days of Naturell all the way to the recent acquisition by Zydus Wellness.
+
+**Vijay:** It's been quite a journey, that's for sure.
+
+**Nicket:** Yeah, I bet! It all started with Stevia, right? You were the first organized company to launch Stevia as a tabletop sweetener in India.
+
+**Vijay:** That's right. When we started with Stevia, the concept was fantastic – a natural, zero-calorie sweetener with the potential to greatly benefit farmers. Our tagline was "Wealthy Urban, Healty Rural." We were excited to bring this innovative product to the Indian market.
+
+**Nicket:** But then things took an unexpected turn.
+
+**Vijay:** They did. Just as we were getting started, the government issued a notice stating that Stevia wasn't on the approved list of sweeteners. We were devastated. We had already invested so much into the project, and to have it all come crashing down because of regulatory issues was heartbreaking.
+
+**Nicket:** I can only imagine. What did you do?
+
+**Vijay:** Well, it would have been easy to just give up, but I couldn’t. We had a team of 30-40 people, and I felt a responsibility to find a way forward.
+
+**Nicket:** So, that's when you decided to pivot to nutrition bars, right?
+
+**Vijay:** Exactly. Having lived in the US, I had seen the growing popularity of nutrition bars, and I thought it could be a good fit for the Indian market. The industry didn't really exist in India back then, so we had to figure everything out from scratch.
+
+**Nicket:** And how did that go?
+
+**Vijay:** It wasn't easy. We initially priced our Rite Bite bars at ₹15, but quickly realized that wasn't going to work. We were new to the consumer market and didn't fully understand the importance of market research. We relied on feedback from distributors and customers, who suggested lowering the price to ₹10 or even ₹5.
+
+**Nicket:** I remember those ₹5 bars! They were everywhere.
+
+**Vijay:** Yes, they were. We positioned them as "healthy chocolate for children," with the idea of providing a healthier alternative. We even had a calcium-enriched bar marketed as equivalent to a glass of milk. We thought this was a winning formula. We had distribution across the entire country, advertisements on TV, and the product was available everywhere, from premium stores to small kirana shops.
+
+**Nicket:** But it didn't quite work out as planned, did it?
+
+**Vijay:** It didn't. We realized that we were targeting the wrong audience. Premium customers didn't trust a ₹5 bar from a new company, and children in smaller stores just wanted chocolate! They felt tricked when they realized our bars weren’t like regular chocolate bars.
+
+**Nicket:** That's a valuable lesson right there.
+
+**Vijay:** It was. We learned that we couldn't fight consumer perception with limited resources. We had to adapt.
+
+**Nicket:** So how did you turn things around?
+
+**Vijay:** We completely shifted our strategy. We moved away from targeting children and repositioned the bars as a nutritious product for young adults and above. Instead of highlighting the health benefits, which consumers weren't ready for, we focused on functional benefits they could easily understand.
+
+**Nicket:** So, you essentially created a need rather than trying to convince people of a need they didn’t recognize.
+
+**Vijay:** Yes, exactly. We created three segments: Workout, targeting gym-goers who understood the importance of protein; 99 Calorie Sugarless, for calorie-conscious consumers; and Women Bar, addressing specific nutritional needs of women.
+
+**Nicket:** And that's when things started to take off?
+
+**Vijay:** Yes, we started getting traction, especially with the workout bars. Gym-goers loved that our protein bars were much cheaper than imported options while still offering good quality. That’s actually how Max Protein was born. We noticed a demand for higher protein bars and realized we needed a separate brand to cater to that segment.
+
+**Nicket:** From there, you expanded into protein chips, soft cookies, and even plant-based protein options. It's fascinating how you constantly innovated and adapted. You never settled!
+
+**Vijay:** I believe that continuous innovation is key to staying ahead in the market. We wanted to offer healthy options across different snacking categories, from biscuits and cookies to namkeen and granola. That's how we built Max Protein into a platform for healthy snacks, not just a brand for protein bars. We were constantly looking for new ideas, like our millet-based protein chips – I don't even think anyone else was doing that globally at the time.
+
+**Nicket:** Amazing! And then came the acquisition by Zydus Wellness.
+
+**Vijay:** Yes. When Rabo, our investor, wanted to exit, I had to make a crucial decision – continue growing Naturell independently or seek a strategic partner. My age played a factor too – I was turning 60 and wanted to think about my next chapter. You choosing to forge your own path as an entrepreneur in the US also made me realize that Naturell's future didn't have to be tied to family involvement.
+
+**Nicket:** So, you started exploring different options.
+
+**Vijay:** Yes. After evaluating various companies, we felt that Zydus Wellness was the right fit. They had the resources and expertise to scale the brand while preserving its independent identity and, most importantly, our team.
+
+**Nicket:** That's great to hear. But were you worried about losing control of the brand you built so carefully over the years?
+
+**Vijay:** Of course, that was a key consideration for me. But Zydus understood the importance of preserving the brand's identity and giving us the freedom to operate independently. They committed to running Naturell as a separate subsidiary, which means our team, our culture, and our way of doing things will remain intact.
+
+**Nicket:** So, it sounds like a true win-win situation.
+
+**Vijay:** I believe so. Zydus gains a well-established and respected brand in Rite Bite and Max Protein, with a loyal customer base and a strong team. And for Naturell, it's all about taking the brand to the next level. Zydus has the resources, infrastructure, and expertise to help us scale in ways we couldn’t have achieved on our own.
+
+**Nicket:** What about you and Mom? Are you happy with the deal?
+
+**Vijay:** Yes, we are. We've worked hard to build Naturell, and now we have the opportunity to see it grow even bigger as part of Zydus. Zydus has the resources and expertise to help us reach that ₹2000 crore dream we talked about.
+
+**Nicket:** That's fantastic! And it sounds like everyone else involved is happy too.
+
+**Vijay:** Yes, it's good for so many people.
+
+**Nicket:** Like who?
+
+**Vijay:** Well, first, it's good for our employees. Zydus has committed to keeping all of our employees, and they are planning on growing the company. This means our employees will have job security and even more opportunities for growth and development. Plus, they all benefited financially from the ESOP program I set up.
+
+**Nicket:** That’s right. They all got a nice bonus when the deal closed.
+
+**Vijay:** Yes. I negotiated a higher price per share for our employees than for Rabo. They each received around ₹250 a share.
+
+**Nicket:** That's amazing! So, the employees are happy. Who else?
+
+**Vijay:** Well, it's obviously good for Zydus, the acquirer. They are getting two well-established brands – Rite Bite and Max Protein – with a loyal customer base and a great team.
+
+**Nicket:** That makes sense. What about Rabo? Are they happy with the deal?
+
+**Vijay:** Absolutely. They got a good return on their investment – around three times what they put in.
+
+**Nicket:** Wow! And who else benefits from this deal?
+
+**Vijay:** Our vendor partners will also benefit. They'll be part of a larger organization with greater reach and resources. As the Max Protein account increases so will theirs.
+
+**Nicket:** So, it's safe to say that everyone wins in this acquisition. Zydus, Naturell, the employees, the shareholders, the investors, and even the vendor partners.
+
+**Vijay:** Exactly.
+
+**Nicket:** That’s truly inspiring, Dad. It's about so much more than just building a successful business. It's about building a company with heart, a company that values its people, from the employees to the suppliers and distributors.
+
+**Vijay:** You're absolutely right. It's about building something you can be proud of, something that leaves a positive impact on the world. For me, that meant creating a company that not only offered healthy and delicious snacks but also fostered a culture of respect, growth, and shared success.
+
+**Nicket:** And you've definitely achieved that. The way you prioritized the employees' financial well-being during the acquisition speaks volumes about your values. Not many founders would have fought so hard to ensure everyone got a fair share.
+
+**Vijay:** I truly believe that every single person at Naturell contributed to the success we achieved. It wasn't just about the management or a select few. Remember how I initially resisted taking VC money? It was important to me that if I took someone's investment, I could deliver a good return. Building a sustainable business that benefits everyone involved has always been my goal.
+
+**Nicket:** I remember. You've always been cautious and responsible. But you eventually decided to partner with Rabo or India Agri Fund. 
+
+
+
+
+
+1. Opening/Introduction (1-3 minutes)
+Hook: Start with an engaging question, a captivating story, or a thought-provoking quote to grab the listener's attention.
+Podcast Name & Mission: Briefly introduce the podcast name and its mission statement (e.g., "Inspiring entrepreneurs to achieve their dreams").
+Guest Introduction: Introduce the guest and their credentials, highlighting what makes them unique or inspiring.
+Episode Overview: Briefly mention the key topics that will be discussed in the episode.
+2. Guest Interview (15-30+ minutes)
+Background & Journey:
+Explore the guest's background, their entrepreneurial journey, and the challenges they overcame.
+Focus on their "why" – what drives their passion and motivates them.
+Key Learnings & Advice:
+Uncover valuable lessons learned from their successes and failures.
+Elicit actionable advice for listeners (e.g., tips on overcoming fear, building a strong team, finding work-life balance).
+Success Stories & Case Studies:
+Share specific examples of the guest's successes and how they achieved them.
+"Rapid-Fire" Questions (Optional):
+Ask a series of quick, insightful questions to get to know the guest better and provide a change of pace.
+3. Closing/Outro (2-5 minutes)
+Key Takeaways: Summarize the key takeaways and actionable advice from the interview.
+Call to Action:
+Encourage listeners to connect with the guest (e.g., social media, website).
+Invite listeners to subscribe, rate, and review the podcast.
+Promote any upcoming episodes or special offers.
+Outro Music/Sound Effect: End with a memorable outro music or sound effect.
+

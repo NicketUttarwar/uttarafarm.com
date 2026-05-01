@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "title": "How We Work — Uttara Farm",
+    "description": "Learn Uttara Farm's direct farmer support model: consultation, on-farm evaluation, regular consultant visits, and support for infrastructure, funding, knowledge, and distribution."
+  },
+  "badge": "Farmer operating model",
+  "title": "How We Work",
+  "lead": "Uttara Farm works directly with farmers through a practical, field-first model focused on consultation, regular advisor visits, and end-to-end support from production to market access.",
+  "footnote": "The process runs as a continuous loop: step 5 links back to step 1, and each node can be expanded as the operating model grows.",
+  "centerLine1": "Farmer operating",
+  "centerLine2": "cycle",
+  "entryLabel": "Field-first farmer cycle",
+  "steps": [
+    {
+      "title": "1. Consultation",
+      "detail": "Understand farmer goals, constraints, and coming season priorities."
+    },
+    {
+      "title": "2. Overview & evaluation",
+      "detail": "Assess conditions, crop potential, and risk gaps early."
+    },
+    {
+      "title": "3. Regular field support",
+      "detail": "Season-long consultant visits for timely, practical crop decisions."
+    },
+    {
+      "title": "4. Infrastructure & funding",
+      "detail": "Close critical capability gaps with practical interventions."
+    },
+    {
+      "title": "5. Knowledge & market enablement",
+      "detail": "Build farmer capability and connect produce to stronger market pathways."
+    }
+  ]
+}

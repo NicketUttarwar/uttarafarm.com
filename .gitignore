@@ -1,5 +1,7 @@
 node_modules/
 dist/
+combined/
+config/
 
 .DS_Store
 config/aws.env
@@ -9,10 +11,6 @@ config/terraform.tfvars
 .venv/
 .terraform/
 terraform/.terraform/
-.terraform.lock.hcl
-terraform/.terraform.lock.hcl
 terraform/.destroy.tfplan
 *.tfplan
-*.tfstate
-*.tfstate.*
 terraform/state/session/latest.tfstate

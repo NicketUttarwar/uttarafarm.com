@@ -1,13 +1,11 @@
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useLanguage } from "../contexts/LanguageContext";
 
-const navIds = [
-  { key: "mission", id: "mission" },
-  { key: "ginger", id: "ginger" },
-  { key: "support", id: "support" },
-  { key: "region", id: "region" },
-  { key: "partners", id: "partners" },
-  { key: "contact", id: "contact" },
+const navItems = [
+  { label: "Home", to: "/" },
+  { label: "Story", to: "/story" },
+  { label: "How We Work", to: "/how-we-work" },
+  { label: "Contact", to: "/contact" },
 ] as const;
 
 const navClass =
@@ -16,8 +14,7 @@ const navActive =
   "rounded-md px-2 py-1.5 text-sm font-semibold bg-forest/10 text-forest";
 
 export function Header() {
-  const { locale, setLocale, t } = useLanguage();
-  const { pathname } = useLocation();
+  const { locale, setLocale } = useLanguage();
 
   return (
     <header
@@ -27,26 +24,23 @@ export function Header() {
       <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-6">
         <Link
           to="/"
-          className="text-lg font-semibold tracking-tight text-forest"
+          className="brand-wordmark text-2xl text-forest"
         >
-          {t("brand")}
+          Uttara Farm
         </Link>
         <nav
           className="flex flex-1 flex-wrap items-center justify-end gap-1 sm:gap-2"
           aria-label="Primary"
         >
-          {navIds.map(({ key, id }) => (
-            <Link key={id} to={`/#${id}`} className={navClass}>
-              {t(`nav.${key}`)}
-            </Link>
+          {navItems.map((item) => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              className={({ isActive }) => (isActive ? navActive : navClass)}
+            >
+              {item.label}
+            </NavLink>
           ))}
-          <NavLink
-            to="/about"
-            className={({ isActive }) => (isActive ? navActive : navClass)}
-            aria-current={pathname === "/about" ? "page" : undefined}
-          >
-            {t("nav.about")}
-          </NavLink>
           <div
             className="ml-1 flex items-center gap-0.5 rounded-lg border border-forest/20 bg-white/80 p-0.5"
             role="group"
@@ -56,9 +50,7 @@ export function Header() {
               type="button"
               onClick={() => setLocale("en")}
               className={`rounded-md px-2.5 py-1 text-xs font-semibold transition-colors ${
-                locale === "en"
-                  ? "bg-forest text-cream"
-                  : "text-earth hover:bg-forest/10"
+                locale === "en" ? "bg-forest text-cream" : "text-earth hover:bg-forest/10"
               }`}
               aria-pressed={locale === "en"}
             >
@@ -68,9 +60,7 @@ export function Header() {
               type="button"
               onClick={() => setLocale("mr")}
               className={`rounded-md px-2.5 py-1 text-xs font-semibold transition-colors ${
-                locale === "mr"
-                  ? "bg-forest text-cream"
-                  : "text-earth hover:bg-forest/10"
+                locale === "mr" ? "bg-forest text-cream" : "text-earth hover:bg-forest/10"
               }`}
               aria-pressed={locale === "mr"}
             >

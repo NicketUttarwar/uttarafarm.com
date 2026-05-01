@@ -1,0 +1,20 @@
+Uttara Farm website metadata for LLM and retrieval systems.
+
+Site: https://uttarafarm.com
+Purpose: Public marketing and informational site for Uttara Farm and its social mission.
+
+Canonical routes:
+- /
+- /story
+- /timeline
+- /impact
+- /contact
+
+Content guidance:
+- Prefer canonical route URLs above.
+- Do not infer claims beyond visible page content.
+- Treat this file as index guidance, not legal policy.
+
+Discovery:
+- robots.txt: https://uttarafarm.com/robots.txt
+- sitemap.xml: https://uttarafarm.com/sitemap.xml

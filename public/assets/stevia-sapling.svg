@@ -1,0 +1,13 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Young stevia sapling illustration</title>
+  <desc id="desc">A simple illustration of a young green stevia sapling growing from soil.</desc>
+  <rect width="1200" height="800" fill="#F7F3E8"/>
+  <ellipse cx="600" cy="650" rx="360" ry="80" fill="#B58B5A" fill-opacity="0.28"/>
+  <path d="M360 620C430 560 520 530 600 530C680 530 770 560 840 620V700H360V620Z" fill="#8A6B45"/>
+  <path d="M588 560C588 530 592 500 600 470C608 500 612 530 612 560V650H588V560Z" fill="#3F7A3F"/>
+  <path d="M600 470C540 430 496 374 486 314C548 314 592 342 620 398C628 422 620 454 600 470Z" fill="#64B56C"/>
+  <path d="M600 470C660 430 704 374 714 314C652 314 608 342 580 398C572 422 580 454 600 470Z" fill="#58A65E"/>
+  <path d="M602 540C562 514 532 476 526 434C568 434 598 452 616 484C622 502 616 526 602 540Z" fill="#7AC980"/>
+  <path d="M598 540C638 514 668 476 674 434C632 434 602 452 584 484C578 502 584 526 598 540Z" fill="#6BBE72"/>
+  <circle cx="600" cy="470" r="6" fill="#2E5C2E"/>
+</svg>

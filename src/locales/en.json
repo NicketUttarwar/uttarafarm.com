@@ -1,8 +1,8 @@
 {
   "meta": {
     "home": {
-      "title": "Uttara Farm — Prosperity through ginger farming in Vidarbha",
-      "description": "A social initiative supporting farmers in Ralegaon and Vidarbha, Maharashtra with ginger expertise, soil testing, and access to major markets."
+      "title": "Uttara Farm — Prosperity through turmeric and ginger farming in Vidarbha",
+      "description": "A social initiative supporting farmers in Ralegaon and Vidarbha, Maharashtra with turmeric and ginger expertise, soil testing, and access to major markets."
     },
     "about": {
       "title": "About — Uttara Farm & Vijay Uttarwar",
@@ -15,7 +15,7 @@
   "brand": "Uttara Farm",
   "nav": {
     "mission": "Mission",
-    "ginger": "Why ginger",
+    "ginger": "Why turmeric and ginger",
     "support": "What we provide",
     "region": "Our region",
     "partners": "Partners",
@@ -24,27 +24,27 @@
   },
   "hero": {
     "eyebrow": "Social project · Maharashtra",
-    "title": "Prosperity for farmers through high-value ginger",
-    "subtitle": "We help farming families in Ralegaon and Vidarbha grow ginger with expert guidance, practical tools, and fair access to big-city markets.",
+    "title": "Prosperity for farmers through turmeric and ginger",
+    "subtitle": "We are starting with turmeric and ginger, both high-yield crops with regular demand, and helping farming families in Ralegaon and Vidarbha grow them with expert guidance, practical tools, and fair access to big-city markets.",
     "ctaPrimary": "Learn how we help",
     "ctaSecondary": "Get in touch"
   },
   "mission": {
     "title": "A social project rooted in local farming",
     "p1": "Agriculture is the backbone of our region. Uttara Farm exists to help farmers build economic stability from the land they already know—without having to leave it behind.",
-    "p2": "By focusing on a high-value crop like ginger and surrounding farmers with training, testing, and market connections, we aim to turn local farming into a more resilient livelihood."
+    "p2": "By starting with high-yield crops like turmeric and ginger and surrounding farmers with training, testing, and market connections, we aim to turn local farming into a more resilient livelihood."
   },
   "ginger": {
-    "title": "Why ginger",
-    "lead": "Ginger can earn strong returns—but it is demanding. Success depends on soil health, careful cultivation, and timing.",
-    "p1": "Unlike some crops, ginger needs attention through the season: land preparation, nutrition, water, and disease management all matter. That is why going it alone is risky.",
-    "p2": "Our programme reduces that risk by pairing farmers with experienced ginger advisors, soil insight, and a clearer path from field to buyers in larger cities."
+    "title": "Why turmeric and ginger",
+    "lead": "Turmeric and ginger can both deliver strong returns and regular market demand, but they are management-intensive crops that need disciplined execution.",
+    "p1": "These crops require careful season-long attention: land preparation, seed quality, nutrition, irrigation, and disease management all matter. That is why going it alone is risky.",
+    "p2": "Our programme reduces that risk by pairing farmers with experienced crop advisors, soil insight, and a clearer path from field to buyers in larger cities."
   },
   "pillars": {
     "title": "What we provide",
     "knowledge": {
       "title": "Knowledge & field guidance",
-      "body": "Hands-on training and season-long advice from ginger consultants—including specialists like Nilesh—so practices match local soil and weather."
+      "body": "Hands-on training and season-long advice from turmeric and ginger consultants—including specialists like Nilesh—so practices match local soil and weather."
     },
     "infrastructure": {
       "title": "Tools & soil insight",
@@ -63,8 +63,12 @@
   "partners": {
     "title": "Partners & contributors",
     "body": "Uttara Farm brings together field experts, soil-testing partners, and market allies. Names and logos here recognise those who make the programme possible.",
-    "nilesh": "Ginger consultants — e.g. Nilesh",
-    "warkem": "Warkem — soil testing kits & support"
+    "nilesh": "Turmeric and ginger consultants — e.g. Nilesh",
+    "nileshImageAlt": "Placeholder visual for consultant Nilesh",
+    "nileshImageCaption": "Image placeholder for Nilesh (consultant)",
+    "warkem": "Warkem — soil testing kits & support",
+    "warkemImageAlt": "Warkem BioAgri logo from their official website",
+    "visitWebsite": "Visit Warkem BioAgri website"
   },
   "contact": {
     "title": "Contact",
@@ -83,17 +87,49 @@
   },
   "aboutPage": {
     "badge": "Social project",
-    "title": "Why Uttara Farm exists",
-    "lead": "Uttara Farm is a social project—not a commercial venture. It exists to put entrepreneurial experience and networks to work for farming families in the region Vijay comes from.",
-    "p1": "The initiative is led by Vijay Uttarwar, founder of Naturell (India), the company behind well-known nutrition brands such as Max Protein and other everyday wellness foods.",
-    "p2": "In 2024, Naturell became part of Zydus Wellness, one of India’s leading listed consumer health companies—recognition for years of building trusted brands.",
-    "p3": "Vijay grew up in Bhamb, a village near Ralegaon in Vidarbha. That grounding shapes this project: solutions must work for real villages, real seasons, and real risk.",
-    "p4": "His dream is simple to state and hard to do: help villagers prosper economically while staying rooted in farming and local identity.",
-    "brandsTitle": "Brands & milestone",
-    "brandsIntro": "These names mark the journey behind Uttara Farm’s purpose-led work in the villages.",
-    "captionNaturell": "Naturell — nutrition & wellness foods",
-    "captionMax": "Max Protein — flagship protein snacks & bars",
-    "captionZydus": "Zydus Wellness — Naturell joined this listed company in 2024",
+    "title": "From Bhamb to building Naturell, and back to Bhamb",
+    "lead": "This page tells one connected story: Vijay Uttarwar grew up in Bhamb, built Naturell into a nationally recognized nutrition business, and is now using that success to give back through Uttara Farm.",
+    "p1": "Vijay’s roots are in Bhamb, near Ralegaon in Vidarbha. The realities of village farming shaped his worldview long before entrepreneurial success.",
+    "p2": "Through Naturell, RiteBite, and Max Protein, he built brands that scaled across India and eventually became part of the 2024 Zydus Wellness transaction.",
+    "p3": "That journey created not just financial outcomes but operating experience, networks, and execution capability at scale.",
+    "p4": "Uttara Farm is the return journey: applying those learnings to improve farmer livelihoods in and around the same villages he comes from.",
+    "logosTitle": "Logos",
+    "logosIntro": "A dedicated space for Uttara Farm identity assets, with room for additional local logos in future.",
+    "logosTabMain": "Main Logo",
+    "logosTabFuture": "More Local Logos (Soon)",
+    "logoMainAlt": "Uttara Farm official logo",
+    "logoMainCaption": "Uttara Farms logo — primary website identity",
+    "storyTitle": "Company story",
+    "storyIntro": "The journey spans Vijay Uttarwar’s entrepreneurial path: Naturell, RiteBite, Max Protein, and the 2024 sale to Zydus Wellness.",
+    "gallery": {
+      "title": "Image Gallery",
+      "intro": "Every image from the website asset library is available below. Use tabs to switch between images already in the story and additional assets such as logos.",
+      "tabIncluded": "Story Images",
+      "tabExtra": "Additional Images & Logos",
+      "extraLogoAlt": "Uttara Farms logo",
+      "extraLogoTitle": "Uttara Farms logo asset",
+      "extraLogoBody": "Primary Uttara Farms brand logo from the asset library.",
+      "extraRitebiteAlt": "RiteBite product visual",
+      "extraRitebiteTitle": "RiteBite standalone visual",
+      "extraRitebiteBody": "Additional RiteBite image from the asset library that is now reintegrated on site."
+    },
+    "story": {
+      "altNaturell": "Naturell brand visual",
+      "naturellTitle": "Vijay Uttarwar and the formation of Naturell",
+      "naturellBody": "Naturell was formed to build modern nutrition products for Indian consumers, laying the entrepreneurial foundation that now powers Uttara Farm’s social mission.",
+      "altStevia": "Young stevia sapling visual",
+      "ritebiteTitle": "Stugar launches as a Stevia sweetening milestone",
+      "ritebiteBody": "Naturell first built Stugar around Stevia as a separate sweetener-focused effort. RiteBite came afterward as a distinct next chapter in everyday nutrition snacking.",
+      "altMaxProteinLaunch": "RiteBite and Max Protein visual",
+      "maxProteinTitle": "Creation of the Max Protein brand",
+      "maxProteinBody": "The Max Protein line expanded the portfolio into mainstream protein-rich snacks and became one of the most visible outcomes of the Naturell journey.",
+      "altMaxProteinScale": "Scaled Max Protein portfolio",
+      "scaleTitle": "Scaling the portfolio",
+      "scaleBody": "RiteBite and Max Protein scaled across categories and channels, proving that Indian nutrition brands could combine health positioning with mass-market appeal.",
+      "altZydus": "Zydus Wellness stock visual",
+      "zydusTitle": "Sale to Zydus Wellness in 2024",
+      "zydusBody": "In 2024, Naturell was sold to Zydus Wellness, marking a major milestone and enabling Vijay to channel experience and networks back into village-focused initiatives."
+    },
     "backHome": "Back to home"
   }
 }

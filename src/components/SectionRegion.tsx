@@ -23,14 +23,14 @@ export function SectionRegion() {
               <p>{t("region.p2")}</p>
             </div>
           </div>
-          <div
-            className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-forest/15 bg-gradient-to-br from-forest/10 to-ginger/10"
-            role="img"
-            aria-label="Vidarbha region placeholder"
-          >
-            <div className="absolute inset-0 flex items-center justify-center p-6 text-center text-sm font-medium text-forest/70">
-              {t("region.title")}
-            </div>
+          <div className="overflow-hidden rounded-2xl border border-forest/15 bg-white shadow-sm">
+            <iframe
+              title="Vidarbha region map"
+              src="https://www.google.com/maps?q=Vidarbha%20Maharashtra&output=embed"
+              className="aspect-[4/3] w-full"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
         </div>
       </div>

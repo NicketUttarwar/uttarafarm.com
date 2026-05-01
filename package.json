@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:combined": "npm run build && bash scripts/generate-combined.sh",
     "preview": "vite preview",
     "test:local": "bash scripts/test-local.sh"
   },

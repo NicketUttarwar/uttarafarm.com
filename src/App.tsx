@@ -5,6 +5,9 @@ import { Footer } from "./components/Footer";
 import { useLanguage } from "./contexts/LanguageContext";
 import { Home } from "./pages/Home";
 import { About } from "./pages/About";
+import { HowWeWork } from "./pages/HowWeWork";
+import { Contact } from "./pages/Contact";
+import { NotFound } from "./pages/NotFound";
 
 function App() {
   const { t } = useLanguage();
@@ -22,7 +25,12 @@ function App() {
       <main id="main">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/story" element={<About />} />
+          <Route path="/how-we-work" element={<HowWeWork />} />
+          <Route path="/timeline" element={<About />} />
+          <Route path="/impact" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />

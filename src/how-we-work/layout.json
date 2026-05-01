@@ -1,0 +1,71 @@
+{
+  "viewBoxSize": 900,
+  "padding": 100,
+  "center": [450, 450],
+  "segmentColors": ["#154a52", "#d98b7e", "#7fa3bc"],
+  "ring": {
+    "hubFill": "#f7f4ed",
+    "hubStroke": "rgba(26, 77, 46, 0.55)",
+    "hubRadius": 92,
+    "innerRadius": 158,
+    "outerRadius": 236,
+    "segmentGapDeg": 2.4,
+    "guideStroke": "rgba(92, 74, 61, 0.35)",
+    "guideDotRadius": 3.25
+  },
+  "badge": {
+    "radius": 20,
+    "fill": "#fff",
+    "stroke": "#1a4d2e",
+    "textClass": "fill-[#1a4d2e] text-[13px] font-bold"
+  },
+  "label": {
+    "radius": 300,
+    "width": 228,
+    "minHeight": 140
+  },
+  "leader": {
+    "startShrink": 0.92,
+    "endShrink": 0.78
+  },
+  "entry": {
+    "arrowLength": 230,
+    "tipRadiusShrink": 10,
+    "firstWedgeBias": 0.19,
+    "labelMaxWidth": 218,
+    "labelOffsetAlongArrow": 12,
+    "labelOffsetAboveCenter": -54
+  },
+  "steps": [
+    {
+      "nodeAngleDeg": -90,
+      "detailAngleDeg": -90,
+      "detailAlign": "center",
+      "segmentColorIndex": 1
+    },
+    {
+      "nodeAngleDeg": -18,
+      "detailAngleDeg": -14,
+      "detailAlign": "leading",
+      "segmentColorIndex": 2
+    },
+    {
+      "nodeAngleDeg": 54,
+      "detailAngleDeg": 62,
+      "detailAlign": "leading",
+      "segmentColorIndex": 0
+    },
+    {
+      "nodeAngleDeg": 126,
+      "detailAngleDeg": 128,
+      "detailAlign": "trailing",
+      "segmentColorIndex": 1
+    },
+    {
+      "nodeAngleDeg": 198,
+      "detailAngleDeg": 216,
+      "detailAlign": "trailing",
+      "segmentColorIndex": 2
+    }
+  ]
+}
