@@ -6,4 +6,4 @@ ensure_config_files
 load_aws_env
 
 run_tf fmt -recursive
-run_tf validate -var-file="${TF_VARS_FILE}"
+run_tf validate

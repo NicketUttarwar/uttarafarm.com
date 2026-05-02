@@ -54,10 +54,10 @@ This repo is designed for static-site directory routing without edge rewrites:
 
 1. Configure local AWS credentials (`config/aws.env`)
 2. Configure local Terraform variables (`config/terraform.tfvars`)
-3. Confirm dedicated network inputs (`vpc_name`, `public_subnet_name`, `vpc_cidr_block`, `public_subnet_cidr_block`, `public_subnet_availability_zone`)
+3. Confirm core Terraform inputs (`site_bucket_name`, `domain_names`; optional `common_tags`)
 4. `./scripts/tf-init.sh`
 5. `./scripts/tf-plan.sh`
-6. `./scripts/tf-apply-phase1.sh` (creates dedicated VPC + public subnet baseline, plus S3 + ACM request, no DNS wait)
+6. `./scripts/tf-apply-phase1.sh` (S3 + ACM certificate request with constrained targets; no DNS wait)
 7. Add ACM validation CNAME records in DNS provider
 8. Wait for ACM cert status `Issued`
 9. `./scripts/tf-apply.sh` (CloudFront + validation + bucket policy)
@@ -161,11 +161,6 @@ Suggested extension format:
 
 ## Resource composition
 
-- `aws_vpc.site`
-- `aws_subnet.site_public`
-- `aws_internet_gateway.site`
-- `aws_route_table.site_public`
-- `aws_route_table_association.site_public`
 - `aws_s3_bucket.site`
 - `aws_s3_bucket_website_configuration.site`
 - `aws_s3_bucket_public_access_block.site`
@@ -341,8 +336,8 @@ Use lowercase kebab-case for folder/file identifiers unless platform rules requi
 - `project_name`: stable project slug (example: `website`)
 - `environment`: stable environment slug (example: `personal`)
 - `aws_region`: fixed to `us-east-1` in this stack
-- `vpc_name`: dedicated network identifier (example: `website-vpc`)
-- `public_subnet_name`: dedicated public subnet identifier (example: `website-public-subnet`)
+- `site_bucket_name`: globally unique S3 bucket for the static site
+- `domain_names`: hostnames for ACM and CloudFront (`aliases`)
 
 These values are the canonical identity anchors for naming, tags, cost filtering, and search.
 
@@ -395,8 +390,8 @@ Required controls:
 ### Document Version
 
 - Version: `v0.1.0`
-- Last updated: `2026-04-29`
-- Change class: cost tagging requires environment pairing
+- Last updated: `2026-05-01`
+- Change class: stack is CloudFront + S3 only; no dedicated VPC/subnet resources
 
 ---
 

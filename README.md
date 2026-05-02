@@ -42,7 +42,9 @@ Beyond this README:
 - Node.js 18+ and npm (`package-lock.json` is the pinned tree for JS dependencies)
 - Terraform 1.14.7 (`tfenv` recommended)
 - AWS CLI v2
+- **jq** — used by `./scripts/check-acm-dns.sh` when reading `terraform output -json`, and handy for **step 15** JSON
 - Python 3 (optional; used by `scripts/test-local.sh`)
+- Docker (optional; `./scripts/render-how-we-work-diagram.sh` only)
 
 ## Host the website (individual steps)
 
@@ -72,11 +74,11 @@ Do **not** commit **`config/aws.env`** or **`config/terraform.tfvars`** (they co
 6. **`cp config/aws.env.example config/aws.env`**
 7. Edit **`config/aws.env`**: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_DEFAULT_REGION=us-east-1`.
 8. **`cp config/terraform.tfvars.example config/terraform.tfvars`**
-9. Edit **`config/terraform.tfvars`**. At minimum set `site_bucket_name`, `domain_names`, and network fields (`vpc_name`, `public_subnet_name`, `vpc_cidr_block`, `public_subnet_cidr_block`, `public_subnet_availability_zone`). Use the examples in [`config/terraform.tfvars.example`](config/terraform.tfvars.example) as a guide.
+9. Edit **`config/terraform.tfvars`**. At minimum set `site_bucket_name` and `domain_names`. Use the examples in [`config/terraform.tfvars.example`](config/terraform.tfvars.example) as a guide.
 
 ### 3 — Terraform: version check, init, validate, phase-1 apply
 
-All Terraform wrappers load **`config/aws.env`** automatically; plain `aws`/`terraform` CLI commands elsewhere do not unless you export them yourself (step **22**).
+All Terraform wrappers load **`config/aws.env`** automatically; plain `aws`/`terraform` CLI commands elsewhere do not unless you authenticate for this shell (step **20**).
 
 From the repo root, if **`./scripts/...` is denied because the file is not executable**, fix once:
 
@@ -106,47 +108,33 @@ From the repo root, if **`./scripts/...` is denied because the file is not execu
 
 18. **`./scripts/tf-apply.sh`** — brings up the rest of the stack (CloudFront distribution, ACM validation attachments, bucket policy wiring, etc. per Terraform).
 
-### 6 — Capture CloudFront + bucket names for DNS and deploy CLI
+### 6 — Terraform outputs (DNS)
 
-19. **`./scripts/tf-output.sh cloudfront_domain_name`** — target for **`www`** CNAME once you cut over traffic.
+After **step 18**, Terraform prints outputs at apply time (including **`cloudfront_domain_name`** and **`cloudfront_distribution_id`**). Use **`terraform output`** from **`terraform/`** or **`./scripts/tf-output.sh <name>`** if you need those values again—for example the CloudFront hostname for **`www`** CNAME below. For **`./scripts/tf-output.sh acm_validation_records`** (**step 15**), complete at least Phase 1 (**step 14**) so the ACM certificate exists in state.
 
-    Example (raw hostname only; often you want `.` suffix in DNS UI):
-
-    ```bash
-    cd terraform && terraform output -raw cloudfront_domain_name && cd ..
-    ```
-
-20. **`./scripts/tf-output.sh cloudfront_distribution_id`** — distribution id for **`aws cloudfront create-invalidation`** below.
-
-Use the **same bucket name as `site_bucket_name`** in **`config/terraform.tfvars`** for `aws s3 sync` (`terraform/state` may mirror it).
+The publish and invalidation commands in **steps 21–22** use this stack’s **`uttarafarm-website-bucket`** and distribution **`E1G4MH1W1ZHIDY`**; keep **`site_bucket_name`** in **`config/terraform.tfvars`** aligned with the bucket you sync.
 
 ### 7 — Build the static artifact
 
-21. **`npm run build:combined`** — refreshes **`combined/`** (see [Build and artifact generation](#build-and-artifact-generation)).
+19. **`npm run build:combined`** — refreshes **`combined/`** (see [Build and artifact generation](#build-and-artifact-generation)).
 
-### 8 — Load AWS credentials for raw `aws` CLI
+### 8 — Authenticate for the AWS CLI
 
-Terraform scripts already **`source`** `config/aws.env`. **`aws s3`** and **`aws cloudfront`** use your shell unless you configured a profile instead.
-
-22. Export credentials **for your current terminal only** if you rely on **`config/aws.env`**:
-
-    ```bash
-    set -a && source config/aws.env && set +a
-    ```
+20. **`aws login`** — authenticate this shell so **`aws s3`** and **`aws cloudfront`** succeed (same session you use for other AWS CLI work). Terraform wrappers still load **`config/aws.env`** when you run **`./scripts/tf-*.sh`**.
 
 ### 9 — Publish to S3
 
-23. **`aws s3 sync combined/ s3://YOUR_SITE_BUCKET --delete`** — substitute **`YOUR_SITE_BUCKET`** with **`site_bucket_name`** from **`config/terraform.tfvars`**.
+21. **`aws s3 sync combined/ s3://uttarafarm-website-bucket --delete`**
 
 ### 10 — Invalidate CloudFront cache
 
-24. **`aws cloudfront create-invalidation --distribution-id YOUR_DISTRIBUTION_ID --paths "/*"`** — use the id from step 20.
+22. **`aws cloudfront create-invalidation --distribution-id E1G4MH1W1ZHIDY --paths "/*"`**
 
 ### 11 — Public DNS (traffic to CloudFront)
 
-25. For **`uttarafarm.com`** (canonical), **`www`** **→** **CNAME** to the **`cloudfront_domain_name`** hostname from step 19 (omit `https://` in DNS).
-26. **Apex (`@`)** for the canonical zone → registrar **HTTP redirect** to `www` **or** your provider’s **ALIAS/ANAME** to the same CloudFront target, per registrar docs.
-27. For **`uttarafarm.in`**, **`uttarafarms.com`**, **`uttarafarms.in`**, and **`uttara.farm`**, configure **redirect/forward** to **`uttarafarm.com`** at the registrar or DNS only (see [Domains (canonical deploy)](#domains-canonical-deploy)); no CloudFront or Terraform updates in this repo.
+23. For **`uttarafarm.com`** (canonical), **`www`** **→** **CNAME** to the **`cloudfront_domain_name`** value from Terraform output (omit `https://` in DNS).
+24. **Apex (`@`)** for the canonical zone → registrar **HTTP redirect** to `www` **or** your provider’s **ALIAS/ANAME** to the same CloudFront target, per registrar docs.
+25. For **`uttarafarm.in`**, **`uttarafarms.com`**, **`uttarafarms.in`**, and **`uttara.farm`**, configure **redirect/forward** to **`uttarafarm.com`** at the registrar or DNS only (see [Domains (canonical deploy)](#domains-canonical-deploy)); no CloudFront or Terraform updates in this repo.
 
 ### 12 — Verify
 
@@ -165,9 +153,9 @@ Open in a browser (replace `<domain>` with your live hostname):
 When S3 bucket and CloudFront already exist:
 
 1. **`npm run build:combined`**
-2. **`set -a && source config/aws.env && set +a`** (if not already loaded)
-3. **`aws s3 sync combined/ s3://YOUR_SITE_BUCKET --delete`**
-4. **`aws cloudfront create-invalidation --distribution-id YOUR_DISTRIBUTION_ID --paths "/*"`**
+2. **`aws login`** (if not already authenticated)
+3. **`aws s3 sync combined/ s3://uttarafarm-website-bucket --delete`**
+4. **`aws cloudfront create-invalidation --distribution-id E1G4MH1W1ZHIDY --paths "/*"`**
 
 ## Local Development
 
@@ -234,8 +222,8 @@ Debugging output (when defined in Terraform): **`./scripts/tf-output.sh s3_websi
 
 ### Rollback
 
-1. Re-sync a previous known-good **`combined/`** tree to **`s3://YOUR_SITE_BUCKET`**
-2. Run **`aws cloudfront create-invalidation`** for **`"/*"`** or only the impacted paths.
+1. Re-sync a previous known-good **`combined/`** tree to **`s3://uttarafarm-website-bucket`**
+2. Run **`aws cloudfront create-invalidation --distribution-id E1G4MH1W1ZHIDY`** for **`"/*"`** or only the impacted paths.
 3. If DNS cutover was wrong, restore the registrar’s previous target.
 
 ### Governance and ongoing operations
@@ -245,9 +233,6 @@ Debugging output (when defined in Terraform): **`./scripts/tf-output.sh s3_websi
   - `Environment`
   - `ManagedBy`
   - optional: `Owner`, `CostCenter`
-- Keep dedicated network naming and CIDR settings documented and stable:
-  - `vpc_name`, `public_subnet_name`
-  - `vpc_cidr_block`, `public_subnet_cidr_block`
 - List tagged resources:
   - `./scripts/list-tagged-resources.sh`
   - `TAG_KEY=Environment TAG_VALUE=personal ./scripts/list-tagged-resources.sh`

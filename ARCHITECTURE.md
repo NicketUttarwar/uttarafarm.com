@@ -13,16 +13,16 @@ This document captures the repository-level implementation of the Path B operati
 ## Deployment Workflow
 
 1. Configure local credentials and tfvars in `config/`.
-2. Confirm dedicated network inputs in tfvars (`vpc_name`, `public_subnet_name`, `vpc_cidr_block`, `public_subnet_cidr_block`, `public_subnet_availability_zone`).
+2. Confirm Terraform inputs in tfvars (`site_bucket_name`, `domain_names`, and optional tagging).
 3. Generate deploy artifact: `npm run build:combined`.
-4. Run Terraform phase 1 to create network baseline + initial website resources.
+4. Run Terraform phase 1 to create initial website resources (S3 + ACM request).
 5. Perform external ACM validation DNS updates.
 6. Complete Terraform apply.
 7. Sync `combined/` to S3 and invalidate CloudFront.
 
 ## Phase Model (Path B)
 
-- **Phase 1:** local readiness + dedicated VPC/public subnet baseline + first apply (`tf-apply-phase1.sh`)
+- **Phase 1:** local readiness + first targeted apply for S3 + ACM (`tf-apply-phase1.sh`)
 - **Phase 2:** external DNS validation records for ACM
 - **Phase 3:** full Terraform apply after certificate issuance
 - **Phase 4:** artifact sync and CloudFront invalidation
@@ -54,4 +54,4 @@ This document captures the repository-level implementation of the Path B operati
 
 - Version: `v0.1.0`
 - Last updated: `2026-05-01`
-- Change class: Path B phase model updated for dedicated VPC/public subnet baseline
+- Change class: Path B phases; networking is not provisioned for this stack (CloudFront + S3 only).

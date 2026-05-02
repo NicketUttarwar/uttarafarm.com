@@ -32,6 +32,12 @@ run_tf() {
   (cd "${TF_DIR}" && terraform "$@")
 }
 
+# Terraform 1.2+ prints a bare JSON-encoded value for `terraform output -json NAME`.
+# Older states used a wrapper object with a "value" key.
+tf_output_value_from_json() {
+  printf '%s' "${1}" | jq -r 'if type == "string" then . elif type == "object" then (.value // empty) else empty end'
+}
+
 backup_state() {
   mkdir -p "$(dirname "${SESSION_STATE}")"
   if [[ -f "${STATE_DIR}/terraform.tfstate" ]]; then
