@@ -1,31 +1,48 @@
 # ARCHITECTURE
 
-This document captures the repository-level implementation of the Path B operating model.
+This document captures the repository-level implementation of the current deployment model.
 
 ## System Model
 
 - Application source: `src/` (React + TypeScript)
 - Build output: `dist/`
 - Deploy artifact: `combined/` (generated from `dist/`)
-- Hosting model: S3 website endpoint origin + CloudFront
-- DNS model: external provider-managed records
+- Hosting model: private S3 artifact bucket + EC2/nginx + ALB + Global Accelerator
+- DNS model: GoDaddy apex `A` records to Global Accelerator static IPv4 addresses
+
+## Why this architecture exists
+
+GoDaddy does not allow apex (`@`) records to point to a CloudFront domain via CNAME.
+That registrar limitation requires stable IPv4 targets for apex DNS.
+
+To satisfy that requirement, this repo now provisions:
+
+- Global Accelerator static Anycast IPs
+- ALB as the TLS entrypoint
+- EC2 web nodes serving files synced from S3
 
 ## Deployment Workflow
 
 1. Configure local credentials and tfvars in `config/`.
-2. Confirm Terraform inputs in tfvars (`site_bucket_name`, `domain_names`, and optional tagging).
+2. Confirm Terraform inputs in tfvars:
+   - `site_bucket_name`
+   - `domain_names`
+   - `vpc_id`
+   - `public_subnet_ids`
+   - `web_ami_id`
 3. Generate deploy artifact: `npm run build:combined`.
-4. Run Terraform phase 1 to create initial website resources (S3 + ACM request).
-5. Perform external ACM validation DNS updates.
-6. Complete Terraform apply.
-7. Sync `combined/` to S3 and invalidate CloudFront.
+4. Run Terraform phase 1 to create S3 + ACM request (`tf-apply-phase1.sh`).
+5. Perform ACM DNS validation at your DNS provider.
+6. Run full Terraform apply (`tf-apply.sh`) to create ALB/ASG/Global Accelerator.
+7. Sync `combined/` to S3.
+8. Set GoDaddy apex `A` records to `global_accelerator_ip_addresses`.
 
-## Phase Model (Path B)
+## Phase Model
 
-- **Phase 1:** local readiness + first targeted apply for S3 + ACM (`tf-apply-phase1.sh`)
+- **Phase 1:** targeted apply for S3 + ACM request
 - **Phase 2:** external DNS validation records for ACM
-- **Phase 3:** full Terraform apply after certificate issuance
-- **Phase 4:** artifact sync and CloudFront invalidation
+- **Phase 3:** full apply for runtime infra and IP outputs
+- **Phase 4:** artifact sync and DNS verification
 - **Phase 5:** governance, drift checks, and documentation alignment
 
 ## Naming and Tagging Standards
@@ -47,11 +64,11 @@ This document captures the repository-level implementation of the Path B operati
 ## Change Management
 
 - Infrastructure and architecture changes should land together.
-- Use phased rollout with explicit validation gates for DNS and certificate status.
+- Keep the phased rollout with explicit validation gates for ACM + DNS.
 - Avoid manual edits to Terraform state JSON.
 
 ## Document Version
 
-- Version: `v0.1.0`
-- Last updated: `2026-05-01`
-- Change class: Path B phases; networking is not provisioned for this stack (CloudFront + S3 only).
+- Version: `v0.2.0`
+- Last updated: `2026-05-05`
+- Change class: migrated from CloudFront apex workaround to Global Accelerator static-IP apex model for GoDaddy compatibility.

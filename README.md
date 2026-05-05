@@ -1,277 +1,149 @@
 # uttarafarm.com
 
-Static marketing site for Uttara Farm (Vite + React + TypeScript + Tailwind) with a Path B deployment model:
+Static website for Uttara Farm (Vite + React + TypeScript + Tailwind), deployed on AWS with a GoDaddy-compatible apex DNS architecture.
 
-- Source of truth: `src/`
-- Build output: `dist/`
-- Deploy artifact: `combined/`
-- Runtime: S3 website endpoint behind CloudFront
+## What changed
 
-## Domains (canonical deploy)
+This repo now uses an architecture that ends with **static public IP addresses** so you can set apex records (`@`) in GoDaddy:
 
-This repository deploys **one** static website: a **single** S3 bucket and **one** CloudFront distribution. There is no multi-distribution or multi-bucket setup in Terraform for different hostnames.
+- Build artifact in `combined/`
+- Private S3 bucket stores website files
+- EC2 web nodes run nginx and pull site files from S3
+- ALB terminates TLS with ACM cert
+- AWS Global Accelerator fronts ALB and provides static Anycast IPs
+- GoDaddy apex uses `A` records to those Global Accelerator IPs
 
-**Canonical production hostname:** **`uttarafarm.com`** (and **`www`** if you use it in DNS). The steps in this README—build, `aws s3 sync`, CloudFront invalidation, and the Terraform modules in `terraform/`—all target that stack only.
+## AWS architecture
 
-Uttara Farm uses **five** domains that should present the **same** site to visitors. Only **`uttarafarm.com`** is backed by this repo’s CloudFront + S3 deploy. Point the others to the canonical URL with **HTTP redirects or DNS forwarding at your registrar or DNS provider**; you do **not** need extra CloudFront alternate domain names or Terraform changes here for those names.
+`combined/ -> S3 (private) -> EC2/nginx -> ALB (HTTPS) -> Global Accelerator (static IPv4)`
 
-| Role | Hostname |
-| --- | --- |
-| Canonical (this deploy) | `uttarafarm.com` |
-| Forward to canonical (registrar/DNS only) | `uttarafarm.in`, `uttarafarms.com`, `uttarafarms.in`, `uttara.farm` |
+## Domains and DNS
 
-## Stack
+- Canonical domain: `uttarafarm.com`
+- Optional: `www.uttarafarm.com`
+- You can add both to `domain_names` in Terraform.
 
-| Layer | Choices |
-| --- | --- |
-| UI | React 19 + TypeScript |
-| Routing | react-router-dom 7 |
-| Build | Vite 6 |
-| Styles | Tailwind CSS 4 (`@tailwindcss/vite`) |
+Because GoDaddy does not support apex CNAME to CloudFront, this stack outputs static IPs for apex `A` records.
 
-## Documentation
+## Prerequisites
 
-Beyond this README:
-
-- [`ARCHITECTURE.md`](ARCHITECTURE.md): Path B phases, tagging, deployment workflow at repo level.
-- [`GLOBAL_ARCHITECTURE.md`](GLOBAL_ARCHITECTURE.md): End-to-end system view (build → AWS, CloudFront ↔ S3 website endpoint, diagnostics).
-- [`DEVICE_LANGUAGE_DEFAULTS.md`](DEVICE_LANGUAGE_DEFAULTS.md): Default locale rules (manual choice vs device hints).
-
-## Dependencies
-
-- Node.js 18+ and npm (`package-lock.json` is the pinned tree for JS dependencies)
-- Terraform 1.14.7 (`tfenv` recommended)
+- Node.js 18+
+- npm
+- Terraform 1.14.7
 - AWS CLI v2
-- **jq** — used by `./scripts/check-acm-dns.sh` when reading `terraform output -json`, and handy for **step 15** JSON
-- Python 3 (optional; used by `scripts/test-local.sh`)
-- Docker (optional; `./scripts/render-how-we-work-diagram.sh` only)
+- `jq`
 
-## Host the website (individual steps)
+## Setup
 
-Run these **in order** the first time you stand up hosting. Region is **`us-east-1`** everywhere in this repo unless you deliberately change tooling and Terraform constraints.
+1. `cp config/aws.env.example config/aws.env`
+2. Edit `config/aws.env` with AWS credentials and `AWS_DEFAULT_REGION=us-east-1`
+3. `cp config/terraform.tfvars.example config/terraform.tfvars`
+4. Edit `config/terraform.tfvars`:
+   - `site_bucket_name`
+   - `domain_names`
+   - `vpc_id`
+   - `public_subnet_ids` (at least two public subnets in that VPC)
+   - `web_ami_id` (an approved AMI in `us-east-1`, e.g. Amazon Linux 2023)
+   - Route53 fields only if you want Terraform-managed Route53
 
-### 0 — Install tooling (once per machine)
+## Deploy infrastructure
 
-1. Install **Node.js 18+** and **npm** (`node --version`, `npm --version`).
-2. Install **Terraform 1.14.7** (`terraform version`). With `tfenv`:
+Run from repo root:
 
-   ```bash
-   tfenv install 1.14.7
-   tfenv use 1.14.7
-   ```
+1. `./scripts/tf-version.sh`
+2. `./scripts/tf-init.sh`
+3. `./scripts/tf-fmt-validate.sh`
+4. `./scripts/tf-plan.sh`
 
-3. Install **AWS CLI v2** (`aws --version`).
-4. Clone this repository and **`cd`** into its root (`uttarafarm.com`).
+### Phase 1 (creates S3 + ACM cert request)
 
-### 1 — App install
+5. `./scripts/tf-apply-phase1.sh`
 
-5. **`npm install`**
+### Add ACM DNS validation records
 
-### 2 — Local secrets and Terraform variables
+6. `./scripts/tf-output.sh acm_validation_records`
+7. Add all returned CNAMEs at your DNS provider
+8. `./scripts/check-acm-dns.sh` until certificate status is `ISSUED`
 
-Do **not** commit **`config/aws.env`** or **`config/terraform.tfvars`** (they contain secrets and environment-specific naming).
+### Full apply
 
-6. **`cp config/aws.env.example config/aws.env`**
-7. Edit **`config/aws.env`**: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_DEFAULT_REGION=us-east-1`.
-8. **`cp config/terraform.tfvars.example config/terraform.tfvars`**
-9. Edit **`config/terraform.tfvars`**. At minimum set `site_bucket_name` and `domain_names`. Use the examples in [`config/terraform.tfvars.example`](config/terraform.tfvars.example) as a guide.
+9. `./scripts/tf-apply.sh`
 
-### 3 — Terraform: version check, init, validate, phase-1 apply
+## Build and publish site content
 
-All Terraform wrappers load **`config/aws.env`** automatically; plain `aws`/`terraform` CLI commands elsewhere do not unless you authenticate for this shell (step **20**).
+1. `npm install`
+2. `npm run build:combined`
+3. `aws s3 sync combined/ s3://<your-site_bucket_name> --delete`
 
-From the repo root, if **`./scripts/...` is denied because the file is not executable**, fix once:
+Example:
 
-**`chmod +x scripts/*.sh`**
+`aws s3 sync combined/ s3://uttarafarm-website-bucket --delete`
 
-10. **`./scripts/tf-version.sh`**
-11. **`./scripts/tf-init.sh`**
-12. **`./scripts/tf-fmt-validate.sh`**
-13. **`./scripts/tf-plan.sh`**
-14. **`./scripts/tf-apply-phase1.sh`** — constrained `terraform apply` with **`-target`** for **S3** (bucket, website hosting, public access block, bucket policy) and **ACM certificate request**. CloudFront and any remaining stack resources (**step 18**) wait until ACM can validate successfully.
+No CloudFront invalidation is required in this architecture.
 
-### 4 — ACM: DNS validation records (manual registrar / DNS UI)
+## GoDaddy apex DNS setup (critical)
 
-15. Inspect validation requirements (JSON):
+After `./scripts/tf-apply.sh`, fetch static IPs:
 
-    **`./scripts/tf-output.sh acm_validation_records`**
+- `./scripts/tf-output.sh global_accelerator_ip_addresses`
 
-    Read the emitted JSON (for example with `jq`) or use **AWS Certificate Manager** in **`us-east-1`** — every ACM validation **CNAME** must exist at your DNS provider.
-16. **At your DNS host** (e.g. Network Solutions), create **all** ACM validation **CNAME** records exactly as AWS specifies.
-17. Poll until ACM issues the cert:
+You will get two IPv4 addresses. In GoDaddy DNS:
 
-    **`./scripts/check-acm-dns.sh`**
+1. Create `A` record for host `@` to IP #1
+2. Create second `A` record for host `@` to IP #2
+3. (Optional) `www` record:
+   - either `CNAME www -> uttarafarm.com`
+   - or two `A` records for `www` to the same two IPs
 
-    Repeat step 17 until **`Status`** is **`ISSUED`** (propagation may take minutes between attempts).
+Recommended TTL: 600 seconds.
 
-### 5 — Terraform: full apply
+## Optional Route53-managed DNS
 
-18. **`./scripts/tf-apply.sh`** — brings up the rest of the stack (CloudFront distribution, ACM validation attachments, bucket policy wiring, etc. per Terraform).
+If you want Terraform to manage DNS in Route53 instead of GoDaddy records:
 
-### 6 — Terraform outputs (DNS)
+1. Set `route53_zone_id` (preferred), or `route53_zone_name`
+2. `bash scripts/tf-apply-phase3-dns.sh`
 
-After **step 18**, Terraform prints outputs at apply time (including **`cloudfront_domain_name`** and **`cloudfront_distribution_id`**). Use **`terraform output`** from **`terraform/`** or **`./scripts/tf-output.sh <name>`** if you need those values again—for example the CloudFront hostname for **`www`** CNAME below. For **`./scripts/tf-output.sh acm_validation_records`** (**step 15**), complete at least Phase 1 (**step 14**) so the ACM certificate exists in state.
+That creates Route53 `A` records pointing all `domain_names` to Global Accelerator IPs.
 
-The publish and invalidation commands in **steps 21–22** use this stack’s **`uttarafarm-website-bucket`** and distribution **`E1G4MH1W1ZHIDY`**; keep **`site_bucket_name`** in **`config/terraform.tfvars`** aligned with the bucket you sync.
+Rollback Route53 DNS phase:
 
-### 7 — Build the static artifact
+- `bash scripts/tf-destroy-phase3-dns.sh`
 
-19. **`npm run build:combined`** — refreshes **`combined/`** (see [Build and artifact generation](#build-and-artifact-generation)).
+## Verify
 
-### 8 — Authenticate for the AWS CLI
+Check:
 
-20. **`aws login`** — authenticate this shell so **`aws s3`** and **`aws cloudfront`** succeed (same session you use for other AWS CLI work). Terraform wrappers still load **`config/aws.env`** when you run **`./scripts/tf-*.sh`**.
+- `https://uttarafarm.com/`
+- `https://uttarafarm.com/story/`
+- `https://uttarafarm.com/timeline/`
+- `https://uttarafarm.com/impact/`
+- `https://uttarafarm.com/how-we-work/`
+- `https://uttarafarm.com/contact/`
 
-### 9 — Publish to S3
+## Useful outputs
 
-21. **`aws s3 sync combined/ s3://uttarafarm-website-bucket --delete`**
+- `./scripts/tf-output.sh global_accelerator_ip_addresses`
+- `./scripts/tf-output.sh global_accelerator_dns_name`
+- `./scripts/tf-output.sh alb_dns_name`
+- `./scripts/tf-output.sh acm_validation_records`
 
-### 10 — Invalidate CloudFront cache
+## Local development
 
-22. **`aws cloudfront create-invalidation --distribution-id E1G4MH1W1ZHIDY --paths "/*"`**
+- `npm run dev`
+- or `./scripts/test-local.sh`
 
-### 11 — Public DNS (traffic to CloudFront)
+## Terraform destroy
 
-23. For **`uttarafarm.com`** (canonical), **`www`** **→** **CNAME** to the **`cloudfront_domain_name`** value from Terraform output (omit `https://` in DNS).
-24. **Apex (`@`)** for the canonical zone → registrar **HTTP redirect** to `www` **or** your provider’s **ALIAS/ANAME** to the same CloudFront target, per registrar docs.
-25. For **`uttarafarm.in`**, **`uttarafarms.com`**, **`uttarafarms.in`**, and **`uttara.farm`**, configure **redirect/forward** to **`uttarafarm.com`** at the registrar or DNS only (see [Domains (canonical deploy)](#domains-canonical-deploy)); no CloudFront or Terraform updates in this repo.
+This destroys everything managed by Terraform (S3, EC2/ALB, Global Accelerator, ACM, Route53 managed records):
 
-### 12 — Verify
+- `FORCE_DESTROY_ALL=true bash scripts/tf-destroy-all.sh`
 
-Open in a browser (replace `<domain>` with your live hostname):
+## Repo structure
 
-- `https://<domain>/`
-- `https://<domain>/story/`
-- `https://<domain>/timeline/`
-- `https://<domain>/impact/`
-- `https://<domain>/how-we-work/`
-- `https://<domain>/contact/`
-- Unknown path → custom **404** page
-
-### Subsequent deploys (content change only — infra unchanged)
-
-When S3 bucket and CloudFront already exist:
-
-1. **`npm run build:combined`**
-2. **`aws login`** (if not already authenticated)
-3. **`aws s3 sync combined/ s3://uttarafarm-website-bucket --delete`**
-4. **`aws cloudfront create-invalidation --distribution-id E1G4MH1W1ZHIDY --paths "/*"`**
-
-## Local Development
-
-```bash
-npm install
-npm run dev
-```
-
-Convenience script:
-
-```bash
-./scripts/test-local.sh
-```
-
-`./scripts/test-local.sh` ensures a local `.venv` exists (Python 3; optional packages only if listed in [`requirements.txt`](requirements.txt)), installs npm deps if needed, binds Vite to **127.0.0.1:9999** with `--strictPort`, opens the browser, and tears down on exit (`Ctrl+C`).
-
-For the default dev server (`npm run dev`), Vite chooses host/port from its defaults. Use `npm run test:local` when you want the scripted flow (fixed port **9999**, optional Python `.venv`). After `npm run build`, use `npm run preview` to sanity-check production output locally.
-
-## Build and Artifact Generation
-
-```bash
-npm run build:combined
-```
-
-What this does:
-
-1. Runs TypeScript project build (`tsc -b`) plus `vite build` into `dist/`
-2. Copies `dist/` into `combined/` (see [`scripts/generate-combined.sh`](scripts/generate-combined.sh))
-3. Creates directory-index entrypoints (`<route>/index.html`) so the S3 website host can resolve trailing-slash paths without SPA hacks:
-   - `/timeline/`, `/story/`, `/impact/`, `/contact/`, `/how-we-work/`
-4. Copies `/llms.txt` to `/llm.txt` alias in `combined/`
-
-`combined/` is the folder to sync to S3.
-
-## App routes (`src/App.tsx`)
-
-| Path | Renders |
-| --- | --- |
-| `/` | Home |
-| `/story`, `/timeline`, `/impact` | Story / About (`About.tsx`) |
-| `/how-we-work` | How we work (`HowWeWork.tsx` → [`src/how-we-work/`](src/how-we-work/)) |
-| `/contact` | Contact |
-| `*` | Custom 404 (`NotFound.tsx`) |
-
-String assets for the `/how-we-work` page live in [`src/how-we-work/copy.en.json`](src/how-we-work/copy.en.json) and [`src/how-we-work/copy.mr.json`](src/how-we-work/copy.mr.json).
-
-## Internationalization
-
-- Strings: [`src/locales/en.json`](src/locales/en.json) and [`src/locales/mr.json`](src/locales/mr.json).
-- Wiring: [`src/contexts/LanguageContext.tsx`](src/contexts/LanguageContext.tsx) (`t()`, `locale`, `setLocale`). Manual preference is stored in `localStorage` under `uttarafarm-locale` and overrides device defaults.
-
-See [`DEVICE_LANGUAGE_DEFAULTS.md`](DEVICE_LANGUAGE_DEFAULTS.md) for Android vs iOS default locale behavior on first visit.
-
-## Path B model (reference)
-
-The numbered sequence in [Host the website (individual steps)](#host-the-website-individual-steps) is Path B:
-
-- Terraform **phase 1**: `./scripts/tf-apply-phase1.sh` provisions **S3** + requests **ACM**, using **`-target`** so CloudFront-heavy resources wait until ACM validation CNAMEs exist (see [`scripts/tf-apply-phase1.sh`](scripts/tf-apply-phase1.sh)).
-- **External DNS**: ACM validation CNAMEs at your DNS provider; `./scripts/check-acm-dns.sh` polls status.
-- Terraform **phase 2**: `./scripts/tf-apply.sh` applies the remainder (CloudFront, validation completion, wiring).
-- **Content**: **`combined/` → S3** then **CloudFront invalidation**. Public traffic uses registrar DNS (**`www` CNAME → CloudFront**; apex per provider).
-
-Debugging output (when defined in Terraform): **`./scripts/tf-output.sh s3_website_endpoint`** for the bare S3 website hostname (distinct from CloudFront).
-
-### Rollback
-
-1. Re-sync a previous known-good **`combined/`** tree to **`s3://uttarafarm-website-bucket`**
-2. Run **`aws cloudfront create-invalidation --distribution-id E1G4MH1W1ZHIDY`** for **`"/*"`** or only the impacted paths.
-3. If DNS cutover was wrong, restore the registrar’s previous target.
-
-### Governance and ongoing operations
-
-- Keep tag set on resources:
-  - `Project`
-  - `Environment`
-  - `ManagedBy`
-  - optional: `Owner`, `CostCenter`
-- List tagged resources:
-  - `./scripts/list-tagged-resources.sh`
-  - `TAG_KEY=Environment TAG_VALUE=personal ./scripts/list-tagged-resources.sh`
-- Use `./scripts/tf-refresh.sh` and `./scripts/tf-plan.sh` for drift checks
-- Keep architecture docs/versioning aligned with infra changes
-
-## AI/LLM Compatibility Files
-
-Published at site root through `public/`:
-
-- `/robots.txt`
-- `/sitemap.xml`
-- `/llms.txt`
-- `/llm.txt` (compatibility alias, produced during `build:combined`)
-
-Update these whenever public routes or site purpose change.
-
-## Repo layout (high level)
-
-- `src/` — React application
-- `public/` — Static files emitted at site root (`robots.txt`, `sitemap.xml`, assets, etc.)
-- `diagrams/` — LaTeX source for the entity diagram SVG
-- `combined/` — **generated** deploy tree (gitignored typical); do not edit by hand
-- `terraform/` — Infrastructure-as-code consumed by `./scripts/tf-*.sh` (see [`GLOBAL_ARCHITECTURE.md`](GLOBAL_ARCHITECTURE.md))
-- `config/` — Local-only templates for AWS/Terraform vars (see Phase 1 in the Path B runbook)
-- `scripts/` — Build helpers, Terraform wrappers, ACM checks
-
-## How We Work Diagram (LaTeX)
-
-The `/how-we-work` page uses an SVG diagram rendered from:
-
-- `diagrams/how-we-work-entity-diagram.tex`
-
-To regenerate the SVG after editing the LaTeX source:
-
-```bash
-./scripts/render-how-we-work-diagram.sh
-```
-
-This updates:
-
-- `public/assets/how-we-work-entity-diagram.svg`
+- `src/` app source
+- `public/` static public assets
+- `combined/` generated deploy artifact
+- `terraform/` infrastructure
+- `config/` local env and tfvars templates
+- `scripts/` automation scripts

@@ -8,10 +8,8 @@ load_aws_env
 backup_state
 run_tf apply \
   -var-file="${TF_VARS_FILE}" \
-  -target=aws_s3_bucket.site \
-  -target=aws_s3_bucket_public_access_block.site \
-  -target=aws_acm_certificate.site \
+  -var='manage_route53_records=false' \
   -auto-approve
 
 echo ""
-echo "Phase 1 complete. Add ACM DNS validation CNAME records, then run scripts/tf-apply.sh."
+echo "Phase 3 rollback complete. Route53 records managed by Terraform were removed."

@@ -1,0 +1,60 @@
+#!/bin/bash
+set -euo pipefail
+
+dnf update -y
+dnf install -y nginx awscli
+
+mkdir -p /var/www/site
+
+cat >/usr/local/bin/sync-site.sh <<'EOF'
+#!/bin/bash
+set -euo pipefail
+aws s3 sync "s3://${site_bucket_name}" /var/www/site --delete
+EOF
+chmod +x /usr/local/bin/sync-site.sh
+
+/usr/local/bin/sync-site.sh
+
+cat >/etc/nginx/conf.d/site.conf <<'EOF'
+server {
+  listen 80 default_server;
+  server_name _;
+  root /var/www/site;
+  index index.html;
+
+  location / {
+    try_files $uri $uri/ =404;
+  }
+
+  error_page 404 /404.html;
+}
+EOF
+
+systemctl enable nginx
+systemctl restart nginx
+
+cat >/etc/systemd/system/site-sync.service <<'EOF'
+[Unit]
+Description=Sync static site from S3
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/sync-site.sh
+EOF
+
+cat >/etc/systemd/system/site-sync.timer <<'EOF'
+[Unit]
+Description=Run static site sync every 5 minutes
+
+[Timer]
+OnBootSec=90
+OnUnitActiveSec=300
+Unit=site-sync.service
+
+[Install]
+WantedBy=timers.target
+EOF
+
+systemctl daemon-reload
+systemctl enable --now site-sync.timer
