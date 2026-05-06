@@ -6,7 +6,7 @@ ensure_config_files
 load_aws_env
 
 if ! command -v jq >/dev/null 2>&1; then
-  echo "error: jq is required (same as inspecting JSON from ./scripts/tf-output.sh in README step 15)." >&2
+  echo "error: jq is required to parse Terraform JSON output." >&2
   exit 1
 fi
 

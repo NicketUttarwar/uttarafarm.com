@@ -15,19 +15,13 @@ This repository deploys one static website stack:
 - Runtime platform: AWS (`us-east-1`)
 - DNS provider: GoDaddy (primary flow)
 
-### Critical DNS constraint
-
-GoDaddy does **not** support using a CloudFront hostname as an apex (`@`) CNAME target.
-Because apex CNAME is not viable for this setup, the stack must expose static IP addresses for apex DNS.
-
 ### High-level request path
 
 1. User requests `https://<domain>/path/`
-2. DNS resolves `@` and optionally `www` to Global Accelerator static IPv4 addresses
-3. Global Accelerator routes traffic to ALB endpoint
-4. ALB terminates TLS with ACM certificate and forwards to EC2 target group
-5. EC2 nginx serves static files from local disk synced from S3
-6. Response returns through ALB and Global Accelerator
+2. DNS resolves `@` and optionally `www` to CloudFront (provider-specific configuration)
+3. CloudFront terminates TLS with ACM certificate and fetches origin objects
+4. CloudFront reads from private S3 using origin access control (OAC)
+5. CloudFront returns cached or fetched content to clients
 
 ---
 
@@ -45,12 +39,9 @@ Terraform provisions:
 
 - S3 bucket for artifact storage (private)
 - ACM certificate and validation resource
-- Security groups
-- IAM role/policy/profile for EC2 S3-read access
-- Launch template + Auto Scaling Group
-- ALB + listeners + target group
-- Global Accelerator + listener + endpoint group
-- Optional Route53 records
+- CloudFront origin access control
+- CloudFront distribution
+- S3 bucket policy allowing CloudFront access
 
 State backend is local: `terraform/state/terraform.tfstate`.
 
@@ -61,18 +52,15 @@ State backend is local: `terraform/state/terraform.tfstate`.
 3. Required infra vars:
    - `site_bucket_name`
    - `domain_names`
-   - `vpc_id`
-   - `public_subnet_ids`
-   - `web_ami_id`
 4. `./scripts/tf-init.sh`
 5. `./scripts/tf-plan.sh`
 6. `./scripts/tf-apply-phase1.sh` (S3 + ACM request)
 7. Add ACM validation CNAMEs at DNS provider
 8. Confirm certificate `ISSUED`
-9. `./scripts/tf-apply.sh` (ALB/ASG/Global Accelerator and related resources)
+9. `./scripts/tf-apply.sh` (CloudFront and related resources)
 10. `aws s3 sync combined/ s3://<bucket> --delete`
-11. `./scripts/tf-output.sh global_accelerator_ip_addresses`
-12. Set GoDaddy apex `A` records to those IPs
+11. `./scripts/tf-output.sh cloudfront_domain_name`
+12. Configure GoDaddy apex + `www` using CloudFront instructions
 
 ---
 
@@ -92,29 +80,13 @@ Core identity and routing inputs:
 - `environment`
 - `site_bucket_name`
 - `domain_names`
-- `vpc_id`
-- `public_subnet_ids`
-- `web_ami_id`
-
-Capacity controls:
-
-- `web_instance_type`
-- `web_desired_capacity`
-- `web_min_size`
-- `web_max_size`
-
-Optional DNS controls:
-
-- `manage_route53_records`
-- `route53_zone_id`
-- `route53_zone_name`
-- `create_route53_zone`
+- `common_tags`
 
 ## Outputs relevant to DNS cutover
 
-- `global_accelerator_ip_addresses` (primary GoDaddy apex targets)
-- `global_accelerator_dns_name`
-- `alb_dns_name`
+- `cloudfront_domain_name` (target for DNS setup)
+- `cloudfront_distribution_id`
+- `cloudfront_hosted_zone_id`
 - `acm_validation_records`
 
 ---
@@ -124,16 +96,13 @@ Optional DNS controls:
 Two DNS workflows remain separate and must not be mixed:
 
 1. **ACM validation records** (CNAMEs for certificate issuance)
-2. **Traffic records** (A records for apex/site routing)
+2. **Traffic records** (apex and `www` routing to CloudFront)
 
 ### GoDaddy production model
 
-- Apex (`@`): two `A` records, one per Global Accelerator IP
-- `www`: CNAME to apex, or two `A` records to same IPs
-
-### Optional Route53 model
-
-If using Route53 through Terraform phase 3, the records point to Global Accelerator IPs (not CloudFront aliases).
+- Follow this guide for apex setup:
+  - <https://getintokube.com/how-to-point-godaddy-apex-domain-to-cloudfront>
+- Use `cloudfront_domain_name` from Terraform output for provider record setup.
 
 ---
 
@@ -155,9 +124,9 @@ If using Route53 through Terraform phase 3, the records point to Global Accelera
 
 ## C. Runtime ingress and DNS checks
 
-- `./scripts/tf-output.sh global_accelerator_ip_addresses`
-- `./scripts/tf-output.sh global_accelerator_dns_name`
-- `./scripts/tf-output.sh alb_dns_name`
+- `./scripts/tf-output.sh cloudfront_distribution_id`
+- `./scripts/tf-output.sh cloudfront_domain_name`
+- `./scripts/tf-output.sh cloudfront_hosted_zone_id`
 - Validate domain HTTPS responses after GoDaddy updates
 
 ## D. Content checks
@@ -186,7 +155,7 @@ Use `scripts/list-tagged-resources.sh` for inventory checks.
 - Keep `config/aws.env` and `config/terraform.tfvars` uncommitted.
 - Use least-privilege IAM for operators and runtime role.
 - Run plan before apply.
-- Keep at least two public subnets for ALB high availability.
+- Keep CloudFront distribution settings aligned with security requirements.
 - Treat state changes as sensitive infra operations.
 
 ---
@@ -197,7 +166,7 @@ Managed in this repo:
 
 - AWS infrastructure and outputs
 - Terraform wrappers and deployment workflow
-- DNS guidance for GoDaddy and optional Route53
+- DNS guidance for GoDaddy with CloudFront
 
 Not managed in this repo:
 
@@ -209,6 +178,6 @@ Not managed in this repo:
 
 ## 9) Document Version
 
-- Version: `v0.2.0`
-- Last updated: `2026-05-05`
-- Change class: CloudFront-era docs replaced with Global Accelerator static-IP architecture for GoDaddy apex compatibility.
+- Version: `v0.3.0`
+- Last updated: `2026-05-06`
+- Change class: reverted from static-IP ingress stack to CloudFront + S3 architecture.

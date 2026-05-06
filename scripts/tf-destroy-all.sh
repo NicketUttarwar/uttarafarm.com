@@ -27,12 +27,12 @@ trap 'rm -f "${TMP_VARS_FILE}"' EXIT
 awk '
   /^[[:space:]]*#/ { print; next }
   /^[[:space:]]*$/ { print; next }
-  /^[[:space:]]*(project_name|environment|aws_region|site_bucket_name|domain_names|vpc_id|public_subnet_ids|web_ami_id|common_tags|route53_zone_name|route53_zone_id|create_route53_zone|manage_route53_records|web_instance_type|web_desired_capacity|web_min_size|web_max_size)[[:space:]]*=/ { print; next }
+  /^[[:space:]]*(project_name|environment|aws_region|site_bucket_name|domain_names|common_tags)[[:space:]]*=/ { print; next }
   /^[[:space:]]*}/ { print; next }
 ' "${TF_VARS_FILE}" > "${TMP_VARS_FILE}"
 
 echo "warning: this will destroy ALL Terraform-managed infrastructure for this repo."
-echo "warning: includes S3, ACM, EC2/ALB, Global Accelerator, and Route53 resources in Terraform state."
+echo "warning: includes S3, CloudFront, and ACM resources in Terraform state."
 echo ""
 
 if [[ "${FORCE_DESTROY_ALL:-false}" != "true" ]]; then

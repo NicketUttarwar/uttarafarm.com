@@ -10,7 +10,7 @@ output "site_bucket_name" {
   value = aws_s3_bucket.site.bucket
 }
 
-output "s3_website_endpoint" {
+output "s3_bucket_regional_domain_name" {
   value = aws_s3_bucket.site.bucket_regional_domain_name
 }
 
@@ -29,22 +29,14 @@ output "acm_validation_records" {
   ]
 }
 
-output "route53_zone_id" {
-  value = var.manage_route53_records ? local.route53_resolved_zone_id : null
+output "cloudfront_distribution_id" {
+  value = aws_cloudfront_distribution.site.id
 }
 
-output "route53_name_servers" {
-  value = var.manage_route53_records && var.create_route53_zone ? aws_route53_zone.public_managed[0].name_servers : null
+output "cloudfront_domain_name" {
+  value = aws_cloudfront_distribution.site.domain_name
 }
 
-output "alb_dns_name" {
-  value = aws_lb.site.dns_name
-}
-
-output "global_accelerator_dns_name" {
-  value = aws_globalaccelerator_accelerator.site.dns_name
-}
-
-output "global_accelerator_ip_addresses" {
-  value = local.global_accelerator_ip_addresses
+output "cloudfront_hosted_zone_id" {
+  value = aws_cloudfront_distribution.site.hosted_zone_id
 }

@@ -1,29 +1,17 @@
 # uttarafarm.com
 
-Static website for Uttara Farm (Vite + React + TypeScript + Tailwind), deployed on AWS with a GoDaddy-compatible apex DNS architecture.
-
-## What changed
-
-This repo now uses an architecture that ends with **static public IP addresses** so you can set apex records (`@`) in GoDaddy:
-
-- Build artifact in `combined/`
-- Private S3 bucket stores website files
-- EC2 web nodes run nginx and pull site files from S3
-- ALB terminates TLS with ACM cert
-- AWS Global Accelerator fronts ALB and provides static Anycast IPs
-- GoDaddy apex uses `A` records to those Global Accelerator IPs
+Static website for Uttara Farm (Vite + React + TypeScript + Tailwind), deployed on AWS using S3 + CloudFront.
 
 ## AWS architecture
 
-`combined/ -> S3 (private) -> EC2/nginx -> ALB (HTTPS) -> Global Accelerator (static IPv4)`
+`combined/ -> S3 (private) -> CloudFront (HTTPS)`
 
 ## Domains and DNS
 
 - Canonical domain: `uttarafarm.com`
 - Optional: `www.uttarafarm.com`
-- You can add both to `domain_names` in Terraform.
-
-Because GoDaddy does not support apex CNAME to CloudFront, this stack outputs static IPs for apex `A` records.
+- Add both to `domain_names` in Terraform.
+- This repo does **not** provision Route53 records.
 
 ## Prerequisites
 
@@ -33,111 +21,146 @@ Because GoDaddy does not support apex CNAME to CloudFront, this stack outputs st
 - AWS CLI v2
 - `jq`
 
-## Setup
+## Complete deploy flow (copy-paste)
 
-1. `cp config/aws.env.example config/aws.env`
-2. Edit `config/aws.env` with AWS credentials and `AWS_DEFAULT_REGION=us-east-1`
-3. `cp config/terraform.tfvars.example config/terraform.tfvars`
-4. Edit `config/terraform.tfvars`:
-   - `site_bucket_name`
-   - `domain_names`
-   - `vpc_id`
-   - `public_subnet_ids` (at least two public subnets in that VPC)
-   - `web_ami_id` (an approved AMI in `us-east-1`, e.g. Amazon Linux 2023)
-   - Route53 fields only if you want Terraform-managed Route53
+Run all commands from the repository root.
 
-## Deploy infrastructure
+### 1) Create local config files
 
-Run from repo root:
+```bash
+cp config/aws.env.example config/aws.env
+cp config/terraform.tfvars.example config/terraform.tfvars
+```
 
-1. `./scripts/tf-version.sh`
-2. `./scripts/tf-init.sh`
-3. `./scripts/tf-fmt-validate.sh`
-4. `./scripts/tf-plan.sh`
+### 2) Fill AWS credentials and region
 
-### Phase 1 (creates S3 + ACM cert request)
+Edit `config/aws.env` and set real values:
 
-5. `./scripts/tf-apply-phase1.sh`
+```bash
+AWS_ACCESS_KEY_ID=REPLACE_ME
+AWS_SECRET_ACCESS_KEY=REPLACE_ME
+AWS_DEFAULT_REGION=us-east-1
+```
 
-### Add ACM DNS validation records
+### 3) Fill Terraform variables
 
-6. `./scripts/tf-output.sh acm_validation_records`
-7. Add all returned CNAMEs at your DNS provider
-8. `./scripts/check-acm-dns.sh` until certificate status is `ISSUED`
+Edit `config/terraform.tfvars` and set real values:
 
-### Full apply
+```hcl
+project_name     = "uttarafarm"
+environment      = "independent-ventures"
+aws_region       = "us-east-1"
+site_bucket_name = "uttarafarm-website-bucket"
+domain_names     = ["uttarafarm.com", "www.uttarafarm.com"]
 
-9. `./scripts/tf-apply.sh`
+common_tags = {
+  Owner      = "nicket"
+  CostCenter = "uttarafarm-web"
+}
+```
 
-## Build and publish site content
+### 4) Initialize and validate Terraform
 
-1. `npm install`
-2. `npm run build:combined`
-3. `aws s3 sync combined/ s3://<your-site_bucket_name> --delete`
+```bash
+./scripts/tf-version.sh
+./scripts/tf-init.sh
+./scripts/tf-fmt-validate.sh
+./scripts/tf-plan.sh
+```
 
-Example:
+### 5) Apply phase 1 (S3 + ACM certificate request)
 
-`aws s3 sync combined/ s3://uttarafarm-website-bucket --delete`
+```bash
+./scripts/tf-apply-phase1.sh
+```
 
-No CloudFront invalidation is required in this architecture.
+### 6) Add ACM DNS validation records
 
-## GoDaddy apex DNS setup (critical)
+Get validation CNAME records:
 
-After `./scripts/tf-apply.sh`, fetch static IPs:
+```bash
+./scripts/tf-output.sh acm_validation_records
+```
 
-- `./scripts/tf-output.sh global_accelerator_ip_addresses`
+Add the returned CNAMEs in your DNS provider, then check status:
 
-You will get two IPv4 addresses. In GoDaddy DNS:
+```bash
+./scripts/check-acm-dns.sh
+```
 
-1. Create `A` record for host `@` to IP #1
-2. Create second `A` record for host `@` to IP #2
-3. (Optional) `www` record:
-   - either `CNAME www -> uttarafarm.com`
-   - or two `A` records for `www` to the same two IPs
+Repeat the status command until certificate `Status` is `ISSUED`.
 
-Recommended TTL: 600 seconds.
+### 7) Apply full infrastructure
 
-## Optional Route53-managed DNS
+```bash
+./scripts/tf-apply.sh
+```
 
-If you want Terraform to manage DNS in Route53 instead of GoDaddy records:
+### 8) Build and upload website content
 
-1. Set `route53_zone_id` (preferred), or `route53_zone_name`
-2. `bash scripts/tf-apply-phase3-dns.sh`
+```
+aws s3 sync combined/ "s3://uttarafarm-website-bucket" --delete
+```
 
-That creates Route53 `A` records pointing all `domain_names` to Global Accelerator IPs.
+### 9) Invalidate CloudFront cache
 
-Rollback Route53 DNS phase:
+Invalidate all cached paths (recommended after each deploy):
 
-- `bash scripts/tf-destroy-phase3-dns.sh`
+```
+aws cloudfront create-invalidation --distribution-id "E2PT8PD4NYQX5K" --paths "/*"
+```
 
-## Verify
+### 10) Configure GoDaddy apex + www to CloudFront
 
-Check:
+Get the CloudFront domain:
 
-- `https://uttarafarm.com/`
-- `https://uttarafarm.com/story/`
-- `https://uttarafarm.com/timeline/`
-- `https://uttarafarm.com/impact/`
-- `https://uttarafarm.com/how-we-work/`
-- `https://uttarafarm.com/contact/`
+```bash
+./scripts/tf-output.sh cloudfront_domain_name
+```
 
-## Useful outputs
+Then configure apex and `www` in GoDaddy using:
 
-- `./scripts/tf-output.sh global_accelerator_ip_addresses`
-- `./scripts/tf-output.sh global_accelerator_dns_name`
-- `./scripts/tf-output.sh alb_dns_name`
-- `./scripts/tf-output.sh acm_validation_records`
+- [How to point GoDaddy apex domain to CloudFront](https://getintokube.com/how-to-point-godaddy-apex-domain-to-cloudfront)
+
+### 11) Verify routes
+
+```bash
+curl -I https://uttarafarm.com/
+curl -I https://uttarafarm.com/story/
+curl -I https://uttarafarm.com/timeline/
+curl -I https://uttarafarm.com/impact/
+curl -I https://uttarafarm.com/how-we-work/
+curl -I https://uttarafarm.com/contact/
+```
+
+## Useful Terraform outputs
+
+```bash
+./scripts/tf-output.sh cloudfront_distribution_id
+./scripts/tf-output.sh cloudfront_domain_name
+./scripts/tf-output.sh cloudfront_hosted_zone_id
+./scripts/tf-output.sh acm_validation_records
+```
 
 ## Local development
 
-- `npm run dev`
-- or `./scripts/test-local.sh`
+```bash
+npm run dev
+```
+
+or
+
+```bash
+./scripts/test-local.sh
+```
 
 ## Terraform destroy
 
-This destroys everything managed by Terraform (S3, EC2/ALB, Global Accelerator, ACM, Route53 managed records):
+This destroys everything managed by Terraform (S3, CloudFront, ACM):
 
-- `FORCE_DESTROY_ALL=true bash scripts/tf-destroy-all.sh`
+```bash
+FORCE_DESTROY_ALL=true bash scripts/tf-destroy-all.sh
+```
 
 ## Repo structure
 
