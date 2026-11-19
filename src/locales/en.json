@@ -5,8 +5,8 @@
       "description": "A social initiative supporting farmers in Ralegaon and Vidarbha, Maharashtra with turmeric and ginger expertise, soil testing, and access to major markets."
     },
     "about": {
-      "title": "About — Uttara Farm & Vijay Uttarwar",
-      "description": "Uttara Farm is a social project led by Vijay Uttarwar, founder of Naturell (Max Protein and more), which joined Zydus Wellness in 2024—giving back to villages near Ralegaon."
+      "title": "Our Story — Vijay Uttarwar & Uttara Farm",
+      "description": "From Bhamb to Naturell, Max Protein, and Zydus Wellness — Vijay Uttarwar’s full-circle journey back to farming communities in Vidarbha through Uttara Farm."
     },
     "contact": {
       "title": "Contact — Uttara Farm",
@@ -97,111 +97,61 @@
     "note": "uttarafarm.com"
   },
   "aboutPage": {
-    "badge": "Social project",
-    "title": "From Bhamb to building Naturell, and back to Bhamb",
-    "lead": "This page tells one connected story: Vijay Uttarwar grew up in Bhamb, built Naturell into a nationally recognized nutrition business, and is now using that success to give back through Uttara Farm.",
-    "p1": "Vijay’s roots are in Bhamb, near Ralegaon in Vidarbha. The realities of village farming shaped his worldview long before entrepreneurial success.",
-    "p2": "Through Naturell, RiteBite, and Max Protein, he built brands that scaled across India and eventually became part of the 2024 Zydus Wellness transaction.",
-    "p3": "That journey created not just financial outcomes but operating experience, networks, and execution capability at scale.",
-    "p4": "Uttara Farm is the return journey: applying those learnings to improve farmer livelihoods in and around the same villages he comes from.",
-    "logosTitle": "Logos",
-    "logosIntro": "A dedicated space for Uttara Farm identity assets, with room for additional local logos in future.",
-    "logosTabMain": "Main Logo",
-    "logosTabFuture": "More Local Logos (Soon)",
-    "logoMainAlt": "Uttara Farm official logo",
-    "logoMainCaption": "Uttara Farms logo — primary website identity",
-    "storyTitle": "Company story",
-    "storyIntro": "The journey spans Vijay Uttarwar’s entrepreneurial path: Naturell, RiteBite, Max Protein, and the 2024 sale to Zydus Wellness.",
-    "gallery": {
-      "title": "Image Gallery",
-      "intro": "Every image from the website asset library is available below. Use tabs to switch between images already in the story and additional assets such as logos.",
-      "tabIncluded": "Story Images",
-      "tabExtra": "Additional Images & Logos",
-      "extraLogoAlt": "Uttara Farms logo",
-      "extraLogoTitle": "Uttara Farms logo asset",
-      "extraLogoBody": "Primary Uttara Farms brand logo from the asset library.",
-      "extraRitebiteAlt": "RiteBite product visual",
-      "extraRitebiteTitle": "RiteBite standalone visual",
-      "extraRitebiteBody": "Additional RiteBite image from the asset library that is now reintegrated on site."
-    },
-    "story": {
-      "altNaturell": "Naturell brand visual",
-      "naturellTitle": "Vijay Uttarwar and the formation of Naturell",
-      "naturellBody": "Naturell was formed to build modern nutrition products for Indian consumers, laying the entrepreneurial foundation that now powers Uttara Farm’s social mission.",
-      "altStevia": "Real stevia plant photo",
-      "ritebiteTitle": "Stugar launches as a Stevia sweetening milestone",
-      "ritebiteBody": "Naturell first built Stugar around Stevia as a separate sweetener-focused effort. RiteBite came afterward as a distinct next chapter in everyday nutrition snacking.",
-      "altMaxProteinLaunch": "RiteBite and Max Protein visual",
-      "maxProteinTitle": "Creation of the Max Protein brand",
-      "maxProteinBody": "The Max Protein line expanded the portfolio into mainstream protein-rich snacks and became one of the most visible outcomes of the Naturell journey.",
-      "altMaxProteinScale": "Scaled Max Protein portfolio",
-      "scaleTitle": "Scaling the portfolio",
-      "scaleBody": "RiteBite and Max Protein scaled across categories and channels, proving that Indian nutrition brands could combine health positioning with mass-market appeal.",
-      "altZydus": "Zydus Wellness stock visual",
-      "zydusTitle": "Sale to Zydus Wellness in 2024",
-      "zydusBody": "In 2024, Naturell was sold to Zydus Wellness, marking a major milestone and enabling Vijay to channel experience and networks back into village-focused initiatives."
-    },
-    "timeline": {
-      "title": "Full Story Timeline",
-      "intro": "The complete arc of Vijay Uttarwar's journey shown as a circular narrative: every milestone feeds the next and ultimately loops back to village impact.",
-      "centerLabel": "Journey loops back to rural impact",
-      "stepLabel": "Step {n}",
-      "phase": {
-        "act1": "Act 1",
-        "act2": "Act 2",
-        "act3": "Act 3"
+    "badge": "Our story",
+    "title": "From Bhamb to the world — and back again",
+    "lead": "Vijay Uttarwar’s journey runs from a farming village in Vidarbha to agriculture college, computer science in America, building Naturell and Max Protein, joining Zydus Wellness — and returning to Bhamb through Uttara Farm.",
+    "sections": {
+      "roots": {
+        "title": "Roots in the land",
+        "p1": "Eight generations back, the family’s story begins in Uttur, a small village near Hyderabad in Andhra Pradesh. Ancestors migrated into Maharashtra. In Andhra, people were addressed by village name with respect — Uttur Garu. In Maharashtra that became the surname Uttarwar.",
+        "p2": "Vijay grew up on the family farm in Bhamb. Childhood meant school, farm animals, hide-and-seek, and festivals like Ganesh when the whole village came together. Celebration was never only about the festival — it was about belonging.",
+        "p3": "With no local doctor or grocery store, his mother’s home became the village pharmacy for first aid. That give-and-take built a culture of oneness: not just family, but the whole village as an extended family."
       },
-      "events": {
-        "roots": {
-          "title": "Bhamb roots and a bigger dream",
-          "detail": "Vijay grew up in Bhamb near Ralegaon, where farming shaped everyday life. That early exposure stayed with him while he built his professional career."
-        },
-        "naturellBegins": {
-          "title": "Naturell begins with a health-first mission",
-          "detail": "Naturell started with the vision of combining healthier food products with long-term value creation."
-        },
-        "pivot": {
-          "title": "Setback, pivot, and product learning",
-          "detail": "After early regulatory challenges, the team pivoted into nutrition snacks and steadily improved product fit, positioning, and category understanding."
-        },
-        "scale": {
-          "title": "RiteBite and Max Protein scale nationally",
-          "detail": "Focused innovation, wider distribution, and clear consumer use-cases helped build RiteBite and Max Protein into widely recognized brands."
-        },
-        "zydus": {
-          "title": "Naturell joins Zydus Wellness",
-          "detail": "The 2024 transaction with Zydus Wellness marked a major milestone and validated years of brand-building and execution."
-        },
-        "impact": {
-          "title": "Success circles back to village impact",
-          "detail": "With the Naturell journey at scale, Vijay turned his attention to giving back to Bhamb, Ralegaon, and nearby farming communities through Uttara Farm."
-        }
+      "education": {
+        "title": "Choosing agriculture — and discovering computers",
+        "p1": "His father believed deeply in education. With no school beyond the early grades in the village, Vijay was sent to Nagpur for English-medium schooling — a seventh-grader living in a lodge with a cousin, against his grandfather’s strong opposition. The memories were hard, but lasting.",
+        "p2": "Even as a student he helped his father with farm supervision. Offered both engineering and agriculture, his father let him decide. Heart chose agriculture: BSc from Akola, then MSc in agronomy from Nagpur — university topper and gold medalist.",
+        "p3": "In 1983–84, a single computer behind glass in an air-conditioned room at the agriculture university fascinated him. He learned Fortran on punch cards and used programming for statistical analysis instead of manual calculation — a curiosity that opened the door to computer science in the United States."
+      },
+      "america": {
+        "title": "America, marriage, and a decade away",
+        "p1": "US universities admitted him with prerequisites; he finished coursework in two years while taking many extra courses. Life then brought Smita into the story: engaged on 14 January and married four days later — about four thousand guests, made possible by the goodwill of her father’s medical and philanthropic standing.",
+        "p2": "From 1989 to 1999 they built a life in the United States — education, work, and family. Home was never entirely behind them. When they returned to India, adjusting to school and society again was challenging at first, then it settled."
+      },
+      "return": {
+        "title": "From software back to the farmer",
+        "p1": "Vijay looks at life as a journey with ups and downs. Moving from the software industry, he wanted to do something for the farmer. Stevia offered many times the income of jowar, cotton, or soybean. Naturell began around that idea: understand demand, then grow supply at the scale the market needed.",
+        "p2": "When regulators said stevia could not be sold as a sweetener unless officially listed, the company already had about forty people. Instead of shutting down, they pivoted into something new — Max Protein — with Smita’s kitchen trials, food technologists, and nearly two years of formulating until Choco Delight, a bar still loved today."
+      },
+      "uttara": {
+        "title": "Uttara Farm: making farming viable again",
+        "p1": "Yavatmal is too often known for farmer distress. Vijay cannot change everything alone, but he asked what small bit he could do. The core problem is income: when earnings cannot cover debt, pressure becomes unbearable.",
+        "p2": "Not all farmers in Maharashtra are poor. Nashik, Pune, Kolhapur, Satara, and Bhusawal show what organised high-value crops and infrastructure can do. Sugar in western Maharashtra and bananas around Bhusawal prove the model. Uttara Farm applies that same thought process locally.",
+        "p3": "He looks at farming as industry: expert growing and hand-holding, supply-chain efficiency, and marketing that reaches consumers. Early work with about twenty-five farmers is showing strong crops; the next step is scale through a cooperative or FPO so every last rupee can go to the farmer.",
+        "p4": "The larger ambition is reverse migration — retaining talent so graduates earning a modest city salary can live well in the village instead of leaving it behind."
+      },
+      "circle": {
+        "title": "Full circle",
+        "p1": "From small-village Bhamb to Nagpur, to the US, back to Mumbai, and now back to Bhamb — personally and professionally, Vijay’s journey has come full circle. Uttara Farm is where that circle meets the land and the people who shaped him."
       }
     },
-    "impact": {
-      "title": "Impact of the Journey",
-      "intro": "This story is not only about one founder. It shows how a successful business journey can create value for many groups and then return that value to the village ecosystem.",
-      "groups": {
-        "people": {
-          "title": "People and teams",
-          "p1": "Employees and contributors participated in value creation as the company scaled.",
-          "p2": "A continuity-focused approach protected long-term careers and capability building."
-        },
-        "investors": {
-          "title": "Investors and shareholders",
-          "p1": "The growth journey created meaningful outcomes for early risk capital.",
-          "p2": "Execution discipline and category expansion translated into durable enterprise value."
-        },
-        "ecosystem": {
-          "title": "Strategic ecosystem",
-          "p1": "The Zydus partnership enabled the brands to move onto a larger national platform.",
-          "p2": "Suppliers, channel partners, and stakeholders benefited from a stronger scaled network."
-        },
-        "villages": {
-          "title": "Village communities in Vidarbha",
-          "p1": "Experience and networks from this entrepreneurial journey now feed back into rural initiatives.",
-          "p2": "Uttara Farm is designed to convert private success into public rural opportunity."
-        }
+    "brands": {
+      "title": "Naturell, Max Protein, and Zydus Wellness",
+      "intro": "A regulatory setback on stevia became the turning point for a nutrition brand that scaled nationally — and later found a home with Zydus Wellness.",
+      "naturell": {
+        "alt": "Naturell brand visual",
+        "title": "Naturell",
+        "body": "Naturell began with stevia as a higher-income crop for farmers and a consumer sweetener business. When that path was blocked, the team rebuilt around nutrition snacking instead of closing shop."
+      },
+      "maxProtein": {
+        "alt": "RiteBite and Max Protein visual",
+        "title": "Max Protein",
+        "body": "Max Protein grew from kitchen trials into a mainstream protein brand. Smita led formulation work — dozens of trials a day — until products like Choco Delight earned lasting consumer love."
+      },
+      "zydus": {
+        "alt": "Zydus Wellness visual",
+        "title": "Zydus Wellness",
+        "body": "The merger with Zydus Wellness marked a new chapter: scale for the brands, and for Vijay and Smita the freedom to return attention to Bhamb and Uttara Farm."
       }
     },
     "backHome": "Back to home"
