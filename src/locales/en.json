@@ -27,7 +27,6 @@
     "ginger": "Why turmeric and ginger",
     "support": "What we provide",
     "region": "Our region",
-    "partners": "Partners",
     "contact": "Contact",
     "about": "About"
   },
@@ -69,16 +68,6 @@
     "p1": "We work in Ralegaon and the wider Vidarbha region of Maharashtra—communities where farming shapes daily life and seasonal income.",
     "p2": "Our effort is deliberately local: solutions should fit Vidarbha’s climate, soils, and the realities of family farms.",
     "mapTitle": "Vidarbha region map"
-  },
-  "partners": {
-    "title": "Partners & contributors",
-    "body": "Uttara Farm brings together field experts, soil-testing partners, and market allies. Names and logos here recognise those who make the programme possible.",
-    "nilesh": "Turmeric and ginger consultants — e.g. Nilesh",
-    "nileshImageAlt": "Placeholder visual for consultant Nilesh",
-    "nileshImageCaption": "Image placeholder for Nilesh (consultant)",
-    "warkem": "Warkem — soil testing kits & support",
-    "warkemImageAlt": "Warkem BioAgri logo from their official website",
-    "visitWebsite": "Visit Warkem BioAgri website"
   },
   "contact": {
     "title": "Contact",

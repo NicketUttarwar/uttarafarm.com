@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "build:combined": "npm run build && bash scripts/generate-combined.sh",
+    "deploy": "bash scripts/deploy.sh",
     "preview": "vite preview",
     "test:local": "bash scripts/test-local.sh"
   },
@@ -23,5 +24,8 @@
     "tailwindcss": "^4.0.0",
     "typescript": "~5.7.2",
     "vite": "^6.0.0"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-darwin-arm64": "^4.68.7"
   }
 }

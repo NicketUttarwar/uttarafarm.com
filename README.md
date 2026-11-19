@@ -98,11 +98,11 @@ Repeat the status command until certificate `Status` is `ISSUED`.
 
 ### 8) Build and upload website content
 
-```
-aws s3 sync combined/ "s3://uttarafarm-website-bucket" --delete
+```bash
+npm run deploy
 ```
 
-CloudFront uses `Managed-CachingDisabled`, so each request reads the current objects from S3. No cache invalidation is needed after sync.
+This loads credentials from `config/aws.env`, builds `combined/`, and syncs to the S3 bucket from `config/terraform.tfvars`. CloudFront uses `Managed-CachingDisabled`, so no cache invalidation is needed after sync.
 
 ### 9) Configure GoDaddy apex + www to CloudFront
 
