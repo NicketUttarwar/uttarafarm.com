@@ -19,6 +19,10 @@ resource "aws_cloudfront_origin_access_control" "site" {
   signing_protocol                  = "sigv4"
 }
 
+data "aws_cloudfront_cache_policy" "caching_disabled" {
+  name = "Managed-CachingDisabled"
+}
+
 resource "aws_acm_certificate" "site" {
   domain_name               = local.primary_domain
   subject_alternative_names = slice(var.domain_names, 1, length(var.domain_names))
@@ -57,14 +61,8 @@ resource "aws_cloudfront_distribution" "site" {
     target_origin_id       = "s3-${aws_s3_bucket.site.id}"
     viewer_protocol_policy = "redirect-to-https"
     compress               = true
-
-    forwarded_values {
-      query_string = false
-
-      cookies {
-        forward = "none"
-      }
-    }
+    # Always fetch current objects from S3; no post-deploy invalidation needed.
+    cache_policy_id        = data.aws_cloudfront_cache_policy.caching_disabled.id
   }
 
   custom_error_response {

@@ -1,5 +1,8 @@
 import { useLanguage } from "../contexts/LanguageContext";
 
+const WHATSAPP_DIGITS = "918356070425";
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_DIGITS}`;
+
 export function Contact() {
   const { t } = useLanguage();
   return (
@@ -27,11 +30,17 @@ export function Contact() {
             </dd>
           </div>
           <div>
-            <dt className="text-sm font-semibold uppercase tracking-wide text-ginger">{t("contact.phoneLabel")}</dt>
+            <dt className="text-sm font-semibold uppercase tracking-wide text-ginger">{t("contact.whatsappLabel")}</dt>
             <dd className="mt-1">
-              <a className="font-medium text-forest underline" href="tel:+919821162605">
+              <a
+                className="font-medium text-forest underline"
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {t("contact.phoneValue")}
               </a>
+              <p className="mt-1 text-sm text-earth/80">{t("contact.phoneNote")}</p>
             </dd>
           </div>
         </dl>

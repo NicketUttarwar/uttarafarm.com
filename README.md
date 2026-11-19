@@ -102,15 +102,9 @@ Repeat the status command until certificate `Status` is `ISSUED`.
 aws s3 sync combined/ "s3://uttarafarm-website-bucket" --delete
 ```
 
-### 9) Invalidate CloudFront cache
+CloudFront uses `Managed-CachingDisabled`, so each request reads the current objects from S3. No cache invalidation is needed after sync.
 
-Invalidate all cached paths (recommended after each deploy):
-
-```
-aws cloudfront create-invalidation --distribution-id "E2PT8PD4NYQX5K" --paths "/*"
-```
-
-### 10) Configure GoDaddy apex + www to CloudFront
+### 9) Configure GoDaddy apex + www to CloudFront
 
 Get the CloudFront domain:
 
@@ -122,7 +116,7 @@ Then configure apex and `www` in GoDaddy using:
 
 - [How to point GoDaddy apex domain to CloudFront](https://getintokube.com/how-to-point-godaddy-apex-domain-to-cloudfront)
 
-### 11) Verify routes
+### 10) Verify routes
 
 ```bash
 curl -I https://uttarafarm.com/

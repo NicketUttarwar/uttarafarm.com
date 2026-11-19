@@ -1,7 +1,7 @@
 import { useLanguage } from "../contexts/LanguageContext";
 
 /** Fallback if display string has no digits (should not happen). */
-const PHONE_DIGITS_FALLBACK = "919821162605";
+const PHONE_DIGITS_FALLBACK = "918356070425";
 
 export function SectionContact() {
   const { t } = useLanguage();
@@ -9,7 +9,6 @@ export function SectionContact() {
   const phoneDisplay = t("contact.phoneValue");
   const digits =
     phoneDisplay.replace(/\D/g, "") || PHONE_DIGITS_FALLBACK;
-  const telLink = `tel:+${digits}`;
   const waUrl = `https://wa.me/${digits}`;
 
   return (
@@ -45,28 +44,23 @@ export function SectionContact() {
           </div>
           <div>
             <dt className="text-sm font-semibold uppercase tracking-wide text-ginger">
-              {t("contact.phoneLabel")}
-            </dt>
-            <dd className="mt-1">
-              <a
-                href={telLink}
-                className="text-lg font-medium text-forest underline decoration-ginger/40 underline-offset-4 hover:decoration-ginger"
-              >
-                {phoneDisplay}
-              </a>
-            </dd>
-          </div>
-          <div>
-            <dt className="text-sm font-semibold uppercase tracking-wide text-ginger">
               {t("contact.whatsappLabel")}
             </dt>
-            <dd className="mt-1 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:gap-3">
-              <span className="text-lg text-earth/95">{phoneDisplay}</span>
+            <dd className="mt-1">
               <a
                 href={waUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex w-fit font-semibold text-forest underline decoration-ginger/40 underline-offset-4 hover:decoration-ginger"
+                className="text-lg font-medium text-forest underline decoration-ginger/40 underline-offset-4 hover:decoration-ginger"
+              >
+                {phoneDisplay}
+              </a>
+              <p className="mt-1 text-sm text-earth/80">{t("contact.phoneNote")}</p>
+              <a
+                href={waUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 inline-flex w-fit font-semibold text-forest underline decoration-ginger/40 underline-offset-4 hover:decoration-ginger"
               >
                 {t("contact.whatsappCta")}
               </a>

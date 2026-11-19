@@ -86,8 +86,9 @@
     "intro": "Farmers, cooperatives, and supporters can reach Vijay directly about Uttara Farm.",
     "emailLabel": "Email",
     "emailValue": "vijay@uttarwar.com",
-    "phoneLabel": "Phone",
-    "phoneValue": "+91 98211 62605",
+    "phoneLabel": "WhatsApp",
+    "phoneValue": "+91 83560 70425",
+    "phoneNote": "WhatsApp messages only — no phone calls",
     "whatsappLabel": "WhatsApp",
     "whatsappCta": "Message on WhatsApp"
   },
