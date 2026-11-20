@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { useLanguage } from "../contexts/LanguageContext";
+import { SpinMark } from "./SpinMark";
 
 const navItems = [
   { labelKey: "nav.home", to: "/" },
@@ -9,24 +10,22 @@ const navItems = [
 ] as const;
 
 const navClass =
-  "rounded-md px-2 py-1.5 text-sm font-medium text-earth/90 hover:bg-forest/10 hover:text-forest";
+  "rounded-sm px-2 py-1.5 text-sm font-medium text-earth/85 hover:bg-forest/10 hover:text-forest";
 const navActive =
-  "rounded-md px-2 py-1.5 text-sm font-semibold bg-forest/10 text-forest";
+  "rounded-sm px-2 py-1.5 text-sm font-semibold bg-forest/10 text-forest";
 
 export function Header() {
   const { locale, setLocale, t } = useLanguage();
 
   return (
     <header
-      className="sticky top-0 z-50 border-b border-forest/10 bg-cream/95 backdrop-blur-md"
+      className="sticky top-0 z-50 border-b border-forest/10 bg-sand/95 backdrop-blur-md"
       role="banner"
     >
-      <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-6">
-        <Link
-          to="/"
-          className="brand-wordmark text-2xl text-forest"
-        >
-          {t("brand")}
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-6">
+        <Link to="/" className="inline-flex items-center gap-2 text-forest">
+          <SpinMark tone="ginger" duration={26} className="text-base opacity-80" />
+          <span className="brand-wordmark text-2xl">{t("brand")}</span>
         </Link>
         <nav
           className="flex flex-1 flex-wrap items-center justify-end gap-1 sm:gap-2"
@@ -41,16 +40,22 @@ export function Header() {
               {t(item.labelKey)}
             </NavLink>
           ))}
+          <SpinMark
+            tone="forest"
+            duration={34}
+            reverse
+            className="hidden text-sm opacity-50 sm:inline-block"
+          />
           <div
-            className="ml-1 flex items-center gap-0.5 rounded-lg border border-forest/20 bg-white/80 p-0.5"
+            className="ml-1 flex items-center gap-0.5 rounded-sm border border-forest/20 bg-paper/90 p-0.5"
             role="group"
             aria-label={t("a11y.languageToggle")}
           >
             <button
               type="button"
               onClick={() => setLocale("en")}
-              className={`rounded-md px-2.5 py-1 text-xs font-semibold transition-colors ${
-                locale === "en" ? "bg-forest text-cream" : "text-earth hover:bg-forest/10"
+              className={`rounded-sm px-2.5 py-1 text-xs font-semibold transition-colors ${
+                locale === "en" ? "bg-forest text-sand" : "text-earth hover:bg-forest/10"
               }`}
               aria-pressed={locale === "en"}
             >
@@ -59,8 +64,8 @@ export function Header() {
             <button
               type="button"
               onClick={() => setLocale("mr")}
-              className={`rounded-md px-2.5 py-1 text-xs font-semibold transition-colors ${
-                locale === "mr" ? "bg-forest text-cream" : "text-earth hover:bg-forest/10"
+              className={`rounded-sm px-2.5 py-1 text-xs font-semibold transition-colors ${
+                locale === "mr" ? "bg-forest text-sand" : "text-earth hover:bg-forest/10"
               }`}
               aria-pressed={locale === "mr"}
             >
