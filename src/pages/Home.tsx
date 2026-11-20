@@ -21,13 +21,13 @@ const offers = [
     titleKey: "homeLanding.offers.advise.title",
     bodyKey: "homeLanding.offers.advise.body",
     metaKey: "homeLanding.offers.advise.meta",
-    tone: "bg-sky/25",
+    tone: "bg-bone text-earth",
   },
   {
     titleKey: "homeLanding.offers.soil.title",
     bodyKey: "homeLanding.offers.soil.body",
     metaKey: "homeLanding.offers.soil.meta",
-    tone: "bg-paper",
+    tone: "bg-sage/35 text-earth",
   },
   {
     titleKey: "homeLanding.offers.sales.title",
@@ -39,7 +39,7 @@ const offers = [
     titleKey: "homeLanding.offers.root.title",
     bodyKey: "homeLanding.offers.root.body",
     metaKey: "homeLanding.offers.root.meta",
-    tone: "bg-ginger/15",
+    tone: "bg-ginger text-earth",
   },
 ] as const;
 
@@ -235,7 +235,7 @@ export function Home() {
 
       <section
         id="story-teaser"
-        className="relative overflow-hidden border-b border-forest/10 bg-paper/60 py-16 sm:py-20"
+        className="relative overflow-hidden border-b border-forest/10 bg-sage/25 py-16 sm:py-20"
         aria-labelledby="story-teaser-heading"
       >
         <ParallaxField variant="light" />
@@ -270,7 +270,7 @@ export function Home() {
 
       <section
         id="support"
-        className="relative scroll-mt-24 overflow-hidden border-b border-forest/10 py-16 sm:py-20"
+        className="relative scroll-mt-24 overflow-hidden border-b border-forest/10 bg-sand py-16 sm:py-20"
         aria-labelledby="support-heading"
       >
         <ParallaxField variant="light" />
@@ -415,14 +415,14 @@ export function Home() {
             ))}
           </ol>
 
-          <div
+            <div
             data-kharif
-            className="mt-12 overflow-hidden rounded-sm border border-forest/15 bg-gradient-to-br from-sky/20 via-paper to-ginger/10 p-6 sm:p-8"
+            className="mt-12 overflow-hidden rounded-sm bg-ginger px-6 py-8 text-earth sm:px-8 sm:py-10"
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-ginger">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-earth/70">
               {t("homeLanding.kharif.badge")}
             </p>
-            <h3 className="mt-3 display-wordmark text-2xl text-forest sm:text-4xl">
+            <h3 className="mt-3 display-wordmark text-2xl text-earth sm:text-4xl">
               {t("homeLanding.kharif.title")}
             </h3>
             <p className="mt-4 max-w-3xl text-lg leading-relaxed text-earth/95">
@@ -436,7 +436,7 @@ export function Home() {
 
       <section
         id="join"
-        className="relative overflow-hidden border-b border-forest/10 bg-paper/50 py-16 sm:py-20"
+        className="relative overflow-hidden border-b border-forest/10 bg-cream/80 py-16 sm:py-20"
         aria-labelledby="join-heading"
       >
         <ParallaxField variant="light" />

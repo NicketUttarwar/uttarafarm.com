@@ -1,4 +1,5 @@
 import { useEffect, type ReactNode } from "react";
+import { useLocation } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
@@ -6,11 +7,16 @@ import Lenis from "lenis";
 gsap.registerPlugin(ScrollTrigger);
 
 /**
- * 8B-style smooth scrolling (Lenis) wired to GSAP ScrollTrigger.
- * Disabled when the user prefers reduced motion.
+ * Lenis smooth scrolling for secondary pages.
+ * Skipped on `/` — the 8B home page boots its own Lenis + ScrollTrigger scenes.
  */
 export function SmoothScroll({ children }: { children: ReactNode }) {
+  const { pathname } = useLocation();
+  const enabled = pathname !== "/";
+
   useEffect(() => {
+    if (!enabled) return;
+
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduce) return;
 
@@ -47,7 +53,7 @@ export function SmoothScroll({ children }: { children: ReactNode }) {
       lenis.destroy();
       ScrollTrigger.clearScrollMemory();
     };
-  }, []);
+  }, [enabled]);
 
   return children;
 }

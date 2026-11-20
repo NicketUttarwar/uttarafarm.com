@@ -1,19 +1,23 @@
-@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Bree+Serif&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=DM+Sans:opsz,wght@9..40,100..1000&family=Bree+Serif&display=swap");
 @import "tailwindcss";
 
 @theme {
   --font-sans: "DM Sans", "Noto Sans Devanagari", ui-sans-serif, system-ui, sans-serif;
   --font-brand: "Bree Serif", "Noto Sans Devanagari", "Merriweather", serif;
   --font-display: "Bricolage Grotesque", "Noto Sans Devanagari", ui-sans-serif, system-ui, sans-serif;
-  --color-cream: #f0e4cf;
+  /* Craft-workshop 8B palette (preview c0jjfrzu8x) */
+  --color-cream: #ebe0d0;
   --color-forest: #2f5c4f;
   --color-forest-dark: #1a3228;
   --color-ginger: #c45c26;
-  --color-earth: #181412;
-  --color-sand: #f0e4cf;
+  --color-earth: #1c1a17;
+  --color-sand: #f3efe6;
   --color-sky: #8fb3a8;
   --color-moss: #1a3228;
-  --color-paper: #f7efe2;
+  --color-paper: #e4d7c5;
+  --color-sage: #6f8573;
+  --color-bone: #e4d7c5;
+  --color-navy: #2f5c4f;
 }
 
 html {
@@ -327,4 +331,13 @@ html.js-motion [data-kharif] {
   [data-path-dot] {
     animation: none !important;
   }
+}
+
+
+/* Full-bleed 8B craft home — avoid double page chrome */
+html.eightb-page body {
+  background: #f3efe6;
+}
+html.eightb-page .isolate > .z-10 {
+  /* home owns layout */
 }
