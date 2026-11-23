@@ -29,12 +29,6 @@ for route in "${ROUTES[@]}"; do
   cp "${COMBINED_DIR}/index.html" "${COMBINED_DIR}/${route}/index.html"
 done
 
-# Optional archive of the static 8B experiment (not the primary site).
-if [[ -f "${ROOT}/public/8b/index.html" ]]; then
-  mkdir -p "${COMBINED_DIR}/8b"
-  cp "${ROOT}/public/8b/index.html" "${COMBINED_DIR}/8b/index.html"
-fi
-
 # Keep compatibility alias for llm.txt.
 if [[ -f "${COMBINED_DIR}/llms.txt" ]]; then
   cp "${COMBINED_DIR}/llms.txt" "${COMBINED_DIR}/llm.txt"

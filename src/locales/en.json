@@ -2,7 +2,7 @@
   "meta": {
     "home": {
       "title": "Uttara Farm — Prosperity through turmeric and ginger farming in Vidarbha",
-      "description": "A social project helping individual, cooperative, and contract farmers across Vidarbha raise yield and livelihood—with a focus in Ralegaon."
+      "description": "A social initiative supporting farmers in Ralegaon and Vidarbha, Maharashtra with turmeric and ginger expertise, soil testing, and access to major markets."
     },
     "about": {
       "title": "Our Story — Vijay Uttarwar & Uttara Farm",
@@ -33,152 +33,14 @@
   "hero": {
     "eyebrow": "Social project · Maharashtra",
     "title": "Prosperity for farmers through turmeric and ginger",
-    "subtitle": "We are a social project helping individual, cooperative, and contract farmers across Vidarbha raise yield and livelihood through turmeric and ginger, with a special focus in Ralegaon.",
+    "subtitle": "We are starting with turmeric and ginger, both high-yield crops with regular demand, and helping farming families in Ralegaon and Vidarbha grow them with expert guidance, practical tools, and fair access to big-city markets.",
     "ctaPrimary": "Learn how we help",
     "ctaSecondary": "Get in touch"
   },
-  "homeLanding": {
-    "eyebrow": "Social project · Maharashtra",
-    "wordmark": "uttara",
-    "heroImageAlt": "Green crops growing in open farmland",
-    "heroCaption": "Uttara Farm is a social project for farmers across Vidarbha—individual farmers, cooperative members, and contract farmers. Ralegaon is a special focus within the region. We start with turmeric and ginger to help raise yield and socioeconomic standing through guidance, soil insight, and routes to bigger markets.",
-    "ctaPrimary": "See how we help",
-    "ctaStory": "Read our story",
-    "ctaSecondary": "Get in touch",
-    "facts": {
-      "focusLabel": "Service",
-      "focusValue": "All of Vidarbha",
-      "cropsLabel": "Crops",
-      "cropsValue": "Turmeric & ginger",
-      "seasonLabel": "Season",
-      "seasonValue": "Kharif crop",
-      "farmersLabel": "Hub",
-      "farmersValue": "Ralegaon focus"
-    },
-    "storyTeaser": {
-      "title": "From Bhamb to the world — and back",
-      "p1": "Vijay Uttarwar grew up in Bhamb, studied agriculture, learned computers, built Naturell and Max Protein, then came home.",
-      "highlight": "Every last rupee should reach the farmer.",
-      "p2": "That rule drives Uttara Farm as a social project—to raise yield and livelihood for all farmers.",
-      "link": "Full story, brands, and journey"
-    },
-    "offers": {
-      "title": "How we lift farms",
-      "intro": "Three pillars and one crop focus: knowledge in the field, tools that reveal the soil, and logistics that reach city buyers.",
-      "advise": {
-        "title": "Advise",
-        "body": "Season-long advice from turmeric and ginger specialists so practices match local soil, weather, and the realities of family farms.",
-        "meta": "Field guidance"
-      },
-      "soil": {
-        "title": "Soil kits",
-        "body": "Soil testing and nutrition support help farmers understand their land before they plant. Better data means fewer costly mistakes.",
-        "meta": "Shared tools"
-      },
-      "sales": {
-        "title": "Sales",
-        "body": "We work toward grading, bundling, and transport so produce can reach tier-1 markets. Small lots alone rarely capture fair prices.",
-        "meta": "Market access"
-      },
-      "root": {
-        "title": "Root",
-        "body": "Turmeric and ginger can out-earn jowar or cotton when managed well. We start here because demand is regular and returns can be strong.",
-        "meta": "Crop focus"
-      }
-    },
-    "tools": {
-      "title": "The tools that carry the work",
-      "intro": "Not vehicles—capabilities. Each piece of the programme reduces risk on the farm and opens a clearer path to buyers.",
-      "specA": "Scale",
-      "specB": "Need",
-      "haldi": {
-        "name": "Haldi",
-        "type": "Turmeric · high-yield crop",
-        "a": "Village acres",
-        "b": "Season care"
-      },
-      "adrak": {
-        "name": "Adrak",
-        "type": "Ginger · intensive crop",
-        "a": "Plot units",
-        "b": "Water & disease watch"
-      },
-      "soil": {
-        "name": "Soil",
-        "type": "Testing kits · Warkem",
-        "a": "Each plot",
-        "b": "Crop advisor"
-      },
-      "route": {
-        "name": "Route",
-        "type": "Logistics · Mumbai path",
-        "a": "Shared loads",
-        "b": "Tier-1 markets"
-      }
-    },
-    "path": {
-      "title": "A season with Uttara Farm",
-      "intro": "A sample path, not a rigid script. Timing flexes with monsoon, soil results, and what each village circle needs most.",
-      "s1": {
-        "step": "Step 1",
-        "title": "Bhamb base",
-        "body": "Meet the circle, walk the plots, and agree which fields join turmeric or ginger for the coming season."
-      },
-      "s2": {
-        "step": "Step 2",
-        "title": "Soil insight",
-        "body": "Test kits and advisors read the land. Nutrition plans follow the soil, not a one-size packet."
-      },
-      "s3": {
-        "step": "Step 3",
-        "title": "Plant well",
-        "body": "Seed quality, spacing, and early care set the season. Field visits catch problems before they compound."
-      },
-      "s4": {
-        "step": "Step 4",
-        "title": "Mid-season care",
-        "body": "Irrigation, disease watch, and nutrition adjustments. This is where discipline protects income."
-      },
-      "s5": {
-        "step": "Step 5",
-        "title": "Harvest prep",
-        "body": "Grading and bundling start before the truck. Clean lots travel farther and sell fairer."
-      },
-      "s6": {
-        "step": "Step 6",
-        "title": "Market & return",
-        "body": "Produce moves toward bigger buyers; learnings feed the next season so every farmer we support can keep improving yield and income."
-      }
-    },
-    "kharif": {
-      "badge": "Growing calendar",
-      "title": "A Kharif crop — support that lasts the year",
-      "body": "This is a Kharif crop, and there is a specific planting season, but we assist throughout the growing season, all through harvest, and into next-season prep."
-    },
-    "join": {
-      "title": "Who we support",
-      "intro": "Uttara Farm is a social project to help farmers raise yield and socioeconomic status. We work with individual farmers, farmers in cooperatives, and contract farmers across Vidarbha.",
-      "individual": {
-        "title": "Individual farmers",
-        "body": "Family farms and independent growers who want turmeric and ginger guidance, soil insight, and a clearer path to fairer markets.",
-        "cta": "Talk with us"
-      },
-      "cooperative": {
-        "title": "Cooperative farmers",
-        "body": "Members of existing cooperatives and FPOs are welcome. We support you as farmers alongside your co-op or FPO.",
-        "cta": "Get in touch"
-      },
-      "contract": {
-        "title": "Contract farmers",
-        "body": "Growers under contract arrangements can still use our crop advice, soil tools, and market know-how to improve yield and standing.",
-        "cta": "Ask how we help"
-      }
-    }
-  },
   "mission": {
     "title": "A social project rooted in local farming",
-    "p1": "Uttara Farm is a social project. We exist to help farmers build economic stability from the land they already know, whether they farm alone, with a cooperative, or under contract.",
-    "p2": "By starting with high-yield crops like turmeric and ginger and surrounding farmers with training, testing, and market connections, we aim to raise yield and socioeconomic status across Vidarbha."
+    "p1": "Agriculture is the backbone of our region. Uttara Farm exists to help farmers build economic stability from the land they already know—without having to leave it behind.",
+    "p2": "By starting with high-yield crops like turmeric and ginger and surrounding farmers with training, testing, and market connections, we aim to turn local farming into a more resilient livelihood."
   },
   "ginger": {
     "title": "Why turmeric and ginger",
@@ -202,16 +64,15 @@
     }
   },
   "region": {
-    "badge": "Geography",
-    "title": "Serving all of Vidarbha",
-    "p1": "Uttara Farm serves the entire Vidarbha region of Maharashtra—communities where farming shapes daily life and seasonal income.",
-    "p2": "Ralegaon lies within Vidarbha and is a special focus for us, but it is not our only geography. Solutions are built for Vidarbha’s climate, soils, and family farms across the region.",
+    "title": "Ralegaon & Vidarbha",
+    "p1": "We work in Ralegaon and the wider Vidarbha region of Maharashtra—communities where farming shapes daily life and seasonal income.",
+    "p2": "Our effort is deliberately local: solutions should fit Vidarbha’s climate, soils, and the realities of family farms.",
     "mapTitle": "Vidarbha region map"
   },
   "contact": {
     "title": "Contact",
     "personName": "Vijay Uttarwar",
-    "intro": "Individual farmers, cooperative members, contract growers, and supporters can reach Vijay directly about Uttara Farm.",
+    "intro": "Farmers, cooperatives, and supporters can reach Vijay directly about Uttara Farm.",
     "emailLabel": "Email",
     "emailValue": "vijay@uttarwar.com",
     "phoneLabel": "WhatsApp",
@@ -232,7 +93,7 @@
     "backHome": "Back to home"
   },
   "footer": {
-    "rights": "Uttara Farm. Serving farmers across Vidarbha—with a focus in Ralegaon.",
+    "rights": "Uttara Farm. Supporting farmers in Ralegaon and Vidarbha.",
     "note": "uttarafarm.com"
   },
   "aboutPage": {
@@ -266,7 +127,7 @@
         "title": "Uttara Farm: making farming viable again",
         "p1": "Yavatmal is too often known for farmer distress. Vijay cannot change everything alone, but he asked what small bit he could do. The core problem is income: when earnings cannot cover debt, pressure becomes unbearable.",
         "p2": "Not all farmers in Maharashtra are poor. Nashik, Pune, Kolhapur, Satara, and Bhusawal show what organised high-value crops and infrastructure can do. Sugar in western Maharashtra and bananas around Bhusawal prove the model. Uttara Farm applies that same thought process locally.",
-        "p3": "He looks at farming as industry: expert growing and hand-holding, supply-chain efficiency, and marketing that reaches consumers. Uttara Farm is a social project supporting individual, cooperative, and contract farmers so yield rises, livelihoods strengthen, and every last rupee can go to the farmer.",
+        "p3": "He looks at farming as industry: expert growing and hand-holding, supply-chain efficiency, and marketing that reaches consumers. Early work with about twenty-five farmers is showing strong crops; the next step is scale through a cooperative or FPO so every last rupee can go to the farmer.",
         "p4": "The larger ambition is reverse migration — retaining talent so graduates earning a modest city salary can live well in the village instead of leaving it behind."
       },
       "circle": {

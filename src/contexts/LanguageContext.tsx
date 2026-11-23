@@ -57,9 +57,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>(readInitialLocale);
 
   useEffect(() => {
-    const root = document.documentElement;
-    root.lang = locale === "mr" ? "mr" : "en";
-    root.dataset.locale = locale;
+    document.documentElement.lang = locale === "mr" ? "mr" : "en";
     window.localStorage.setItem(STORAGE_KEY, locale);
   }, [locale]);
 

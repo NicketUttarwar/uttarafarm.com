@@ -1,5 +1,4 @@
 import { useLanguage } from "../contexts/LanguageContext";
-import { ParallaxField } from "./ParallaxField";
 
 /** Fallback if display string has no digits (should not happen). */
 const PHONE_DIGITS_FALLBACK = "918356070425";
@@ -15,16 +14,13 @@ export function SectionContact() {
   return (
     <section
       id="contact"
-      data-contact-art
-      className="contact-art relative scroll-mt-20 overflow-hidden bg-gradient-to-b from-sand to-ginger/10 py-16 sm:py-20"
+      className="scroll-mt-20 bg-gradient-to-b from-cream to-ginger/5 py-16 sm:py-20"
       aria-labelledby="contact-heading"
     >
-      <ParallaxField variant="light" />
-      <div className="relative mx-auto max-w-5xl px-4 sm:px-6">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6">
         <h2
           id="contact-heading"
-          data-stretch
-          className="display-wordmark text-3xl text-forest sm:text-5xl"
+          className="text-2xl font-bold tracking-tight text-forest sm:text-3xl"
         >
           {t("contact.title")}
         </h2>
@@ -33,7 +29,7 @@ export function SectionContact() {
           {t("contact.intro")}
         </p>
         <dl className="mt-10 max-w-xl space-y-6">
-          <div data-depth data-speed="0.08">
+          <div>
             <dt className="text-sm font-semibold uppercase tracking-wide text-ginger">
               {t("contact.emailLabel")}
             </dt>
@@ -46,7 +42,7 @@ export function SectionContact() {
               </a>
             </dd>
           </div>
-          <div data-depth data-speed="-0.06">
+          <div>
             <dt className="text-sm font-semibold uppercase tracking-wide text-ginger">
               {t("contact.whatsappLabel")}
             </dt>

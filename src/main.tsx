@@ -4,16 +4,12 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App.tsx";
 import "./index.css";
 import { LanguageProvider } from "./contexts/LanguageContext.tsx";
-import { SmoothScroll } from "./motion/SmoothScroll.tsx";
-import "lenis/dist/lenis.css";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
       <LanguageProvider>
-        <SmoothScroll>
-          <App />
-        </SmoothScroll>
+        <App />
       </LanguageProvider>
     </BrowserRouter>
   </StrictMode>,
